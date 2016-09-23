@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+   <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>我要参赛</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+#parse("head.html")
+<div class="site-body">
+<div class="competitionJoinPage site-container">
+    <form data-mode="inline"  action="$!request.contextPath/works/upload.do"   method="post">
+        <div class="competitionJoinPage-item mt40">
+            <p class="title">填写作品信息</p>
+            <div class="form">
+             <div class="site-form-2">
+                <div class="form-item">
+                    <label class="label">* 作品类别</label>
+                    <div class="input">
+                        <select id="category" data-valid-require="请输入作品类别" data-init="$!game.workstag" name="workstag" class="site-input J_validInput"></select>
+                        <input  name="worksid"  value="$!game.worksid" type="hidden" />
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">*作品名称</label>
+                    <div class="input">
+                        <input data-valid-require="请输入作品名称" name="worksname" value="$!game.worksname"  data-valid-range="作品名称长度在2-32" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+					<label class="label">指导老师</label>
+					<div class="input ">
+						<input name="instructor" value="$!game.instructor" class="site-input J_validInput" data-valid-range="组织老师长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" type="text">
+					</div>
+					<div class="tip"></div>
+				</div>
+				<div class="form-item">
+					<label class="label">指导老师联系方式</label>
+					<div class="input ">
+						<input name="instructorMobile" value="$!game.instructorMobile" class="site-input  J_validInput" type="text" data-valid-mobile="请输入正确的手机号码">
+					</div>
+					<div class="tip"></div>
+				</div>
+                <div class="form-item">
+                    <label class="label">作品简介</label>
+                    <div class="input">
+                        <textarea rows="6" name="description"  class="site-input J_validInput" data-valid-range="作品简介长度在300个汉字以内" data-valid-range-min="1" data-valid-range-max="300">$!game.description</textarea>
+                    </div>
+                    <div class="tip">作品简介长度在300个汉字以内</div>
+                </div>
+                #if($!status==3)
+                    <input  value="$!game.picturetag" name="path" type="hidden" />
+                    <input  value="$!status" name="status" type="hidden" />
+                #else
+                <div class="form-item site-upload J_validInput" data-valid-require="请上传作品文件" data-valid-control="custom">
+                    <label class="label">* 作品文件</label>
+                    <div class="input">
+                        <label class="upload site-upload-button" data-preview="true" data-init="$!game.path" data-file-type="image" data-form-data='{"typeimg":"0"}'></label>
+                        <input  value="$!game.picturetag" name="path" type="hidden" />
+                    </div>
+                    <div class="tip">作品请上传jpg、png、jpeg格式的扫描文件</div>
+                </div>
+                #end
+            </div>
+        </div>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-primary" type="submit" value="提交作品">
+        </div>
+    </form>
+</div>
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+</div>
+
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+  #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "painter/join"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

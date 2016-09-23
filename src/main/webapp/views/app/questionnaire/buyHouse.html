@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>我要买房</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if lte IE 8]>
+       <link rel="stylesheet" type="text/css" href="$!request.contextPath/res/css/app/questionnaire/questionnaireMain.css" />
+    <![endif]-->
+</head>
+<body class="site questionnairePage ">
+#parse("_head.html")
+<div class="banner"></div>
+<!-- <div class="nav">
+<div class="nav">
+    <ul class="site-container clearfix">
+        <li class="first nav-renovated">
+            <a href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-wantRenovate">
+            <a href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-buyHouse">
+            <a href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class="active"></a>
+        </li>
+        <li class="nav-mybalcony">
+            <a href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+    </ul>
+</div>
+</div> -->
+<div class="content">
+    
+ <div class="content-i">
+
+<div class="buyHouse">
+    <h1>2015我的家调查问卷--我要买房</h1>
+    <!-- <form class="site-form mt80" data-mode="inline" action="/mobile/wantBuyHouse/addMobileWantBuyHouse.do" method="post" data-tip-success-class=""> -->
+    <form class="site-form mt80" data-auto-parse="false" action="/mobile/wantBuyHouse/addMobileWantBuyHouse.do" method="post" data-tip-success-class="">  
+        <div class="formcontent">
+           <input type="text" name="user.id"  hidden="true" value="$!id">
+           <input type="text" name="user.userInfo.invitationCode"  hidden="true" value="$!invitationCode">
+            <section>
+                <h2 class="clearfix">
+                    <i>01</i>
+                    说说您对购房的需求
+                </h2>
+                <div class="sectionContent">
+                    <div class="item clearfix">
+                        <label><i>*</i>所在城市</label>
+                        <div class="input">
+                            <select id="province" class="site-input"></select>
+                            <select id="city" class="site-input ml20"></select>
+                            <select id="district" name="region.id" class="site-input ml20"></select>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>楼盘名称</label>
+                        <div class="input">
+                            <input data-valid-require="请输入楼盘名称"  name="name" data-valid-range="楼盘名称长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input site-input2 J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>期望房型</label>
+                        <div class="input">
+                            <select class="site-input" name="houseType">
+                            #foreach($baseDataDictionary in $baseDataDictionaryList)
+                            <option value="$baseDataDictionary.name">$baseDataDictionary.name</option>
+                            #end
+                            </select>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>购买时间</label>
+                        <div class="input">
+                            <input data-valid-require="请输入购买时间" name="purchaseTime" onfocus="WdatePicker({ maxDate: '%y-%M-%d' })" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>购买面积</label>
+                        <div class="input">
+                            <input data-valid-require="请输入购买面积" name="area" data-valid-integer="请输入正确的购买面积" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">平米</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>购买预算</label>
+                        <div class="input">
+                            <input data-valid-require="请输入购买预算" name="purchasingBudget" data-valid-numeric="请输入正确的购买预算" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">元</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="item item1">
+                        <div class="clearfix">
+                            <label><i>*</i>您是否有房屋需要出售？</label>
+                            <div class="input">
+                                <input type="radio" checked name="houseForSale" class="radio" value="1" id="airbnb1" /><label for="airbnb1">是</label>
+                                <input type="radio" name="houseForSale" class="radio ml60" value="0" id="airbnb2" /><label for="airbnb2">否</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-red" type="submit" value="提交问卷">
+        </div>
+    </form>
+</div>
+
+</div>
+
+</div>
+<div id="questionnaireShareBox" class="successBoxWrap none">
+    <div class="successBox">
+        <a id="questionnaireShareClose" href="javascript:void(0);" class="close"><i class="iconfont icon-guanbi"></i></a>
+        <h2><span>恭喜，您获得10积分！</span></h2>
+    </div>
+</div>
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+           // serverUrl: "http://www.haaaaaa.com",
+//             serverUrl: "http://192.168.3.45:8081/web_myhome",
+            app: "area,questionnaire/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

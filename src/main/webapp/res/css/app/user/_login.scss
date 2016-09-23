@@ -1,0 +1,149 @@
+﻿/// <reference path="../../_references.scss" />
+
+.loginPage {
+    padding: 40px 15px;
+
+    .view {
+        float: left;
+        width: 652px;
+        height: 346px;
+        margin-top: 80px;
+        background: url(../img/user/login/bg.png) no-repeat;
+    }
+
+    .box {
+        float: right;
+        padding: 32px 28px 0;
+        border-radius: 5px;
+
+        .title {
+            text-align:center;
+            span {
+                font-size: $font-size-h3;
+                color: #333;
+            }           
+        }
+    }
+}
+
+.loginPage .box, .site-loginBox {
+    .site-form {
+        padding-top: 25px;
+
+        .site-form-item {
+            @extend .site-box;
+            @extend .clearfix;
+            width: 378px;
+            border-radius: 3px;
+
+            label {
+                float: left;
+                font-size: 20px;
+                color: $color-info;
+                text-align: center;
+                width: 32px;
+                margin-top: 8px;
+                padding-left: 5px;
+            }
+
+            .line {
+                float: left;
+                height: 20px;
+                margin-top: 13px;
+                border-right: 1px solid #e8e8e8;
+            }
+
+            .input {
+                float: left;
+            }
+
+            .site-input {
+                padding: 12px 10px;
+                width: 320px;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .site-button {
+            width: 100%;
+        }
+    }
+
+    .otherLogin {
+        text-align: center;
+        font-size: 14px;
+        color: #CCC;
+        margin-top: 16px;
+
+        .line {
+            height: 1px;
+            width: 134px;
+            background: #f2f2f2;
+            margin: 10px 0 0;
+        }
+
+        .title {
+            padding: 0 14px;
+        }
+    }
+
+    .otherLoginCon {
+        margin: 26px 0 38px;
+
+        li {
+            float: left;
+
+            a {
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: no-repeat;
+                margin-left: 27px;
+
+                &.QQ {
+                    background-image: url(../img/user/login/QQ.gif);
+                    margin-left: 123px;
+
+                    &:hover {
+                        background-image: url(../img/user/login/QQh.gif);
+                    }
+                }
+
+                &.weibo {
+                    background-image: url(../img/user/login/weibo.gif);
+
+                    &:hover {
+                        background-image: url(../img/user/login/weiboh.gif);
+                    }
+                }
+
+                &.wechat {
+                    background-image: url(../img/user/login/wechat.gif);
+
+                    &:hover {
+                        background-image: url(../img/user/login/wechath.gif);
+                    }
+                }
+            }
+        }
+    }
+
+    .boxBottom {
+        text-align: center;
+        margin-bottom:20px;
+
+        span {
+            margin: 0 10px;
+            font-size:14px;
+        }
+
+        a {
+            color: #666;
+
+            &:hover {
+                color: $color-brand;
+            }
+        }
+    }
+}

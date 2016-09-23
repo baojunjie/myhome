@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+   <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>我要参赛</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+#parse("head.html")
+<div class="site-body">
+<div class="competitionJoinPage site-container">
+    <form data-mode="inline" action="$!request.contextPath/artist/update.do" method="post">
+        <div class="competitionJoinPage-item">
+            <p class="title">填写作者信息</p>
+            <div class="form">
+             <div class="site-form-2">
+                <div class="form-item first">
+                    <label class="label">* 姓名</label>
+                    <div class="input">
+                         <input autofocus data-valid-require="请输入真实姓名" name="name" value="$!game.name" data-valid-range="姓名长度在2-32" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                        <input  name="id"  value="$!game.id" type="hidden" />
+                    </div>
+                    <div class="tip">请输入真实姓名</div>
+                </div>
+                 <div class="form-item site-upload J_validInput" data-valid-require="请上传参赛者本人的清晰头像-图片不小于500K" data-valid-control="custom">
+                    <label class="label">* 照片</label>
+                    <div class="input">
+                        <label class="upload site-upload-button" data-init="$!game.img" data-preview="true" data-file-size-min="500" data-file-type="image" data-form-data='{"typeimg":"1"}'></label>
+                        <input  name="img" value="$!game.picturetag"  type="hidden" />
+                    </div>
+                    <div class="tip">请上传参赛者本人的清晰头像-图片不小于1M</div>
+                </div>
+                <div class="form-item">
+                    <label class="label" >* 性别</label>
+                    <div class="input">
+                        <select class="site-input J_validInput"  data-valid-require="请选择性别" name="male">
+                            <option value="1" #if($!game.male==1)selected#else#end>男</option>
+                            <option value="2" #if($!game.male==2)selected#else#end>女</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 民族</label>
+                    <div class="input">
+                        <input data-valid-require="请输入民族" name="nation" value="$!game.nation" data-valid-range="民族长度在2-32" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 生日</label>
+                    <div class="input">
+                        <input id="birthday" onClick="WdatePicker({ minDate: '{%y-12}-%M-%d', maxDate: '{%y-3}-%M-%d' })" name="birthday" value="$!game.birthday" data-valid-require="请选择生日" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 籍贯</label>
+                    <div class="input">
+                    <input data-valid-require="请输入籍贯" name="origin" value="$!game.origin" data-valid-range="籍贯长度在2-32" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 选送地区</label>
+                    <div class="input">
+                        <select id="province" class="site-input J_validInput"  data-init="$!game.province" data-valid-require="请选择省份"></select>
+                        <select id="city" class="site-input J_validInput ml10" data-init="$!game.city"  data-valid-require="请选择城市"></select>
+                        <select id="district" class="site-input J_validInput" name="region" data-init="$!game.region"  data-valid-require="请选择地区"></select>
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                   <label class="label">* 身份证号码</label>
+                    <div class="input">
+                         <input data-valid-require="请输入身份证号码" name="idCode" value="$!game.idCode" data-valid-idcard="请输入正确的身份证号码" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip">请填写参赛者身份证号码</div>
+                </div>
+                <div class="form-item">
+                   <label class="label">推荐单位</label>
+                    <div class="input">
+                        <input id="school" class="site-input J_validInput" name="school" value="$!game.school" data-valid-age="7岁以上必填" data-valid-range="学校/培训机构长度在2-32位" data-valid-range-min="2" data-valid-range-max="32"  type="text">
+                    </div>
+                    <div class="tip">7岁以下选填</div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 家长联系方式</label>
+                    <div class="input">
+                        <input data-valid-require="请输入家长联系方式" name="parentMobile" value="$!game.parentMobile" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">最喜欢的卡通形象</label>
+                    <div class="input">
+                       <input data-valid-require="请输入最喜欢的卡通形象" name="cartoon" value="$!game.cartoon" data-valid-range="最喜欢的卡通形象长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="competitionJoinPage-item mt40">
+            <p class="title">填写推荐方信息</p>
+            <div class="form">
+                <div class="form-item">
+                    <label class="label">学校/培训机构</label>
+                    <div class="input input2">
+                        <input class="site-input" type="text" name="referrerSchool" value="$!game.referrerSchool" >
+                        <input placeholder="联系方式" class="site-input ml25" type="text" name="referrerMobile" value="$!game.referrerMobile">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="label">组织老师</label>
+                    <div class="input input2">
+                        <input class="site-input" type="text" name="instructor" value="$!game.instructor">
+                        <input placeholder="联系方式" class="site-input ml25" type="text" name="instructorMobile" value="$!game.instructorMobile">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="label">指导老师</label>
+                    <div class="input input2">
+                        <input class="site-input" type="text" value="$!game.teacher" name="teacher">
+                        <input placeholder="联系方式" class="site-input ml25" type="text" value="$!game.teacherMobile" name="teacherMobile">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-primary" type="submit" value="提交资料">
+        </div>
+    </form>
+</div>
+
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+</div>
+
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+            personalCenter: {
+                kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                painterUrl: "$!request.contextPath/artist/personalCenter.do"
+            },
+            works: {
+                detailUrl: "$!request.contextPath/works/worksinfo.do"
+            },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "competition/join"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

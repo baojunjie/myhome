@@ -1,0 +1,138 @@
+﻿.worksIndexPage {
+    padding-bottom: 30px;
+
+    .banner {
+        height: 300px;
+        background: url(../img/works/index/galleryBanner.jpg) no-repeat 50% 50%;
+    }
+
+    .site-tab {
+        .site-tab-nav {
+            li {
+                width: 288px;
+                height: 58px;
+                line-height: 58px;
+
+                a {
+                    display: block;
+                    color: black;
+                    font-size: 24px;
+                    text-align: center;
+                    border: 1px solid #e6e6e6;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                &.active a {
+                    color: white;
+                    background: #7cc250;
+                    border-color: #7cc250;
+                }
+            }
+        }
+    }
+
+    .site-painter-filter {
+        margin-top: 1px;
+    }
+
+    .site-tab-panel-con {
+
+        li {
+            float: left;
+            position: relative;
+            text-align: center;
+            width: 176px;
+            margin: 26px 0 0 26px;
+            border: 1px solid #dedfe0;
+
+            &.first {
+                margin-left: 0;
+            }
+
+            .main {
+                position: relative;
+                display: block;
+                width: 176px;
+                height: 176px;
+                overflow: hidden;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .rank {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 24px;
+                line-height: 24px;
+                font-size: 14px;
+                color: #FFF;
+                background: rgba(0,0,0,0.6);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+            }
+
+            .detail {
+                font-size: 14px;
+                color: #999;
+                padding: 5px;
+
+                p {
+                    @include ellipsis();
+                }
+
+                .colorGreen {
+                    color: #359f6a;
+                }
+
+                span {
+                    color: #666;
+                    height: 24px;
+                    line-height: 24px;
+
+                    &.li-size {
+                        color: #999;
+                        padding: 0 3px;
+                    }
+                }
+            }
+
+            .btn {
+                border-top: 1px solid #dedfe0;
+
+                a {
+                    @include ellipsis(100%);
+                    font-size: 14px;
+                    color: #f8b300;
+                    text-align: center;
+                    width: 100%;
+                    height: 36px;
+                    line-height: 36px;
+
+                    &.vote {
+                        border-right: 1px solid #dedfe0;
+                    }
+                }
+            }
+        }
+    }
+
+    .site-tab-panel-btm {
+        width: 100%;
+        height: 42px;
+        line-height: 46px;
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 60px;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+
+        a {
+            color: #666;
+        }
+    }
+}

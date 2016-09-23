@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="HaveToDecorate" table="t_have_to_decorate" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <many-to-one name="region" class="Region" column="region_id" cascade="none" lazy="false" />
+
+		<many-to-one name="user" class="User" column="user_id" cascade="none" lazy="false"></many-to-one>
+        
+        <property name="name" column="name" type="string" />
+        
+        <property name="purchaseTime" column="purchase_time" type="date" />
+        
+        <property name="area" column="area" type="integer" />
+        
+        <property name="unitPrice" column="unit_price" type="integer" />
+        
+        <property name="totalPrice" column="total_price" type="integer" />
+        
+        <property name="craftsmanName" column="craftsman_name" type="string" />
+        
+        <property name="craftsmanMobile" column="craftsman_mobile" type="string" />
+        
+        <property name="craftsmanType" column="craftsman_type" type="string" />
+        
+        <property name="craftsmanComment" column="craftsman_comment" type="string" />
+        
+        <property name="designerName" column="designer_name" type="string" />
+        
+        <property name="designerMobile" column="designer_mobile" type="string" />
+        
+        <property name="designerComment" column="designer_comment" type="string" />
+        
+        <property name="livingRoom" column="living_room" type="string" />
+        
+        <property name="kitchen" column="kitchen" type="string" />
+        
+        <property name="toilet" column="toilet" type="string" />
+        
+        <property name="bedroom" column="bedroom" type="string" />
+        
+        <property name="study" column="study" type="string" />
+        
+        <property name="balcony" column="balcony" type="string" />
+        
+        <property name="bathtub" column="bathtub" type="string" />
+        
+        <property name="waterChannel" column="water_channel" type="string" />
+        
+        <property name="sprinkler" column="sprinkler" type="string" />
+        
+        <property name="closestool" column="closestool" type="string" />
+        
+        <property name="coating" column="coating" type="string" />
+        
+        <property name="switchInsert" column="switch_insert" type="string" />
+        
+        <property name="lamps" column="lamps" type="string" />
+        
+        <property name="tile" column="tile" type="string" />
+        
+        <property name="floor" column="floor" type="string" />
+        
+        <property name="airCondition" column="air_condition" type="string" />
+        
+        <property name="waterHeater" column="water_heater" type="string" />
+        
+        <property name="bathHeater" column="bath_heater" type="string" />
+        
+        <property name="refrigerator" column="refrigerator" type="string" />
+        
+        <property name="waterPurifier" column="water_purifier" type="string" />
+        
+        <property name="smokeExhaust" column="smoke_exhaust" type="string" />
+        
+        <property name="gasCooker" column="gas_cooker" type="string" />
+        
+        <property name="garderobe" column="garderobe" type="string" />
+        
+        <property name="sofa" column="sofa" type="string" />
+        
+        <property name="mattess" column="mattess" type="string" />
+        
+        <property name="bed" column="bed" type="string" />
+        
+        <property name="cabinet" column="cabinet" type="string" />
+        
+        <property name="airbnb" column="airbnb" type="integer" />
+        
+        <property name="houseForSale" column="house_for_sale" type="integer" />
+
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,55 @@
+<script type="text/template" id="rewardTmpl">
+    <div class="rewardDialog">
+        <a class="J_close close iconfont icon-guanbi" href="javascript:void(0);"></a>
+        <form action="/recommendChildren/getAccount.do" method="post">
+            <div class="item">
+                <p class="title">
+                    <label>您的寄语</label>
+                </p>
+                <div class="content">
+                    <textarea name="message" autofocus data-valid-require="请输入寄语" class="site-input J_validInput"></textarea>
+                </div>
+            </div>
+            <div class="item mt35">
+                <p class="title">
+                    <label>您打赏的金额</label>
+                </p>
+                <div class="content">
+                    <input name="money" data-valid-require="请输入打赏的金额" data-valid-numeric="请输入正确的金额" class="site-input money J_validInput price" type="text" /><span class="ml10">元</span>
+                </div>
+            </div>
+            <div class="item mt35">
+                <input type="hidden" name="type" value="1" />
+                <input type="hidden" name="userTo.id" value="$!artist.artistInfo.user.id" />
+                <input type="hidden" name="userFrom.id" value="$!session.getAttribute('USER_ID')" />
+                <input class="site-button" type="submit" value="提 交" />
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/template" id="rewardInfoTmpl">
+    <div class="main">
+        <div class="title">
+            <h3>打赏方式</h3>
+            <p>请将打赏金额通过以下方式直接打给小画家</p>
+        </div>
+        <ol>
+            <li class="clearfix">
+                <label>支付宝：</label>
+                <span>{{:alipayAccount}}</span>
+            </li>
+            <li class="clearfix mt40">
+                <label>微信：</label>
+                <span>{{:weChatAccount}}</span>
+            </li>
+            <li class="clearfix mt40">
+                <label>银行卡：</label>
+                <span>{{:bankAccount}}</span>
+            </li>
+        </ol>
+    </div>
+    <div class="action">
+        <input type="button" class="site-button first J_close" value="取 消" /><input type="button" class="site-button J_yes" value="好 的" />
+    </div>
+</script>

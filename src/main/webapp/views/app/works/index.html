@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>作品展示</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+
+<body class="site site-3 ">
+ #parse("head.html")
+<div class="site-menu">
+    <ul class="site-container flc">
+        <li>
+            <a class="" href="$!request.contextPath/home/index.do">首页</a>
+        </li>
+        <li>
+            <a class="" href="$!request.contextPath/game/about.do">关于大赛</a>
+        </li>
+        <li>
+            <a class="current" href="$!request.contextPath/works/index.do">作品展示</a>
+        </li>
+        <li>
+            <a class="" href="$!request.contextPath/artist/index.do">小小画家</a>
+        </li>
+        <li>
+            <a href="$!request.contextPath/passWork/index.do">入围榜</a>
+        </li>
+        <li>
+           <a href="$!request.contextPath/love/index.do">公益活动</a>
+        </li>
+       <li>
+            <a class="" href="$!request.contextPath/game/activity.do">赛区活动</a>
+        </li>
+        <li class="">
+            <a class="" href="$!request.contextPath/home/pastReview.do">往届回顾</a>
+        </li>
+        	        <li class="last search">
+            <form id="searchForm" class="clearfix" action="/" method="post">
+                <div id="searchWrap" class="fl clearfix none">
+                    <div class="text">
+                        <input name="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+                <input class="search-button" type="submit" value="搜索" />
+            </form>
+        </li>
+    </ul>
+</div>
+
+<div class="site-body">
+    
+<div class="worksIndexPage">
+      <div class="banner"></div>
+    <div class="site-container mt70">
+         <div class="site-tab" data-auto-parse="false">
+            <ol class="site-tab-nav flc">
+                <li class="active"><a href="javascript:void(0);">TOP作品秀</a></li>
+                <li class="ml10"><a href="javascript:void(0);">赛区作品秀</a></li>
+            </ol>
+            <div class="site-tab-panel">
+                    <div class="site-paging " data-url="/works/load.do" data-params='{"searchtype":"0", "size": 24}' data-tmpl-selector="#worksTmp">
+                        <div class="site-painter-filter J_filter">
+                            <div class="item">
+                                <label>性别</label>
+                                <ul data-name="searchmale" class="flc">
+                                    <li class="first">
+                                        <a class="active" href="javascript:void(0);">全部</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="1" href="javascript:void(0);">男生</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="2" href="javascript:void(0);">女生</a>
+                                    </li>
+                                </ul>
+                            </div>
+                                <div class="item last">
+                                    <label>年龄</label>
+                                    <ul data-name="searchage" class="flc">
+                                        <li class="first">
+                                            <a class="active" href="javascript:void(0);">全部</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="3" href="javascript:void(0);">3岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="4" href="javascript:void(0);">4岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="5" href="javascript:void(0);">5岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="6" href="javascript:void(0);">6岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="7" href="javascript:void(0);">7岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="8" href="javascript:void(0);">8岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="9" href="javascript:void(0);">9岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="10" href="javascript:void(0);">10岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="11" href="javascript:void(0);">11岁</a>
+                                        </li>
+                                        <li>
+                                            <a data-value="12" href="javascript:void(0);">12岁</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                        <div class="site-tab-panel-con">
+                            <ul class="site-gallery site-paging-list clearfix"></ul>
+                            <p class="site-paging-tip mt50"></p>
+                        </div>
+                        <p class="site-paging-button">
+                            <a href="javascript:void(0);">加载更多</a>
+                        </p>
+                    </div>
+                    <div class="site-paging none" data-url="/works/load.do" data-params='{"searchtype":"1", "size": 24}' data-tmpl-selector="#worksTmp">
+                        <div class="site-painter-filter J_filter">
+                            <div class="item">
+                                <label>性别</label>
+                                <ul data-name="searchmale" class="flc">
+                                    <li class="first">
+                                        <a class="active" href="javascript:void(0);">全部</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="1" href="javascript:void(0);">男生</a>
+                                    </li>
+                                    <li>
+                                        <a data-value="2" href="javascript:void(0);">女生</a>
+                                    </li>
+                                </ul>
+                            </div>
+                                <div class="item last">
+                                    <label>城市</label>
+                                    <ul data-name="searchregion" class="flc"   id="citymore">
+                                        <li class="first">
+                                            <a class="active" href="javascript:void(0);">全部</a>
+                                        </li>
+                                        
+                                        #foreach($info in $!citylist)
+                                        	<li>
+                                            <a data-value="$!info.cityName" href="javascript:void(0);">$!info.cityName</a>
+                                           </li> 
+                                        #end
+                            				
+                                        
+                                
+                                    </ul>   
+                                                                    
+                                </div>
+                                <a href="javascript:void(0);" class="citymorebtn" style=" right: 10px; bottom: 20px; position:absolute;">更多</a>
+                                <a href="javascript:void(0);" class="citylessbtn none" style="right: 10px; bottom: 20px; position:absolute;">收起</a> 
+                        </div>
+                        <div class="site-tab-panel-con">
+                            <ul class="site-gallery site-paging-list clearfix"></ul>
+                            <p class="site-paging-tip mt50"></p>
+                        </div>
+                        <p class="site-paging-button">
+                            <a href="javascript:void(0);">加载更多</a>
+                        </p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="worksTmp">
+    <li class="{{:i % 6 == 0?'first':''}}" data-id="{{:id}}">
+        <a class="main" href="$!request.contextPath/works/worksinfo.do?worksid={{:id}}">
+            <img class="J_imageAdapt" data-id="{{:id}}" src="{{:~getFileUrl(worksPictureItemSet[0].picture.path)}}" />
+
+        </a>
+        <div class="detail">
+			 <p title="{{:artist.artistInfo.name + "  " + age + "岁  " + artist.artistInfo.region.parent.name + "  " + artist.artistInfo.region.name}}">
+ 				<a class="colorGreen" href="$!request.contextPath/artist/personalCenter.do?artistid={{:artist.id}}">{{:artist.artistInfo.name}}</a>
+                <span class="li-size">|</span>
+                <span>{{:age}}岁</span>
+                <span class="li-size">|</span>
+                <span>{{:artist.artistInfo.region.parent.name}} {{:artist.artistInfo.region.name}}</span>
+            </p>
+            <p title="{{:name + "  " + artist.artistInfo.school}}">
+                <span>{{:name}}</span>
+				{{if artist.artistInfo.school}}
+                <span class="li-size">|</span>
+				{{/if}}
+                <span>{{:artist.artistInfo.school || " "}}</span>
+            </p>
+        </div>
+        <div class="btn clearfix">
+           <a class="fl vote J_vote" href="javascript:void(0);" data-id="{{:id}}" data-amount="{{:votenum || 0}}" data-tmpl="点赞(#vote)"><i class="iconfont icon-like"></i>({{:votenum || 0}})</a>
+        </div>
+    </li>
+</script>
+</div>
+
+    <div class="site-foot">
+
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            searchUrl: "$!request.contextPath/search/index.do",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "filterPaging,works/works,works/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿.registerSuccessPage {
+    color: #999;
+
+    .congratulation {
+        width: 460px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 122px 0 54px;
+
+        i {
+            float: left;
+            color: #e9450a;
+            font-size: 60px;
+            line-height: 60px;
+            padding-right: 20px;
+        }
+
+        p {
+            float: left;
+
+            &.title {
+                color: #e9450a;
+                font-size: 26px;
+            }
+        }
+    }
+
+    .sort {
+        width: 872px;
+        padding: 46px 0;
+        background: #fcfcfc;
+        text-align: center;
+        margin-bottom: 96px;
+
+        li {
+            float: left;
+            padding: 0 33px;
+            border-left: 1px solid #f2f2f2;
+
+            &.first {
+                border-left: none;
+            }
+
+            p {
+                &.role {
+                    font-size: 20px;
+                    color: #4c4c4c;
+                    margin-bottom: 22px;
+                }
+            }
+
+            a {
+                padding: 6px 20px;
+                margin-top: 20px;
+            }
+        }
+    }
+}

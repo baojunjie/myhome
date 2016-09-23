@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的阳台</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if lte IE 8]>
+       <link rel="stylesheet" type="text/css" href="$!request.contextPath/res/css/app/questionnaire/questionnaireMain.css" />
+    <![endif]-->
+</head>
+<body class="site questionnairePage ">
+#parse("_head.html")
+<div class="banner"></div>
+<!-- <div class="nav">
+    <ul class="site-container clearfix">
+        <li class="first nav-renovated">
+            <a href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-wantRenovate">
+            <a href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-buyHouse">
+            <a href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-mybalcony">
+            <a href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class="active"></a>
+        </li>
+    </ul>
+</div> -->
+<div class="content">
+    
+ <div class="content-i">
+
+<div class="mybalcony">
+    <h1>2015我的家调查问卷--我的阳台</h1>
+     <form class="site-form mt80" data-auto-parse="false" action="/mobile/myBalcony/addMyBalcony.do" method="post" data-tip-success-class="">
+          <input type="text" name="user.id"  hidden="true" value="$!id">
+           <input type="text" name="user.userInfo.invitationCode"  hidden="true" value="$!invitationCode">
+        <div class="formcontent">
+            <section>
+                <h2 class="clearfix">
+                    <i>01</i>
+                    说说您家阳台的情况
+                </h2>
+                <div class="sectionContent">
+                    <div class="item clearfix">
+                        <label><i>*</i>所在城市</label>
+                        <div class="input">
+                            <select id="province" class="site-input"></select>
+                            <select id="city" class="site-input ml20"></select>
+                            <select id="district" name="region.id" class="site-input ml20"></select>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix site-upload J_validInput" data-valid-require="请上传阳台照片" data-valid-control="custom">
+                        <label><i>*</i>阳台照片</label>
+                        <div class="input">
+                            <div class="site-input site-btn site-upload-button" data-file-type="image" data-preview="true" data-form-data='{"typeimg":"9"}' data-preview-selector="#balconyImage">添加</div>
+                            <input type="hidden"  name="balconyImg"/>
+                        </div>
+                        <img class="ml10 none" width="100" id="balconyImage"/>
+                        <div class="tip"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>02</i>
+                    您希望景观阳台实现的功能
+                </h2>
+                <div class="sectionContent">
+                    <div class="item">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction1.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="1"  class="radio" id="balconyfunction1" /><label for="balconyfunction1">好友聚会空间</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction2.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="2"  class="radio" id="balconyfunction2" /><label for="balconyfunction2">洗晒空间</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction3.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="3"  class="radio" id="balconyfunction3" /><label for="balconyfunction3">运动空间</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction4.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="4"  class="radio" id="balconyfunction4" /><label for="balconyfunction4">亲子互动</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction5.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="5"  class="radio" id="balconyfunction5" /><label for="balconyfunction5">户外阅读休闲</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconyfunction6.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyFunction"  value="6"  class="radio" id="balconyfunction6" /><label for="balconyfunction6">周末花园午茶</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>03</i>
+                    您心仪的阳台风格
+                </h2>
+                <div class="sectionContent">
+                    <div class="item">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle1.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyStyle"  value="1"  class="radio" id="balconystyle1" /><label for="balconystyle1">欧式贵族气质</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle2.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyStyle"  value="2"  class="radio" id="balconystyle2" /><label for="balconystyle2">质朴、休闲</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle3.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyStyle"  value="3"  class="radio" id="balconystyle3" /><label for="balconystyle3">野趣、绿意盎然</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle4.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyStyle"   value="4"  class="radio" id="balconystyle4" /><label for="balconystyle4">绚丽、田园小清新</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle5.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconyStyle"  value="5"  class="radio" id="balconystyle5" /><label for="balconystyle5">梦幻、唯美公主风</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/mybalcony/balconystyle6.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="checkbox" name="balconystyle"  value="6"  class="radio" id="balconystyle6" /><label for="balconystyle6">自然庭院式</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>04</i>
+                    您认为 DIY 景观阳台， 最难实施的一步是什么？
+                </h2>
+                <div class="sectionContent">
+                    <div class="item hard">
+                        <div class="clearfix">
+                            <div class="input">
+                                <input type="radio" name="diy"  value="1"  class="radio" id="diy1" /><label for="diy1">不会设计</label>
+                                <input type="radio" name="diy"  value="2"  class="radio" id="diy2" /><label for="diy2">不知如何按风格搭配、选购</label>
+                                <input type="radio" name="diy"  value="3"  class="radio" id="diy3" /><label for="diy3">从多个地方购买各种配件，很麻烦</label><br />
+                                <input type="radio" name="diy"  value="4"  class="radio" id="diy4" /><label for="diy4">安装、搬运、摆放是体力活</label>
+                                <input type="radio" name="diy"  value="5" class="radio" id="diy5" /><label for="diy5">后期维护很操心</label>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>05</i>
+                    您愿意为心仪的阳台花园花费多少？
+                </h2>
+                <div class="sectionContent">
+                    <div class="item hard">
+                        <div class="clearfix">
+                            <div class="input">
+                                <input type="radio" name="cost"  value="1"  class="radio" id="cost1" /><label for="cost1">2千以内</label>
+                                <input type="radio" name="cost"  value="2"  class="radio" id="cost2" /><label for="cost2">2千到5千</label>
+                                <input type="radio" name="cost"  value="3"  class="radio" id="cost3" /><label for="cost3">5千到1万</label>
+                                <input type="radio" name="cost"  value="4"  class="radio" id="cost4" /><label for="cost4">1万到3万</label>
+                                <input type="radio" name="cost"  value="5" class="radio" id="cost5" /><label for="cost5">3万以上</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-red" type="submit" value="提交问卷">
+        </div>
+    </form>
+</div>
+</div>
+</div>
+<div id="questionnaireShareBox" class="successBoxWrap none">
+    <div class="successBox">
+        <a id="questionnaireShareClose" href="javascript:void(0);" class="close"><i class="iconfont icon-guanbi"></i></a>
+        <h2><span>恭喜，您获得10积分！</span></h2>
+    </div>
+</div>
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+           // serverUrl: "http://www.haaaaaa.com",
+//             serverUrl: "http://192.168.3.45:8081/web_myhome",
+            app: "area,questionnaire/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

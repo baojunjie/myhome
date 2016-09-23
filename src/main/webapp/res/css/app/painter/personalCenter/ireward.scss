@@ -1,0 +1,86 @@
+﻿.irewardPage {
+    background: #FFF;
+    padding: 16px 0 70px 20px;
+
+    .rewardItem {
+        border: 1px solid #edeff0;
+        margin-top: 20px;
+
+        .main {
+            position: relative;
+
+            a {
+                display: block;
+                width: 222px;
+                height: 218px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .price {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 222px;
+                height: 44px;
+                line-height: 44px;
+                color: #FFF;
+                text-align: center;
+                background: #f38b23;
+            }
+        }
+
+        .des {
+            @include ellipsis(202px);
+            width: 202px;
+            padding: 14px 10px 20px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .from {
+            width: 212px;
+            height: 58px;
+            line-height: 58px;
+            border-top: 1px solid #f5f5f5;
+            padding-left: 10px;
+            color: #979899;
+            font-size: 14px;
+
+            .mode {
+                font-size: 22px;
+                color: #f9cbab;
+                margin-right: 10px;
+            }
+
+            .detail {
+                line-height: 18px;
+                margin-top: 20px;
+
+                .line {
+                    color: #cacbcc;
+                }
+            }
+        }
+
+        .to {
+            height: 70px;
+            line-height: 70px;
+
+            .detail {
+                width: 150px;
+                margin-top: 16px;
+
+                a {
+                    color: #f7b685;
+                }
+            }
+
+            .mode {
+                font-size: 38px;
+            }
+        }
+    }
+}

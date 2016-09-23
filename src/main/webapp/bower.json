@@ -1,0 +1,40 @@
+{
+  "name": "myhome",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.11.3",
+    "requirejs": "https://github.com/jrburke/requirejs.git",
+    "jsrender": "*",
+    "webuploader": "https://github.com/fex-team/webuploader.git",
+    "blueimp-md5": "1.1.1",
+    "jquery-placeholder": "*",
+    "slick-carousel": "*",
+    "animate.css": "*"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "/": "dist/*"
+    },
+    "requirejs": {
+      "/": "require.js"
+    },
+    "jsrender": {
+      "/": "jsrender.*"
+    },
+    "webuploader": {
+      "/": "dist/*"
+    },
+    "blueimp-md5": {
+      "/": "js/md5.*"
+    },
+    "jquery-placeholder": {
+      "/": "jquery.placeholder*"
+    },
+    "slick-carousel": {
+      "/": "slick/*"
+    },
+    "animate.css": {
+      "/": "animate.*"
+    }
+  }
+}

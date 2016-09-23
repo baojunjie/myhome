@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>个人中心</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+ #parse("head.html")
+<div class="site-body">
+    
+<div class="personalPage site-container site-tab" data-auto-parse="false" data-hierarchy-selector="">
+    <div class="personalPage-info clearfix">
+        <div class="info">
+            <div class="info-i">
+                <p class="avatar">
+                    <img src="$!artist.artistInfo.img" />
+                </p>
+                <p class="name mt20">
+                    <span class="text">$!artist.artistInfo.name</span>
+                    <span class="tag ml5">#if($!artist.status==1)未审核#elseif($!artist.status==2)审核中#elseif($!artist.status==3)已认证#else未通过#end</span>
+                </p>
+                <p class="des mt10">#if($!artist.artistInfo.male)男#else女#end丨$!artist.artistInfo.birthday丨$!artist.artistInfo.nation丨$!artist.artistInfo.region.parent.name $!artist.artistInfo.region.name丨$!artist.artistInfo.school</p>
+               #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                <div class="action">
+                    <a href="$!request.contextPath/artist/profile.do?artist=$!artist.id">更多资料</a>
+                </div>
+               #else
+               #end 
+            </div>
+        </div>
+        <div class="img">
+        </div>
+    </div>
+    <div class="personalPage-nav clearfix">
+          #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+        <ul class="flc site-tab-nav">
+            <li class="first active">
+                <a href="javascript:void(0);">
+                    <strong>已认证作品</strong>
+					<span>$!total3</span>
+                        </a>
+                    </li>
+                    <li >
+                    <a href="javascript:void(0);">
+		                    <strong>审核中作品</strong>
+		                    <span>$!total2</span>        
+					 </a>                     
+                    </li>
+                    <li>
+                       <a href="javascript:void(0);">
+		                    <strong>未提交作品</strong>
+		                    <span>$!total1</span>
+					    </a>                     
+                    </li>
+                    <li>
+                       <a href="javascript:void(0);">
+		                    <strong>未通过审核</strong>
+		                    <span>$!total4</span>
+		                </a>                      
+                    </li>
+				</ul>
+				<a class="site-button site-button-blue" href="$!request.contextPath/works/uploadindex.do?artistid=$!artist.id">上传作品</a>
+				 #else
+		        <p class="title">
+		            $!artist.artistInfo.name的参赛作品
+		        </p>
+		        #end
+ </div>
+
+    <div class="personalPage-panel mt30 site-tab-panel">
+    #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+            <div class="site-paging list list2 " data-url="/artist/myhome.do" data-params='{"type":"3","artist_id":"$!artistid"}' data-tmpl-selector="#worksTmpl2" data-tmpl-data='{"index" : 0}' data-page-size="10">
+                <ul class="site-gallery site-paging-list flc"></ul>
+                <p class="site-paging-tip"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+            <div class="site-paging list list1 none" data-url="/artist/myhome.do" data-params='{"type":"2","artist_id":"$!artistid"}' data-tmpl-selector="#myWorksTmpl" data-tmpl-data='{"index" : 1}' data-page-size="10">
+                <ul class="site-gallery site-paging-list flc"></ul>
+                <p class="site-paging-tip"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+            <div class="site-paging list list1 none" data-url="/artist/myhome.do" data-params='{"type":"1","artist_id":"$!artistid"}' data-tmpl-selector="#myWorksTmpl" data-tmpl-data='{"index" : 2}' data-page-size="10">
+                <ul class="site-gallery site-paging-list flc"></ul>
+                <p class="site-paging-tip"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+            <div class="site-paging list list1 none" data-url="/artist/myhome.do" data-params='{"type":"4","artist_id":"$!artistid"}' data-tmpl-selector="#myWorksTmpl" data-tmpl-data='{"index" : 3}' data-page-size="10">
+                <ul class="site-gallery site-paging-list flc"></ul>
+                <p class="site-paging-tip"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+        #else
+        <div class="site-paging list list2" data-url="/artist/myhome.do" data-params='{"type":"3","artist_id":"$!artistid"}' data-page-size="10" data-tmpl-selector="#worksTmpl2">
+            <ul class="site-gallery site-paging-list flc"></ul>
+            <p class="site-paging-tip"></p>
+            <p class="site-paging-button">
+                <a href="javascript:void(0);">加载更多</a>
+            </p>
+           <!--  <script type="text/template" class="site-paging-tmpl">
+               <li class="{{:i % 5== 0?'first':''}}">
+                    <a class="works" href="javascript:void(0);">
+                       <img data-id="{{:works.id}}" class="site-gallery-image" src="{{:~getFileUrl(works.worksPictureItemSet[0].picture.path)}}" />
+                    </a>
+                    <p class="info">
+                       <span class="name">{{:works.artist.artistInfo.name}}</span>
+                    </p>
+                    <p class="action clearfix">
+                        <span class="vote fl">票数 {{:works.votenum}}</span>
+                        <input data-id="{{:works.id}}" class="fr site-button site-button-orange site-gallery-image" type="button" value="评论" />
+                    </p>
+                </li>
+            </script>-->
+        #end
+    </div>
+</div>
+<script type="text/template" id="worksTmpl2">
+    <li class="{{:i % 5== 0?'first':''}}">
+        <a class="works" href="javascript:void(0);">
+            <img data-id="{{:works.id}}" class="site-gallery-image" src="{{:~getFileUrl(works.worksPictureItemSet[0].picture.path)}}" />
+        </a>
+        <p class="info">
+            <span class="name">{{:works.name}}</span>
+        </p>
+        <p class="action clearfix">
+            <span class="vote fl"><i class="iconfont icon-like"></i> {{:works.votenum}}</span>
+            <input class="fr site-button site-button-orange site-gallery-image"  data-id="{{:works.id}}" type="button" value="评论" />
+        </p>
+    </li>
+</script>
+<script type="text/template" id="myWorksTmpl">
+    <li class="{{:i % 5 == 0?'first':''}}">
+        <a class="works" href="javascript:void(0);">
+            <img data-id="{{:works.id}}" class="site-gallery-image" data-action="false" data-action-index="{{:~root.tmplData.index}}" src="{{:~getFileUrl(works.worksPictureItemSet[0].picture.path)}}" />
+        </a>
+        <p class="info">
+            <span class="name">{{:works.name}}</span>
+            <span class="line">丨</span>
+            <span class="category">{{:tag.name!='儿童画(铅笔、钢笔、蜡笔画)'? tag.name :'儿童画'}}</span>
+        </p>
+        <p class="des" title="{{:works.description}}">
+            {{:works.description}}
+        </p>
+    </li>
+</script>
+</div>
+</div>
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl:"$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "works/works,user/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

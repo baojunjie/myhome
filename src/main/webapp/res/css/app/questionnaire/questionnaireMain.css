@@ -1,0 +1,325 @@
+﻿@media only screen and (min-device-width: 800px) {
+  .questionnairePage {
+    background: #fe1e52;
+  }
+  .questionnairePage .successBoxWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+  }
+  .questionnairePage .successBoxWrap * {
+    box-sizing: border-box;
+  }
+  .questionnairePage .successBoxWrap .successBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -284px;
+    margin-top: -100px;
+    width: 570px;
+    height: 200px;
+    line-height: 32px;
+    background: #FFF;
+    padding: 60px 100px 0;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .questionnairePage .successBoxWrap .successBox .close {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+  }
+  .questionnairePage .successBoxWrap .successBox .close i {
+    font-size: 36px;
+    color: #666;
+    width: 36px;
+  }
+  .questionnairePage .successBoxWrap .successBox .close:hover i {
+    color: #f4480a;
+  }
+  .questionnairePage .successBoxWrap .successBox h2 {
+    font-size: 30px;
+  }
+  .questionnairePage .successBoxWrap .successBox .mobile {
+    display: none;
+  }
+  .questionnairePage .successBoxWrap .successBox .wechat {
+    text-align: center;
+    padding: 26px 0;
+  }
+  .questionnairePage .successBoxWrap .successBox .wechat img {
+    display: inline-block !important;
+  }
+  .questionnairePage .successBoxWrap .successBox span {
+    color: #ec5143;
+  }
+  .questionnairePage .successBoxWrap .successBox .action {
+    margin-top: 45px;
+  }
+  .questionnairePage .successBoxWrap .successBox .action a {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .questionnairePage .banner {
+    height: 564px;
+    background: url(../img/questionnaire/top.gif) no-repeat 50% 50%;
+  }
+  .questionnairePage .nav {
+    width: 100%;
+    height: 80px;
+    padding-top: 1px;
+    background: url(../img/questionnaire/nav/bg.png) repeat-x;
+  }
+  .questionnairePage .nav li {
+    float: left;
+    margin-left: 32px;
+  }
+  .questionnairePage .nav li.first {
+    margin: 0;
+  }
+  .questionnairePage .nav li a {
+    display: block;
+    height: 78px;
+    width: 275px;
+    background: no-repeat 0 0;
+  }
+  .questionnairePage .nav .nav-renovated a {
+    background-image: url(../img/questionnaire/nav/renovated.jpg);
+  }
+  .questionnairePage .nav .nav-renovated a.active {
+    background-image: url(../img/questionnaire/nav/renovated-active.jpg);
+  }
+  .questionnairePage .nav .nav-wantRenovate a {
+    background-image: url(../img/questionnaire/nav/wantRenovate.jpg);
+  }
+  .questionnairePage .nav .nav-wantRenovate a.active {
+    background-image: url(../img/questionnaire/nav/wantRenovate-active.jpg);
+  }
+  .questionnairePage .nav .nav-buyHouse a {
+    background-image: url(../img/questionnaire/nav/buyHouse.jpg);
+  }
+  .questionnairePage .nav .nav-buyHouse a.active {
+    background-image: url(../img/questionnaire/nav/buyHouse-active.jpg);
+  }
+  .questionnairePage .nav .nav-mybalcony a {
+    background-image: url(../img/questionnaire/nav/mybalcony.jpg);
+  }
+  .questionnairePage .nav .nav-mybalcony a.active {
+    background-image: url(../img/questionnaire/nav/mybalcony-active.jpg);
+  }
+  .questionnairePage .content {
+    width: 1068px;
+    background: white;
+    padding: 84px 0 160px 132px;
+    margin: 36px auto 110px;
+  }
+  .questionnairePage .content h1 {
+    width: 504px;
+    height: 70px;
+    font-size: 26px;
+    font-weight: normal;
+    color: #FFF;
+    line-height: 70px;
+    text-align: center;
+    margin-left: 216px;
+    background: url(../img/questionnaire/heading.gif) no-repeat;
+  }
+  .questionnairePage .content form .formcontent {
+    border-left: 1px solid #ffe1df;
+  }
+  .questionnairePage .content form h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: normal;
+    height: 44px;
+    color: #6a0402;
+    padding-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  .questionnairePage .content form h2 i {
+    position: absolute;
+    top: 0;
+    left: -41px;
+    float: left;
+    width: 42px;
+    height: 44px;
+    line-height: 30px;
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    background: url(../img/questionnaire/title.png) no-repeat;
+  }
+  .questionnairePage .content form .item {
+    font-size: 18px;
+    color: #666;
+    padding-left: 86px;
+  }
+  .questionnairePage .content form .item label {
+    float: left;
+    width: 110px;
+    height: 36px;
+    line-height: 36px;
+  }
+  .questionnairePage .content form .item label i {
+    color: #fe1e52;
+  }
+  .questionnairePage .content form .item .input {
+    float: left;
+  }
+  .questionnairePage .content form .item .input .site-input {
+    color: #6a0402;
+    width: 162px;
+    padding: 5px 8px;
+    border-radius: 4px;
+  }
+  .questionnairePage .content form .item .input .site-input2 {
+    width: 566px;
+  }
+  .questionnairePage .content form .item .input .site-btn {
+    box-sizing: content-box;
+    display: block;
+    width: 54px;
+    height: 36px;
+    line-height: 36px;
+    color: #e95c49;
+    padding: 0;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 42px;
+    border: none;
+    background: url(../img/questionnaire/wantRenovate/add.png) 20px 10px no-repeat #f5edeb;
+  }
+  .questionnairePage .content form .item .input select.site-input {
+    width: 178px;
+    padding: 5px 8px;
+  }
+  .questionnairePage .content form .item .input select.site-input2 {
+    width: 354px;
+  }
+  .questionnairePage .content form .item .input .area1 {
+    height: 136px;
+  }
+  .questionnairePage .content form .item .input .area2 {
+    height: 202px;
+  }
+  .questionnairePage .content form .item .des {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    color: #999;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  .questionnairePage .content form .item .tip {
+    clear: both;
+    height: 30px;
+    line-height: 30px;
+    color: #fe1e52;
+    font-size: 12px;
+    padding-left: 114px;
+  }
+  .questionnairePage .content form .item .radio {
+    margin-right: 10px;
+  }
+  .questionnairePage .content form .item ul {
+    width: 730px;
+  }
+  .questionnairePage .content form .item ul li {
+    float: left;
+    margin-right: 18px;
+    width: 220px;
+  }
+  .questionnairePage .content form .item ul li.meishiwang {
+    width: 162px;
+    margin-bottom: 30px;
+  }
+  .questionnairePage .content form .item ul li .pic {
+    border: 3px solid #ffe1df;
+    border-radius: 4px;
+  }
+  .questionnairePage .content form .item ul li .des {
+    width: 220px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-left: 0;
+  }
+  .questionnairePage .content form .item ul li .des label {
+    float: none;
+    color: #6a0402;
+  }
+  .questionnairePage .content form .item .introduce {
+    width: 692px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .questionnairePage .content form .item1 label {
+    width: 380px;
+  }
+  .questionnairePage .content form .item1 label.red {
+    color: #6a0402;
+  }
+  .questionnairePage .content form .item1 .input {
+    height: 36px;
+    line-height: 36px;
+    color: #6a0402;
+  }
+  .questionnairePage .content form .item1 .input label {
+    float: none;
+  }
+  .questionnairePage .content form .line {
+    width: 692px;
+    height: 1px;
+    background: #ffe1df;
+    margin: 4px 0 34px 86px;
+  }
+  .questionnairePage .content form h3 {
+    color: #6a0402;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 86px;
+    margin-bottom: 26px;
+  }
+  .questionnairePage .content form .designer {
+    margin-left: 26px;
+  }
+  .questionnairePage .content form .site-button-red {
+    font-size: 22px;
+    color: white;
+    width: 468px;
+    height: 54px;
+    line-height: 54px;
+    background: #fe0909;
+    margin-top: 110px;
+    margin-left: 232px;
+  }
+  .questionnairePage .wantRenovate form h3 {
+    font-size: 16px;
+  }
+  .questionnairePage .wantRenovate form .gifts label {
+    width: auto;
+  }
+  .questionnairePage .wantRenovate form .gifts .site-input {
+    width: 212px;
+  }
+  .questionnairePage .wantRenovate form .gifts .tip {
+    padding-left: 5px;
+  }
+  .questionnairePage .mybalcony form .hard .input {
+    line-height: 48px;
+  }
+  .questionnairePage .mybalcony form .hard .input label {
+    float: none;
+    color: #6a0402;
+    font-size: 16px;
+    margin-right: 60px;
+  }
+}
+

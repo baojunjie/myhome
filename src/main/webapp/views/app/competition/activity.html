@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>赛区活动</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-3 competitionActivityPage">
+ #parse("head.html")
+<div class="site-menu">
+    <ul class="site-container flc">
+        <li>
+            <a class="" href="$!request.contextPath/home/index.do">首页</a>
+        </li>
+        <li>
+            <a  href="$!request.contextPath/game/about.do">关于大赛</a>
+        </li>
+        <li>
+            <a class="" href="$!request.contextPath/works/index.do">作品展示</a>
+        </li>
+        <li>
+            <a class="" href="$!request.contextPath/artist/index.do">小小画家</a>
+        </li>
+        <li>
+            <a href="$!request.contextPath/passWork/index.do">入围榜</a>
+        </li>
+        <li>
+            <a href="$!request.contextPath/love/index.do">公益活动</a>
+        </li>
+        <li>
+            <a class="current" href="$!request.contextPath/game/activity.do">赛区活动</a>
+        </li>
+        <li class="">
+            <a class="" href="$!request.contextPath/home/pastReview.do">往届回顾</a>
+        </li>
+        <li class="last search">
+            <form id="searchForm" class="clearfix" action="/" method="post">
+                <div id="searchWrap" class="fl clearfix none">
+                    <div class="text">
+                        <input name="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+                <input class="search-button" type="submit" value="搜索" />
+            </form>
+        </li>
+    </ul>
+</div>
+
+<div class="site-body">
+<div id="banner" class="banner">
+    <!-- <a class="control control-preview" href="javascript:void(0);"></a> -->
+        <ul>
+        <li class="first none">
+            <div class="action site-container">
+            
+            #if($session.getAttribute("USER_TYPE")==2||$session.getAttribute("USER_TYPE")==6||$session.getAttribute("USER_TYPE")==1||$session.getAttribute("USER_TYPE")==3)
+                    #if($session.getAttribute("ARTIST_ID"))
+                    <a class="site-button site-button-orange" href="$!request.contextPath/works/uploadindex.do?artistid=$session.getAttribute('ARTIST_ID')">我要参赛</a>
+                   #else
+                    <!-- <a class="site-button site-button-orange" href="$!request.contextPath/game/interceptorindex.do">我要参赛</a> -->
+                   #end
+                #elseif($session.getAttribute("USER_TYPE")==4||$session.getAttribute("USER_TYPE")==5)
+                <!-- <a class="site-button site-button-orange site-painterJoin"  href="#">我要参赛</a> -->
+                #else
+                    <!-- <a class="site-button site-button-orange"  href="$!request.contextPath/game/interceptorindex.do">我要参赛</a> -->
+                #end
+            </div>
+        </li>
+        <li class="second none">
+            <div class="action site-container" style="display: none" >
+              #if($session.getAttribute("USER_TYPE"))
+	              #if($session.getAttribute("USER_TYPE")==1)
+	               <a class="site-button site-button-orange" href="$!request.contextPath/sponsors/join.do">我要赞助</a>
+	              #elseif($session.getAttribute("USER_TYPE")==5)
+	                <a class="site-button site-button-orange disabled" style="background-color: #D3D3D3" href="$!request.contextPath/sponsors/personalCenter.do">您已成为赞助商</a>
+	              #else
+	                <a class="site-button site-button-orange" style="background-color: #D3D3D3" >我要赞助</a>
+	              #end
+              #else
+              	<a class="site-button site-button-orange" href="$!request.contextPath/game/interceptorindex.do">我要赞助</a>
+              #end
+            </div>
+        </li>
+    </ul>
+    <!-- <a class="control control-next" href="javascript:void(0);"></a> -->
+</div>
+<div class="content">
+    <div class="title">
+        <div class="site-container">
+
+        </div>
+    </div>
+ <div class="eventsGallery">
+        <div class="site-container clearfix">
+            <ul>
+            #foreach($activityinfo in $!list)
+                #if($!activityinfo.year)
+                <div class="clearfix">                    
+                </div>
+                <div class="dataYear clearfix">
+                    <span>$!activityinfo.year年</span>
+                    <div class="spot"></div>
+                </div>
+                <div style="padding-top:150px;" #if($velocityCount%2 ==1) class="clearfix" #else #end></div>
+                #else
+                #end
+                <li #if($velocityCount%2 ==1) class="first" #else class="control_sec" #end>
+                    <span class="arrow"></span>
+                    <div class="box">
+                        <div class="boxHd clearfix">
+                            <div class="time">
+                                <div class="titLink fl">
+                                    <a href="$!activityinfo.url" target="_blank" title="$!activityinfo.title">$!activityinfo.title</a>
+                                </div>
+                                <div class="fr">
+                                    <div class="month fl">$!activityinfo.month月</div>
+                                    <div class="day fl">$!activityinfo.date日</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boxBy">
+                           <a  target="_blank" href="$!activityinfo.url"><img src="$!activityinfo.path" /></a> 
+                        </div>
+                        <div class="boxFt">
+                            <a target="_blank" href="$!activityinfo.url"><p>$!activityinfo.description</p></a>
+                        </div>
+                    </div>
+                </li>
+                #if($!activityinfo.last)
+                <div class="clearfix">
+                </div>
+                <div class="dataYear clearfix">
+                    <span>$!activityinfo.last年</span>
+                    <div class="spot"></div>
+                </div>
+                #else
+                #end
+                #end
+            </ul> 
+        </div>
+        <div class="endMessage">已是最底了</div>
+
+    </div>
+    
+</div>
+</div>
+    <!-- shared section start-->
+    <div class="site-foot">
+
+    #parse("_footer.html")
+</div>
+    #parse("footer.html")
+    <script>
+        var siteConfig = {
+        	personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+              },
+            works: {
+                 detailUrl: "$!request.contextPath/works/worksinfo.do"
+            },
+            fileUrl: "",
+            searchUrl: "$!request.contextPath/search/index.do",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "competition/activity"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

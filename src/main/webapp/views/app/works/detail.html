@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="我的家" />
+<meta name="description" content="我的家" />
+<title>作品详情</title>
+<meta name="keywords" content="少儿绘画,儿童绘画,全国少儿绘画,全国儿童绘画,少儿绘画大赛,儿童绘画作品" />
+<meta name="description"
+	content="我的家-全国少年儿童绘画大赛，面向全国3 -12岁少年儿童的公益性绘画比赛。使小朋友不仅仅可以拿作品参赛,还能以此帮助有困难的小朋友,从小培养他们的大爱意识,让公益事业与中国少年儿童艺术共同发展。" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+
+<script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-3 ">
+	#parse("head.html")
+	<div class="site-menu">
+		<ul class="site-container flc">
+			<li><a class="current"
+				href="$!request.contextPath/home/index.do">首页</a></li>
+			<li><a class="" href="$!request.contextPath/game/about.do">关于大赛</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/works/index.do">作品展示</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/artist/index.do">小小画家</a>
+			</li>
+			<li><a href="$!request.contextPath/passWork/index.do">入围榜</a></li>
+			<li><a href="$!request.contextPath/love/index.do">公益活动</a></li>
+			<li class="last"><a class=""
+				href="$!request.contextPath/game/activity.do">赛区活动</a></li>
+			<li class="">
+	            <a class="" href="$!request.contextPath/home/pastReview.do">往届回顾</a>
+	        </li>
+	        <li class="last search">
+            <form id="searchForm" class="clearfix" action="/" method="post">
+                <div id="searchWrap" class="fl clearfix none">
+                    <div class="text">
+                        <input name="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+                <input class="search-button" type="submit" value="搜索" />
+            </form>
+        </li>
+		</ul>
+	</div>
+	<div class="site-body">
+		<div class="worksdetailPage">
+			<div class="site-container clearfix">
+				<div class="main fl">
+					<div class="workWrap">
+						<div class="workWraptop clearfix">
+							<div class="detailSort fl">
+								<p class="workname">$!works.works.name</p>
+								<p class="teacher">
+									分类：<span>$!works.tag.name</span> 指导老师：<span>
+										#if($!works.works.instructor && $!works.works.instructor!="") $!works.works.instructor #elseif($!works.works.artist.artistInfo.instructor && $!works.works.artist.artistInfo.instructor!="")
+										$!works.works.artist.artistInfo.instructor #else #end </span>
+								</p>
+							</div>
+							#if($!works.works.status==3)
+                                #if($!works.works.awards ==1)
+                                <div class="trophy fr">
+                                    <div class="prize city-bronze"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==2)
+                                <div class="trophy fr">
+                                    <div class="prize city-silver"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==3)
+                                <div class="trophy fr">
+                                    <div class="prize city-gold"></div>
+                                </div>
+                                #else
+                                #end 
+                                #if($!works.works.awards ==4)
+                                <div class="trophy fr">
+                                    <div class="prize provincial-bronze"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==5)
+                                <div class="trophy fr">
+                                    <div class="prize provincial-silver"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==6)
+                                <div class="trophy fr">
+                                    <div class="prize provincial-gold"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==7)
+                                <div class="trophy fr">
+                                    <div class="prize pass"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==8)
+                                <div class="trophy fr">
+                                    <div class="prize creationAward"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==9)
+                                <div class="trophy fr">
+                                    <div class="prize national-silver"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==10)
+                                <div class="trophy fr">
+                                    <div class="prize national-gold"></div>
+                                </div>
+                                #else
+                                #end
+                                #if($!works.works.awards ==11)
+                                <div class="trophy fr">
+                                    <div class="prize grandPrize"></div>
+                                </div>
+                                #else
+                                #end
+							#else
+							#end 
+						</div>
+						<div class="workWrapcon">
+							<div class="des">
+								<p>$!works.works.description</p>
+							</div>
+							<div class="detailPic mt20">
+								#foreach($picture in $!works.works.worksPictureItemSet) <img
+									src="$!picture.picture.orginpath" /> #end
+							</div>
+							<div class="clearfix mt30">
+								<!-- <div class="share fl">
+									分享：<a href="#" class="ml20"><img
+										src="$!request.contextPath/res/img/user/login/QQh.gif" /></a> <a
+										href="#" class="ml20"><img
+										src="$!request.contextPath/res/img/user/login/wechath.gif" /></a>
+									<a href="#" class="ml20"><img
+										src="$!request.contextPath/res/img/user/login/weiboh.gif" /></a>
+								</div> -->
+                                #if($!works.works.status==3)
+								<div class="share fl">
+		                            <span>分享：</span>
+		                            <a id="shareWechat" data-url="http://m.haaaaaa.com/views/app/works/detail.html?id=$!works.works.id" href="javascript:void(0);" class="ml10"><img src="$!request.contextPath/res/img/user/login/wechath.gif" /></a>
+		                            <div id="shareWechatDialog" class="dialog none">
+		                                <div class="dialog-head">
+		                                    <span>分享到微信朋友圈</span>
+		                                    <a id="shareWechatDialogClose" href="javascript:void(0);" class="close">×</a>
+		                                </div>
+		                                <div id="shareWechatDialogContent" class="dialog-content">
+		                                </div>
+		                                <div class="dialog-foot">
+							                                    打开微信，点击底部的“发现”，
+							                                    <br>
+							                                    使用“扫一扫”即可将网页分享至朋友圈。
+		                                </div>
+		                            </div>
+		                        </div>
+
+								<div class="J_voteWrap vote fr">
+		                            <span class="fl"> <i class="iconfont icon-like"></i></span>
+		                            <span class="J_voteText votes fl">$!works.works.votenum</span>
+		                            <a class="J_vote fl" data-amount="$!works.works.votenum" data-id="$!works.works.id" href="javascript:void(0);">
+		                                <span>点赞</span>
+		                            </a>
+		                        </div>
+		                        #else
+                                #end
+							</div>
+						</div>
+					</div>
+					#if($!works.works.status==3)
+					<div class="detailWrap mt20">
+						<form id="reviewForm" class="clearfix">
+							<textarea placeholder="最多输入200字..." name="words"></textarea>
+							<input type="hidden" name="worksid" id="worksId" value="$!works.works.id" />
+							<input type="submit" value="评论" class="site-button mt20" />
+						</form>
+						<div id="review"></div>
+						<script type="text/template" id="reviewTmpl">
+                    <div class="comment clearfix">
+                        <a class="commentPerson fl" href="{{:~getPersonalCenterUrl(user.userInfo.type,{'userid':user.userInfo.id})}}">
+								{{if  user.userInfo.img==null}}
+									<img class="J_imageAdapt" src="$!request.contextPath/res/img/painter.jpg" />
+								{{/if}}
+               					<img class="J_imageAdapt" src="{{:user.userInfo.img}}" />
+
+                        </a>
+                        <div class="commentCon">
+                            <p class="title">
+                                <a href="#">{{:user.userInfo.name}}</a><span class="line">-</span><span class="font-color">{{:~formatDate(createdDatetime)}}</span>
+                            </p>
+                            <p>
+                                {{:words}}
+                            </p>
+                        </div>
+                    </div>
+                </script>
+					</div>
+					#else
+                    #end
+				</div>
+				<div class="pageRight fr">
+					<div class="clearfix posts">
+						<a class="postsPerson"
+							href="$!request.contextPath/artist/personalCenter.do?artistid=$!works.works.artist.id">
+							 #if($!works.works.artist.artistInfo.user.userInfo.img)
+               					<img class="J_imageAdapt" src="$!works.works.artist.artistInfo.user.userInfo.img" />
+             				  #else
+							<img class="J_imageAdapt"
+							src="$!request.contextPath/res/img/painter.jpg" />
+							#end
+						</a>
+						<div class="postsCon">
+							<p class="title mt11">$!works.works.artist.artistInfo.name</p>
+							<p class="mt11">
+								<span class="font-color">#if($!works.works.artist.artistInfo.male==true)男#else女#end</span>
+								<span class="line font-color">|</span> <span class="font-color">$!works.works.artist.artistInfo.age</span>
+								<span class="line font-color">|</span> <span class="font-color">$!works.works.artist.artistInfo.region.parent.name
+									$!works.works.artist.artistInfo.region.name</span> 
+									#if($!works.works.artist.artistInfo.trainingInstitution && $!works.works.artist.artistInfo.trainingInstitution!="")
+									<span class="line font-color">|</spa n> <span class="font-color">$!works.works.artist.artistInfo.trainingInstitution </span>
+									#else #end
+							</p>
+							<!-- #if($session.getAttribute("USER_ID")==$!works.works.artist.artistInfo.user.id)
+							#else
+							<p class="des mt25">
+								<a class="clearfix site-button J_reward"
+									href="javascript:void(0);"> <i
+									class="fl iconfont icon-dashang"></i> 
+									
+									<span class="fl ml10">打赏</span>
+								</a>
+							</p>
+							#end -->
+						</div>
+					</div>
+					<div class="recommend">
+						<p>优秀作品推荐</p>
+						<ul class="clearfix">
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work1.id"> 
+							        <img class="J_imageAdapt" src="$!work1.path" />
+							</a></li>
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work2.id"> 
+                                    <img class="J_imageAdapt" src="$!work2.path" />
+							</a></li>
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work3.id"> 
+                                    <img class="J_imageAdapt" src="$!work3.path" />
+							</a></li>
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work4.id"> 
+                                    <img class="J_imageAdapt" src="$!work4.path" />
+							</a></li>
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work5.id"> 
+                                    <img class="J_imageAdapt" src="$!work5.path" />
+							</a></li>
+							<li class="fl"><a href="$!request.contextPath/works/worksinfo.do?worksid=$!work6.id"> 
+                                    <img class="J_imageAdapt" src="$!work6.path" />
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="site-foot">#parse("_footer.html")</div>
+	<script type="text/template" id="rewardTmpl">
+    <div class="rewardDialog">
+        <a class="J_close close iconfont icon-guanbi" href="javascript:void(0);"></a>
+        <form action="/recommendChildren/getAccount.do" method="post">
+            <div class="item">
+                <p class="title">
+                    <label>您的寄语</label>
+                </p>
+                <div class="content">
+                    <textarea name="message" autofocus data-valid-require="请输入寄语" class="site-input J_validInput"></textarea>
+                </div>
+            </div>
+            <div class="item mt35">
+                <p class="title">
+                    <label>您打赏的金额</label>
+                </p>
+                <div class="content">
+                    <input name="money" data-valid-require="请输入打赏的金额" data-valid-numeric="请输入正确的金额" class="site-input money J_validInput price" type="text" /><span class="ml10">元</span>
+                </div>
+            </div>
+            <div class="item mt35">
+                <input type="hidden" name="type" value="1" />
+                <input type="hidden" name="userTo.id" value="$!works.works.artist.artistInfo.user.id" />
+                <input type="hidden" name="userFrom.id" value="$!session.getAttribute('USER_ID')" />
+                <input class="site-button" type="submit" value="提 交" />
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/template" id="rewardInfoTmpl">
+    <div class="main">
+        <div class="title">
+            <h3>打赏方式</h3>
+            <p>请将打赏金额通过以下方式直接打给小画家</p>
+        </div>
+        <ol>
+            <li class="clearfix">
+                <label>支付宝：</label>
+                <span>{{:alipayAccount}}</span>
+            </li>
+            <li class="clearfix mt40">
+                <label>微信：</label>
+                <span>{{:weChatAccount}}</span>
+            </li>
+            <li class="clearfix mt40">
+                <label>银行卡：</label>
+                <span>{{:bankAccount}}</span>
+            </li>
+        </ol>
+    </div>
+    <div class="action">
+        <input type="button" class="site-button first J_close" value="取 消" /><input type="button" class="site-button J_yes" value="好 的" />
+    </div>
+</script>
+	#parse("footer.html")
+	<!-- shared section start-->
+	<script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            searchUrl: "$!request.contextPath/search/index.do",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            url: "http://www.haaaaaa.com",
+            app: "reward,works/detail,works/works"
+        };
+    </script>
+	<script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+	<!-- shared section end-->
+	<!--百度统计-->
+	<script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

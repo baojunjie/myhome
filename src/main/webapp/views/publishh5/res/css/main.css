@@ -1,0 +1,740 @@
+﻿* {
+  margin: 0;
+  padding: 0; }
+
+.none {
+  display: none; }
+
+.hidden {
+  visibility: hidden; }
+
+.fl, .flc > li {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.tl {
+  text-align: left; }
+
+.tr {
+  text-align: right; }
+
+.tc {
+  text-align: center; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.flc:before,
+.flc:after {
+  content: " ";
+  display: table; }
+
+.flc:after {
+  clear: both; }
+
+.mt5 {
+  margin-top: 5px !important; }
+
+.mr5 {
+  margin-right: 5px !important; }
+
+.mb5 {
+  margin-bottom: 5px !important; }
+
+.ml5 {
+  margin-left: 5px !important; }
+
+.pt5 {
+  margin-top: 5px !important; }
+
+.pr5 {
+  margin-right: 5px !important; }
+
+.pb5 {
+  margin-bottom: 5px !important; }
+
+.pl5 {
+  margin-left: 5px !important; }
+
+.mt10 {
+  margin-top: 10px !important; }
+
+.mr10 {
+  margin-right: 10px !important; }
+
+.mb10 {
+  margin-bottom: 10px !important; }
+
+.ml10 {
+  margin-left: 10px !important; }
+
+.pt10 {
+  margin-top: 10px !important; }
+
+.pr10 {
+  margin-right: 10px !important; }
+
+.pb10 {
+  margin-bottom: 10px !important; }
+
+.pl10 {
+  margin-left: 10px !important; }
+
+.mt15 {
+  margin-top: 15px !important; }
+
+.mr15 {
+  margin-right: 15px !important; }
+
+.mb15 {
+  margin-bottom: 15px !important; }
+
+.ml15 {
+  margin-left: 15px !important; }
+
+.pt15 {
+  margin-top: 15px !important; }
+
+.pr15 {
+  margin-right: 15px !important; }
+
+.pb15 {
+  margin-bottom: 15px !important; }
+
+.pl15 {
+  margin-left: 15px !important; }
+
+.mt20 {
+  margin-top: 20px !important; }
+
+.mr20 {
+  margin-right: 20px !important; }
+
+.mb20 {
+  margin-bottom: 20px !important; }
+
+.ml20 {
+  margin-left: 20px !important; }
+
+.pt20 {
+  margin-top: 20px !important; }
+
+.pr20 {
+  margin-right: 20px !important; }
+
+.pb20 {
+  margin-bottom: 20px !important; }
+
+.pl20 {
+  margin-left: 20px !important; }
+
+.mt25 {
+  margin-top: 25px !important; }
+
+.mr25 {
+  margin-right: 25px !important; }
+
+.mb25 {
+  margin-bottom: 25px !important; }
+
+.ml25 {
+  margin-left: 25px !important; }
+
+.pt25 {
+  margin-top: 25px !important; }
+
+.pr25 {
+  margin-right: 25px !important; }
+
+.pb25 {
+  margin-bottom: 25px !important; }
+
+.pl25 {
+  margin-left: 25px !important; }
+
+.mt30 {
+  margin-top: 30px !important; }
+
+.mr30 {
+  margin-right: 30px !important; }
+
+.mb30 {
+  margin-bottom: 30px !important; }
+
+.ml30 {
+  margin-left: 30px !important; }
+
+.pt30 {
+  margin-top: 30px !important; }
+
+.pr30 {
+  margin-right: 30px !important; }
+
+.pb30 {
+  margin-bottom: 30px !important; }
+
+.pl30 {
+  margin-left: 30px !important; }
+
+.mt35 {
+  margin-top: 35px !important; }
+
+.mr35 {
+  margin-right: 35px !important; }
+
+.mb35 {
+  margin-bottom: 35px !important; }
+
+.ml35 {
+  margin-left: 35px !important; }
+
+.pt35 {
+  margin-top: 35px !important; }
+
+.pr35 {
+  margin-right: 35px !important; }
+
+.pb35 {
+  margin-bottom: 35px !important; }
+
+.pl35 {
+  margin-left: 35px !important; }
+
+.mt40 {
+  margin-top: 40px !important; }
+
+.mr40 {
+  margin-right: 40px !important; }
+
+.mb40 {
+  margin-bottom: 40px !important; }
+
+.ml40 {
+  margin-left: 40px !important; }
+
+.pt40 {
+  margin-top: 40px !important; }
+
+.pr40 {
+  margin-right: 40px !important; }
+
+.pb40 {
+  margin-bottom: 40px !important; }
+
+.pl40 {
+  margin-left: 40px !important; }
+
+.mt45 {
+  margin-top: 45px !important; }
+
+.mr45 {
+  margin-right: 45px !important; }
+
+.mb45 {
+  margin-bottom: 45px !important; }
+
+.ml45 {
+  margin-left: 45px !important; }
+
+.pt45 {
+  margin-top: 45px !important; }
+
+.pr45 {
+  margin-right: 45px !important; }
+
+.pb45 {
+  margin-bottom: 45px !important; }
+
+.pl45 {
+  margin-left: 45px !important; }
+
+.mt50 {
+  margin-top: 50px !important; }
+
+.mr50 {
+  margin-right: 50px !important; }
+
+.mb50 {
+  margin-bottom: 50px !important; }
+
+.ml50 {
+  margin-left: 50px !important; }
+
+.pt50 {
+  margin-top: 50px !important; }
+
+.pr50 {
+  margin-right: 50px !important; }
+
+.pb50 {
+  margin-bottom: 50px !important; }
+
+.pl50 {
+  margin-left: 50px !important; }
+
+.mt55 {
+  margin-top: 55px !important; }
+
+.mr55 {
+  margin-right: 55px !important; }
+
+.mb55 {
+  margin-bottom: 55px !important; }
+
+.ml55 {
+  margin-left: 55px !important; }
+
+.pt55 {
+  margin-top: 55px !important; }
+
+.pr55 {
+  margin-right: 55px !important; }
+
+.pb55 {
+  margin-bottom: 55px !important; }
+
+.pl55 {
+  margin-left: 55px !important; }
+
+.mt60 {
+  margin-top: 60px !important; }
+
+.mr60 {
+  margin-right: 60px !important; }
+
+.mb60 {
+  margin-bottom: 60px !important; }
+
+.ml60 {
+  margin-left: 60px !important; }
+
+.pt60 {
+  margin-top: 60px !important; }
+
+.pr60 {
+  margin-right: 60px !important; }
+
+.pb60 {
+  margin-bottom: 60px !important; }
+
+.pl60 {
+  margin-left: 60px !important; }
+
+.mt65 {
+  margin-top: 65px !important; }
+
+.mr65 {
+  margin-right: 65px !important; }
+
+.mb65 {
+  margin-bottom: 65px !important; }
+
+.ml65 {
+  margin-left: 65px !important; }
+
+.pt65 {
+  margin-top: 65px !important; }
+
+.pr65 {
+  margin-right: 65px !important; }
+
+.pb65 {
+  margin-bottom: 65px !important; }
+
+.pl65 {
+  margin-left: 65px !important; }
+
+.mt70 {
+  margin-top: 70px !important; }
+
+.mr70 {
+  margin-right: 70px !important; }
+
+.mb70 {
+  margin-bottom: 70px !important; }
+
+.ml70 {
+  margin-left: 70px !important; }
+
+.pt70 {
+  margin-top: 70px !important; }
+
+.pr70 {
+  margin-right: 70px !important; }
+
+.pb70 {
+  margin-bottom: 70px !important; }
+
+.pl70 {
+  margin-left: 70px !important; }
+
+.mt75 {
+  margin-top: 75px !important; }
+
+.mr75 {
+  margin-right: 75px !important; }
+
+.mb75 {
+  margin-bottom: 75px !important; }
+
+.ml75 {
+  margin-left: 75px !important; }
+
+.pt75 {
+  margin-top: 75px !important; }
+
+.pr75 {
+  margin-right: 75px !important; }
+
+.pb75 {
+  margin-bottom: 75px !important; }
+
+.pl75 {
+  margin-left: 75px !important; }
+
+.mt80 {
+  margin-top: 80px !important; }
+
+.mr80 {
+  margin-right: 80px !important; }
+
+.mb80 {
+  margin-bottom: 80px !important; }
+
+.ml80 {
+  margin-left: 80px !important; }
+
+.pt80 {
+  margin-top: 80px !important; }
+
+.pr80 {
+  margin-right: 80px !important; }
+
+.pb80 {
+  margin-bottom: 80px !important; }
+
+.pl80 {
+  margin-left: 80px !important; }
+
+.mt85 {
+  margin-top: 85px !important; }
+
+.mr85 {
+  margin-right: 85px !important; }
+
+.mb85 {
+  margin-bottom: 85px !important; }
+
+.ml85 {
+  margin-left: 85px !important; }
+
+.pt85 {
+  margin-top: 85px !important; }
+
+.pr85 {
+  margin-right: 85px !important; }
+
+.pb85 {
+  margin-bottom: 85px !important; }
+
+.pl85 {
+  margin-left: 85px !important; }
+
+.mt90 {
+  margin-top: 90px !important; }
+
+.mr90 {
+  margin-right: 90px !important; }
+
+.mb90 {
+  margin-bottom: 90px !important; }
+
+.ml90 {
+  margin-left: 90px !important; }
+
+.pt90 {
+  margin-top: 90px !important; }
+
+.pr90 {
+  margin-right: 90px !important; }
+
+.pb90 {
+  margin-bottom: 90px !important; }
+
+.pl90 {
+  margin-left: 90px !important; }
+
+.mt95 {
+  margin-top: 95px !important; }
+
+.mr95 {
+  margin-right: 95px !important; }
+
+.mb95 {
+  margin-bottom: 95px !important; }
+
+.ml95 {
+  margin-left: 95px !important; }
+
+.pt95 {
+  margin-top: 95px !important; }
+
+.pr95 {
+  margin-right: 95px !important; }
+
+.pb95 {
+  margin-bottom: 95px !important; }
+
+.pl95 {
+  margin-left: 95px !important; }
+
+.mt100 {
+  margin-top: 100px !important; }
+
+.mr100 {
+  margin-right: 100px !important; }
+
+.mb100 {
+  margin-bottom: 100px !important; }
+
+.ml100 {
+  margin-left: 100px !important; }
+
+.pt100 {
+  margin-top: 100px !important; }
+
+.pr100 {
+  margin-right: 100px !important; }
+
+.pb100 {
+  margin-bottom: 100px !important; }
+
+.pl100 {
+  margin-left: 100px !important; }
+
+.rankingPage {
+  position: relative;
+  font-size: 15px;
+  color: #333;
+  font-family: "SimHei ";
+  background: #fff; }
+  .rankingPage .close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 0.8rem;
+    width: 0.6rem;
+    height: 0.6rem; }
+    .rankingPage .close img {
+      max-width: 100%; }
+  .rankingPage article {
+    text-align: center;
+    padding: 2.93rem 0; }
+  .rankingPage h1 {
+    width: 100%; }
+    .rankingPage h1 img {
+      width: 100%; }
+  .rankingPage aside {
+    font-size: 15px;
+    line-height: 1.5em; }
+  .rankingPage div {
+    margin: 0 auto; }
+  .rankingPage .city {
+    width: 100%;
+    margin-top: 3.88rem; }
+    .rankingPage .city img {
+      width: 100%; }
+  .rankingPage .athlete {
+    width: 100%;
+    margin-top: 3.25rem; }
+    .rankingPage .athlete img {
+      width: 100%; }
+  .rankingPage .school {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 1rem; }
+    .rankingPage .school img {
+      width: 100%; }
+  .rankingPage .teacher {
+    width: 100%;
+    margin-top: 3rem; }
+    .rankingPage .teacher img {
+      width: 100%; }
+  .rankingPage h2 {
+    font-size: 20px;
+    line-height: 1.5em; }
+  .rankingPage section p {
+    font-size: 15px;
+    line-height: 1.5em;
+    padding: 0 0.5rem; }
+    .rankingPage section p.title {
+      margin-top: 0.5rem;
+      font-weight: bolder; }
+  .rankingPage section .line {
+    padding-bottom: 0.2rem;
+    width: 1.25rem;
+    border-top: 2px solid #333;
+    margin-top: 0.6rem; }
+
+.competitionPage {
+  background: url(../img/activity/competition/bg.gif) no-repeat #04662b;
+  background-size: 100%;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.5em;
+  color: #fff;
+  font-family: "SimHei "; }
+  .competitionPage .close {
+    display: block;
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    width: 0.6rem;
+    height: 0.6rem; }
+    .competitionPage .close img {
+      max-width: 100%; }
+  .competitionPage article {
+    padding: 3.8rem 1.5rem 1.5rem; }
+    .competitionPage article h1 {
+      width: 9.225rem;
+      height: 2.1rem; }
+      .competitionPage article h1 img {
+        max-width: 100%; }
+    .competitionPage article h2 {
+      font-size: 15px;
+      margin-top: 0.25rem; }
+    .competitionPage article aside {
+      margin-top: 1.88rem; }
+    .competitionPage article p {
+      font-size: 14px;
+      line-height: 2em; }
+
+.aboutCompetitionPage {
+  background: #fcf134;
+  line-height: 0; }
+  .aboutCompetitionPage img {
+    width: 100%; }
+
+.aboutUsPage {
+  font-family: "SimHei ";
+  text-align: center;
+  background: url(../img/activity/aboutUs/bg.jpg) 0 2.5rem no-repeat;
+  background-size: 100%; }
+  .aboutUsPage article h1 {
+    width: 12rem;
+    height: 3.75rem;
+    margin: 2.85rem auto 1.35rem; }
+    .aboutUsPage article h1 img {
+      max-width: 100%; }
+  .aboutUsPage article h2 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5em;
+    margin-top: 1.35rem; }
+  .aboutUsPage article p {
+    font-size: 15px;
+    line-height: 1.5em; }
+
+.noticePage {
+  font-family: "SimHei ";
+  background: #eee;
+  padding-bottom: 1rem; }
+  .noticePage h1 {
+    font-size: 25px;
+    line-height: 1.625rem;
+    text-align: center;
+    margin: 1rem auto 1.2rem; }
+  .noticePage p {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-top: 1.35rem;
+    padding: 0 0.8rem; }
+    .noticePage p span {
+      font-weight: bolder; }
+
+.servicesAgreementPage {
+  font-family: "SimHei ";
+  background: #eee;
+  padding-bottom: 3rem; }
+  .servicesAgreementPage article {
+    padding: 0 0.8rem; }
+    .servicesAgreementPage article section h2 {
+      font-size: 24px;
+      margin-top: 1.5rem; }
+    .servicesAgreementPage article section p {
+      font-size: 15px;
+      line-height: 1.5em;
+      margin-top: 1.125rem; }
+      .servicesAgreementPage article section p span {
+        font-weight: bolder; }
+      .servicesAgreementPage article section p .tel {
+        text-decoration: none; }
+    .servicesAgreementPage article section div p {
+      margin-top: 0; }
+    .servicesAgreementPage article section em {
+      font-style: normal;
+      color: #6554aa; }
+    .servicesAgreementPage article section a {
+      color: #6554aa; }
+
+.activityPage {
+  background: #ffe317;
+  line-height: 0; }
+  .activityPage img {
+    width: 100%; }
+
+.poetryPage {
+  font-family: "SimHei ";
+  text-align: center;
+  background: url(../img/activity/poetry/bg.png) 0 0 no-repeat #38556b;
+  background-size: 100%; }
+  .poetryPage .wrap {
+    margin: 10% auto 10%;
+    position: relative; }
+    .poetryPage .wrap img {
+      width: 85.3%; }
+    .poetryPage .wrap .poetryOne, .poetryPage .wrap .poetryTwo, .poetryPage .wrap .poetryThree, .poetryPage .wrap .poetryFour {
+      width: 85.3%;
+      position: absolute;
+      top: 22%;
+      color: #FFF;
+      font-size: 18px;
+      line-height: 2em;
+      margin-left: 7.5%;
+      opacity: 0; }
+
+.designForThePeoplePage {
+  font-family: "SimHei ";
+  background: url(../img/activity/designForThePeople/design.jpg) 0 0 no-repeat;
+  background-size: 100%; }
+  .designForThePeoplePage .wrap {
+    font-size: 15px;
+    line-height: 1.5em;
+    width: 66.8%;
+    margin: 60% auto 0; }
+
+.questionnaireRulesPage {
+  font-family: "SimHei ";
+  background: #eee;
+  padding-bottom: 3rem; }
+  .questionnaireRulesPage article {
+    padding: 0 0.8rem; }
+    .questionnaireRulesPage article section h2 {
+      font-size: 25px;
+      font-weight: normal;
+      margin: 1.5rem auto 1.75rem; }
+    .questionnaireRulesPage article section p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.5em; }
+    .questionnaireRulesPage article section div p {
+      font-size: 14px;
+      color: #999; }
+

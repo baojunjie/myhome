@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="Authentication" table="t_authentication" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <discriminator column="type" type="string" />
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <many-to-one name="user" class="User" column="user_id" cascade="save-update" lazy="false"/>
+        
+        <property name="login" column="login" type="string" />
+        
+        <property name="password" column="password" type="string" />
+        
+        <property name="salt" column="salt" type="string" />
+        
+
+        <subclass name="LoginAuthentication" discriminator-value="0">
+        </subclass>       
+
+        <subclass name="EmailAuthentication" discriminator-value="1">
+        </subclass>       
+
+        <subclass name="MobileAuthentication" discriminator-value="2">
+        </subclass>       
+
+        <subclass name="QQAuthentication" discriminator-value="3">
+        </subclass>       
+
+        <subclass name="WeiboAuthentication" discriminator-value="4">
+        </subclass>       
+
+        <subclass name="WeixinAuthentication" discriminator-value="5">
+        </subclass>       
+    </class>
+</hibernate-mapping>

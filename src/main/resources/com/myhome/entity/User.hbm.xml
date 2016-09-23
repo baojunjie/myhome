@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="User" table="t_user" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <one-to-one name="userInfo" cascade="all" lazy="false"/>
+        
+    </class>
+</hibernate-mapping>
+

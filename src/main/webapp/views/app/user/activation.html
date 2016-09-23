@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="我的家" />
+    <meta name="description" content="我的家" />
+    <title>账号激活</title>
+    <meta name="keywords" content="少儿绘画,儿童绘画,全国少儿绘画,全国儿童绘画,少儿绘画大赛,儿童绘画作品" />
+    <meta name="description" content="我的家-全国少年儿童绘画大赛，面向全国3 -12岁少年儿童的公益性绘画比赛。使小朋友不仅仅可以拿作品参赛,还能以此帮助有困难的小朋友,从小培养他们的大爱意识,让公益事业与中国少年儿童艺术共同发展。" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    
+</head>
+<body class="site site-1">
+
+
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">账号激活</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container site-box">
+<div class="activationPage">
+    <p class="title">我的家-账号激活</p>
+    <p class="mt50">我们已经发送一条验证短信至 $!mobile</p>
+    <p class="mt10">请输入短信中的验证码</p>
+    <form action="/login/authentication/activate.do">
+        <div class="clearfix mt40">
+            <input name="mobile" type="hidden" value="$!mobile" id="mobile" />
+            <input data-valid-require="请输入验证码" name="code" class="J_validInput code fl" type="text" placeholder="请输入验证码" />
+            <input id="btnSendCode" class="getcode fl" type="button" value="获取验证码" />
+        </div>
+        <div class="mt30">
+            <input class="site-button site-button-primary" type="submit" value="激 活" />
+        </div>
+    </form>
+</div>
+
+
+</div>
+
+
+</div>
+    <script>
+        var siteConfig = {
+                personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            //serverUrl: "http://192.168.1.110:8080/webmyhome",
+            //serverUrl: "http://www.haaaaaa.com",
+            url: "$!request.contextPath",
+            app: "user/activation"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

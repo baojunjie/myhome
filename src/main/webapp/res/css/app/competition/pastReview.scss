@@ -1,0 +1,190 @@
+﻿.pastReviewPage {
+    .banner {
+
+        li {
+            height: 300px;
+            background: no-repeat 50% 50%;
+
+            &.first {
+                background-image: url('../img/competition/pastReview/banner1.jpg');
+            }
+
+        }
+    }
+
+    .site-tab {
+        margin-top: 16px;
+
+        .site-tab-nav {
+            li {
+                width: 600px;
+                height: 72px;
+                line-height: 72px;
+
+                a {
+                    display: block;
+                    color: #FFF;
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-align: center;
+                    background: #d9d9d9;
+                }
+
+                &.active a {
+                    background: #ff4e00;
+                }
+            }
+        }
+
+        .site-page {
+            .reviewItem {
+                margin-top: 60px;
+
+                .line {
+                    height: 1px;
+                    width: 558px;
+                    background: #f2f2f2;
+                    margin: 10px 0 0;
+                }
+
+                .title {
+                    width: 84px;
+                    text-align: center;
+                    color: #87004f;
+                }
+
+                .site-tab-panel-con {
+                    border: 1px solid #f2f2f2;
+                    padding: 9px;
+                    margin-top: 10px;
+                    border-bottom: 0;
+
+                    .activity2014 {
+                        position: relative;
+
+                        .control {
+                            position: absolute;
+                            z-index: 2;
+                            top: 50%;
+                            height: 38px;
+                            line-height: 38px;
+                            color: #fff;
+                            margin-top: -19px;
+                            background: no-repeat;
+                        }
+
+                        .control-preview {
+                            width: 30px;
+                            left: -9px;
+                            background-image: url(../img/competition/pastReview/preview1.png);
+
+                            &:hover {
+                                background-image: url(../img/competition/pastReview/preview1-active.png);
+                            }
+                        }
+
+                        .control-next {
+                            width: 54px;
+                            padding-left: 6px;
+                            right: -9px;
+                            background-image: url(../img/competition/pastReview/next1.png);
+
+                            &:hover {
+                                background-image: url(../img/competition/pastReview/next1-active.png);
+                            }
+                        }
+
+                        li {
+                            float: left;
+                            background: no-repeat 50% 50%;
+
+                            .pic {
+                                float: left;
+                                margin-left: 4px;
+
+                                &.first {
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .grid-item {
+                        margin-bottom: 4px;
+
+                        a {
+                            position: relative;
+                            cursor: pointer;
+                        }
+
+                        &:hover {
+                            span {
+                                display: block;
+                            }
+                        }
+
+                        span {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 292px;
+                            height: 40px;
+                            line-height: 40px;
+                            background: url(../img/competition/pastReview/span.png);
+                            color: #f9ecec;
+                            font-size: 14px;
+                            text-align: center;
+
+                            &.vedio {
+                                width: 292px;
+                                height: 292px;
+                                font-size: 16px;
+                                background: url(../img/competition/pastReview/videobg.png) repeat;
+
+                                a {
+                                    position: absolute;
+                                    top: 112px;
+                                    left: 78px;
+                                    color: #FFF;
+                                }
+                            }
+                        }
+                    }
+
+                    .more {
+                        width: 962px;
+                        margin: auto auto;
+
+                        .line {
+                            width: 234px;
+                        }
+
+                        .loadmore {
+                            a {
+                                display: block;
+                                width: 466px;
+                                height: 32px;
+                                line-height: 32px;
+                                font-size: 14px;
+                                color: #b5b5b5;
+                                background: #fafafa;
+                                text-align: center;
+                                margin: 0 14px;
+
+                                &:hover {
+                                    background: #f6f6f6;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .outstandingWorks {
+                .site-tab-panel-con {
+                    padding: 9px 5px 49px 9px;
+                }
+            }
+        }
+    }
+}

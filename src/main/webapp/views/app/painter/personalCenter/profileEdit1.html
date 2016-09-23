@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Pragma" content="no-cache"></meta>
+<meta http-equiv="Cache-Control" content="no-cache"></meta>
+<title>个人中心-个人资料</title>
+<link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon"
+    href="$!request.contextPath/favicon.ico">
+<script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site personalPage site-4">
+    #parse("_head.html")
+    <div class="site-head">
+        <div class="site-container clearfix">
+            <div class="site-head-l">
+                <h1 class="logo">
+                    <a href="$!request.contextPath/home/index.do">我的家</a>
+                </h1>
+                <div class="text clearfix">
+                    <span class="divide"></span> <span class="title">个人中心</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="site-body">
+
+
+        <div class="personalPage-head">
+            <div class="main site-container">
+                <div class="main-t clearfix">
+                    <a
+                        class="avatar fl #if($session.getAttribute('USER_ID')==$!artist.artistInfo.user.id) J_crop #else #end"
+                        href="javascript:void(0);"> #if($!user.user.userInfo.img) <img
+                        class="J_avatar" src="$!user.user.userInfo.img" /> #else <img
+                        class="J_avatar" src="$!artist.artistInfo.img" />
+                        #end
+                    </a>
+                    <div class="info fl clearfix">
+                        <strong class="fl">$!artist.artistInfo.name</strong> <a
+                            class="status2 fl ml10"
+                            style="color: #f8b300; border: 1px solid #f8b300">#if($!artist.status==1)待审核
+                            #elseif($!artist.status==2)审核中 #elseif($!artist.status==3)已认证
+                            #else审核不通过 #end</a> #if($!artist.artistInfo.user.userInfo.type==6)
+                        #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                       <!--  <a class="status2 fl ml10"
+                            href="$!request.contextPath/help/personalCenter/profile.do?userid=$!artist.artistInfo.user.id">切换成为幸运小朋友</a>
+                        #elseif($!ifhelpchildren==1) <a class="status2 fl ml10"
+                            href="$!request.contextPath/help/personalCenter.do?userid=$!artist.artistInfo.user.id">切换成为幸运小朋友</a> -->
+                        #else #end #else
+                        #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                        <!-- <a class="status2 fl ml10"
+                            href="$!request.contextPath/help/join.do">申请成为幸运小朋友</a> --> #else
+                        #end #end
+                    </div>
+                     #if($session.getAttribute("USER_ID"))
+                    #if($session.getAttribute("USER_ID")!=$!artist.artistInfo.user.id)
+                  <!--   <div class="help fr">
+                    <a class="J_reward clearfix site-button" href="javascript:void(0);">
+                        <i class="fl iconfont icon-dashang"></i>
+                        <span class="fl">我要打赏</span>
+                    </a>
+                    </div> -->
+                    #else
+                    #end
+            #else
+            <!-- <div class="help fr">
+                    <a class="J_reward clearfix site-button" href="javascript:void(0);">
+                        <i class="fl iconfont icon-dashang"></i>
+                        <span class="fl">我要打赏</span>
+                    </a>
+                    </div> -->
+            #end
+                </div>
+                <div class="des clearfix">
+                    <p class="fl clearfix">
+                        <strong class="fl">#if($!artist.artistInfo.male)男#else女#end丨$!artist.artistInfo.age岁丨$!artist.artistInfo.region.name#if($!artist.artistInfo.school!="")丨$!artist.artistInfo.school#else#end
+                            <!-- #if($!artist.artistInfo.cartoon!="")丨最喜欢的卡通形象：$!artist.artistInfo.cartoon#else#end丨 --><span
+                            class="role">小画家</span>
+                        </strong>
+                    </p>
+                    #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                    <a class="site-button site-button-blue fr"
+                        href="$!request.contextPath/works/uploadindex.do?artistid=$!artist.id">上传作品</a>
+                    #else #end
+                </div>
+            </div>
+        </div>
+        <div class="personalPage-body site-container clearfix">
+            <div class="personalPage-side fl">
+                <dl>
+                    <dt class="clearfix">
+                        <i class="fl iconfont icon-zhengfangxing"></i> <span class="fl">我的参赛作品</span>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li><a class=""
+                                href="$!request.contextPath/artist/personalCenter.do?type=3&artistid=$!artist.id">已认证作品</a><i>$!total3</i>
+                            </li>
+                            #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                            <li><a class=""
+                                href="$!request.contextPath/artist/personalCenter.do?type=2">审核中作品</a><i>$!total2</i>
+                            </li>
+                            <li><a class=""
+                                href="$!request.contextPath/artist/personalCenter.do?type=1">未提交作品</a><i>$!total1</i>
+                            </li>
+                            <li><a class=""
+                                href="$!request.contextPath/artist/personalCenter.do?type=4">未通过审核</a><i>$!total4</i>
+                            </li> #else #end
+                        </ul>
+                    </dd>
+                </dl>
+                #if($session.getAttribute("USER_ID")==$!artist.artistInfo.user.id)
+                <dl>
+                    <dt class="clearfix">
+                        <i class="fl iconfont icon-zhengfangxing"></i> <span class="fl">个人信息</span>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li><a class="current"
+                                href="$!request.contextPath/artist/personalCenter/profile.do">详情资料</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                #else #end #if($session.getAttribute("USER_ID") ==
+                $!artist.artistInfo.user.id)
+                <!--  <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">关系网络</span>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a class="" href="$!request.contextPath/artist/ireward.do">打赏我的人</a>
+                    </li>
+                     <li>
+                        <a class="" href="$!request.contextPath/artist/helpedKids.do">我帮助的小朋友</a>
+                    </li>
+                     <li>
+                        <a class="" href="$!request.contextPath/artist/rewardedPainter.do">我打赏的小画家</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl> -->
+                <!-- <dl>
+                    <dt class="clearfix">
+                        <i class="fl iconfont icon-zhengfangxing"></i> <span class="fl">我的家问卷</span>
+                    </dt>
+                    <dd>
+                        <ul class="J_questionnaire">
+                            <li><a class=""
+                                href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我已装修</a>
+                            </li>
+                            <li><a class=""
+                                href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要装修</a>
+                            </li>
+                            <li><a class=""
+                                href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要买房</a>
+                            </li>
+                            <li><a class=""
+                                href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我的阳台</a>
+                            </li>
+                        <li>
+                        <a class="" href="$!request.contextPath/question/pointsRule.do">积分规则</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl> -->
+        #else #end
+       <!--  <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">账户</span>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a class="" href="$!request.contextPath/artist/accountsReceivable.do?userId=$!artist.artistInfo.user.id">收款账户</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl> -->
+                <div class="line"></div>
+            </div>
+            <div class="personalPage-content fl">
+
+
+                <div class="personalProfilePage painterPersonalProfilePage">
+                    <!--     <div class="section section-preview">
+    <p class="head clearfix">
+        <span class="line fl"></span>
+        <span class="title fl">我的账户信息</span>
+        <a class="fr" href="#">
+            <i class="iconfont icon-xiugaimima"></i>
+            <span>修改密码</span>
+        </a>
+    </p>
+    <div class="body">
+        <div class="form-item first">
+            <label class="label">用户名</label>
+            <span>$!user.user.userInfo.name</span>
+        </div>
+        <div class="form-item">
+            <label class="label">手机号</label>
+            <span>$!user.login</span>
+        </div>
+    </div>
+</div> -->
+                    <form class="site-form" data-mode="inline"
+                        action="$!request.contextPath/artist/update.do" method="post">
+                        <div class="section mt10" style="display: none">
+                            <p class="head clearfix">
+                                <span class="line fl"></span> <span class="title fl">我的详细信息</span>
+                                <span class="clearfix fr"> <a
+                                    href="$!request.contextPath/artist/personalCenter/profile.do">
+                                        <span>取消</span>
+                                </a> <a class="J_save save ml20" href="javascript:void(0);"> <i
+                                        class="iconfont icon-451xianxingbaocun"></i> <span>保存</span>
+                                </a>
+                                </span>
+                            </p>
+                            <div class="body">
+                                <div class="site-form-2">
+                                    <div class="form-item first">
+                                        <label class="label">* 姓名</label>
+                                        <div class="input">
+                                            <input name="name" value="$!game.name" autofocus
+                                                data-valid-require="请输入真实姓名" data-valid-range="姓名长度在2-32位"
+                                                data-valid-range-min="2" data-valid-range-max="32"
+                                                class="site-input  " type="text"> <input
+                                                name="id" value="$!game.id" type="hidden" />
+                                        </div>
+                                        <div class="tip">请输入真实姓名</div>
+                                    </div>
+                                    <div class="form-item site-upload  "
+                                        data-valid-require="请上传参赛者本人的清晰头像" data-valid-control="custom">
+                                        <label class="label">* 照片</label>
+                                        <div class="input">
+                                            <label data-init="$!game.img"
+                                                class="upload site-upload-button" data-preview="true"
+                                                data-file-type="image" data-form-data='{"typeimg":"1"}'></label>
+                                            <input name="img" value="$!game.picturetag" type="hidden" />
+                                        </div>
+                                        <div class="tip">请上传参赛者本人的清晰头像</div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="label">* 性别</label>
+                                        <div class="input">
+                                            <select class="site-input  "
+                                                data-valid-require="请选择性别" in name="male">
+                                                <option value="1" #if($!game.male==1)selected#else#end>男</option>
+                                                <option value="2" #if($!game.male==2)selected#else#end>女</option>
+                                            </select>
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <!-- <div class="form-item">
+                                        <label class="label">* 民族</label>
+                                        <div class="input">
+                                            <input name="nation" value="$!game.nation"
+                                                data-valid-require="请输入民族" data-valid-range="民族长度在1-32位"
+                                                data-valid-range-min="1" data-valid-range-max="32"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div> -->
+                                    <div class="form-item">
+                                        <label class="label">* 生日</label>
+                                        <div class="input">
+                                            <input name="birthday" value="$!game.birthday" id="birthday"
+                                                onClick="WdatePicker({ maxDate: '%y-%M-%d' })"
+                                                data-valid-require="请选择生日" class="site-input  "
+                                                type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <!-- <div class="form-item">
+                                        <label class="label">* 籍贯</label>
+                                        <div class="input">
+                                            <input name="origin" value="$!game.origin"
+                                                data-valid-require="请输入籍贯" data-valid-range="籍贯长度在2-32位"
+                                                data-valid-range-min="2" data-valid-range-max="32"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div> -->
+                                    <div class="form-item">
+                                        <label class="label">* 选送地区</label>
+                                        <div class="input">
+                                            <select data-init="$!game.province" id="province"
+                                                class="site-input  " data-valid-require="请选择省份"></select>
+                                            <select data-init="$!game.city" id="city"
+                                                class="site-input   ml10"
+                                                data-valid-require="请选择城市"></select> <select name="region"
+                                                data-init="$!game.region" id="district"
+                                                class="site-input  " data-valid-require="请选择地区"></select>
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                   <!--  <div class="form-item">
+                                        <label class="label">* 身份证号码</label>
+                                        <div class="input">
+                                            <input name="idCode" value="$!game.idCode"
+                                                data-valid-require="请输入身份证号码"
+                                                data-valid-idcard="请输入正确的身份证号码"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip">请填写参赛者身份证号码</div>
+                                    </div>-->
+									<div class="form-item">
+										<label class="label">学校</label>
+										<div class="input">
+											<input name="school" value="$!game.school" id="school"
+												class="site-input J_validInput" data-valid-age="7岁以上学校/培训机构至少填一个"
+												data-valid-range="学校长度在2-32位" data-valid-range-min="2"
+												data-valid-range-max="32" type="text">
+										</div>
+										<div class="tip">7岁以上学校/培训机构至少填一个</div>
+									</div>
+									<div class="form-item">
+										<label class="label">培训机构</label>
+										<div class="input">
+											<input name="trainingInstitution" value="$!game.trainingInstitution" id="institution"
+												class="site-input J_validInput"
+												data-valid-range="学培训机构长度在2-32位" data-valid-range-min="2"
+												data-valid-range-max="32" type="text">
+										</div>
+										<div class="tip"></div>
+									</div>
+                                    <div class="form-item">
+                                        <label class="label">* 家长联系方式</label>
+                                        <div class="input">
+                                            <input name="parentMobile" value="$!game.parentMobile"
+                                                data-valid-require="请输入家长联系方式"
+                                                class="site-input  " type="text"
+                                                data-valid-mobile="请输入正确的手机号码">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <!-- <div class="form-item">
+                                        <label class="label">最喜欢的卡通形象</label>
+                                        <div class="input">
+                                            <input name="cartoon" value="$!game.cartoon"
+                                                data-valid-range="卡通形象长度在1-32位" data-valid-range-min="2"
+                                                data-valid-range-max="32" class="site-input  "
+                                                type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                      <!--   <div class="section mt10" style="display: none">
+                            <p class="head clearfix">
+                                <span class="line fl"></span> <span class="title fl">收款信息</span>
+                                <span class="clearfix fr"> <a
+                                    href="$!request.contextPath/artist/personalCenter/profile.do">
+                                        <span>取消</span>
+                                </a> <a class="J_save save ml20" href="javascript:void(0);"> <i
+                                        class="iconfont icon-451xianxingbaocun"></i> <span>保存</span>
+                                </a>
+                                </span>
+                            </p>
+                            <div class="body">
+                                <div class="site-form-2">
+                                    <div class="form-item first">
+                                        <label class="label">支付宝账号</label>
+                                        <div class="input">
+                                            <input 
+                                                name="alipayAccount" value="$!game.alipayAccount"
+                                                data-valid-alipay="请输入正确的支付宝帐号"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="label">微信账号</label>
+                                        <div class="input">
+                                            <input data-valid-range="微信账号长度在2-32位" name="weChatAccount"
+                                                value="$!game.weChatAccount" data-valid-range-min="2"
+                                                data-valid-range-max="32"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="label">银行卡账号</label>
+                                        <div class="input">
+                                            <input name="bankAccount"
+                                                value="$!game.bankAccount" data-valid-bankcard="请填写正确的银行卡账号"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="label">银行卡开户人</label>
+                                        <div class="input">
+                                            <input data-valid-range="银行卡开户人长度在2-32位" name="accountName"
+                                                value="$!game.accountName" data-valid-range-min="2"
+                                                data-valid-range-max="32" data-valid-name="请填写正确的银行卡开户人"
+                                                class="site-input  " type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="section mt10">
+                            <p class="head clearfix">
+                                <span class="line fl"></span> <span class="title fl">推荐方信息</span>
+                                <span class="clearfix fr"> <a
+                                    href="$!request.contextPath/artist/personalCenter/profile.do">
+                                        <span>取消</span>
+                                </a> <a class="J_save save ml20" href="javascript:void(0);"> <i
+                                        class="iconfont icon-451xianxingbaocun"></i> <span>保存</span>
+                                </a>
+                                </span>
+                            </p>
+                            <div class="body">
+                                <div class="site-form-2">
+                                    <div class="form-item first">
+                                        <label class="label">推荐方单位</label>
+                                        <div class="input ">
+                                            <input name="referrerSchool" value="$!game.referrerSchool"
+                                                class="site-input  "
+                                                data-valid-range="学校/培训机构长度在2-32位" data-valid-range-min="2"
+                                                data-valid-range-max="32" type="text">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="label">推荐方联系方式</label>
+                                        <div class="input ">
+                                            <input name="referrerMobile" value="$!game.referrerMobile"
+                                                class="site-input   " type="text"
+                                                data-valid-mobile="请输入正确的手机号码">
+                                        </div>
+                                        <div class="tip"></div>
+                                    </div>
+									<div class="form-item">
+										<label class="label">组织老师</label>
+										<div class="input ">
+											<input name="instructor" value="$!game.instructor"
+												class="site-input  "
+												data-valid-range="组织老师长度在2-32位" data-valid-range-min="2"
+												data-valid-range-max="32" type="text">
+										</div>
+										<div class="tip"></div>
+									</div>
+									<div class="form-item">
+										<label class="label">组织老师联系方式</label>
+										<div class="input ">
+											<input name="instructorMobile"
+												value="$!game.instructorMobile"
+												class="site-input   " type="text"
+												data-valid-mobile="请输入正确的手机号码">
+										</div>
+										<div class="tip"></div>
+									</div>
+									<div class="form-item">
+										<label class="label">组织老师</label>
+										<div class="input ">
+											<input value="$!game.teacher" name="teacher"
+												class="site-input  "
+												data-valid-range="组织老师长度在2-32位" data-valid-range-min="2"
+												data-valid-range-max="32" type="text">
+										</div>
+										<div class="tip"></div>
+									</div>
+									<div class="form-item">
+										<label class="label">组织老师联系方式</label>
+										<div class="input ">
+											<input value="$!game.teacherMobile" name="teacherMobile"
+												class="site-input   " type="text"
+												data-valid-mobile="请输入正确的手机号码">
+										</div>
+										<div class="tip"></div>
+									</div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+                <script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+            </div>
+        </div>
+        #parse("app/painter/reward.html")
+    </div>
+
+    <!-- shared section start-->
+    <div class="site-foot">#parse("_footer.html")</div>
+    #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "reward,personalCenter/main,personalCenter/profile,painter/join"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init"
+        src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

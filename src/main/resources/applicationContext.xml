@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:context="http://www.springframework.org/schema/context" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.1.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+           http://www.springframework.org/schema/mvc
+ 		   http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.myhome.service.impl,com.myhome.dao.impl" />
+
+	<!-- <bean id="dataSource" name="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		<property name="maxActive" value="${db.maxActive}" />
+		<property name="maxIdle" value="${db.maxIdle}" />
+		<property name="maxWait" value="${db.maxWait}" />
+		<property name="initialSize" value="${db.initialSize}" />
+		<property name="minIdle" value="${db.minIdle}" />
+		<property name="validationQuery" value="${db.validationQuery}" />
+		<property name="removeAbandoned" value="${db.removeAbandoned}" />
+		<property name="removeAbandonedTimeout" value="${db.removeAbandonedTimeout}" />
+		<property name="logAbandoned" value="${db.logAbandoned}" />
+		<property name="useDisposableConnectionFacade" value="false" />
+		<property name="testOnBorrow" value="${db.testOnBorrow}" />
+		<property name="testWhileIdle" value="${db.testWhileIdle}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${db.timeBetweenEvictionRunsMillis}" />
+		<property name="numTestsPerEvictionRun" value="${db.numTestsPerEvictionRun}" />
+		<property name="minEvictableIdleTimeMillis" value="${db.minEvictableIdleTimeMillis}" />
+	</bean> -->
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="${dataSource.url}" />
+        <property name="user" value="${dataSource.username}" />
+        <property name="password" value="${dataSource.password}" />
+        
+        <property name="acquireIncrement" value="${dataSource.acquireIncrement}" />
+        <property name="acquireRetryAttempts" value="${dataSource.acquireRetryAttempts}" />
+        <property name="acquireRetryDelay" value="${dataSource.acquireRetryAttempts}" />
+        <property name="autoCommitOnClose" value="${dataSource.autoCommitOnClose}" />
+        <property name="checkoutTimeout" value="${dataSource.checkoutTimeout}" />
+        <property name="idleConnectionTestPeriod" value="${dataSource.idleConnectionTestPeriod}" />
+        <property name="initialPoolSize" value="${dataSource.initialPoolSize}" />
+        <property name="maxIdleTime" value="${dataSource.maxIdleTime}" />
+        <property name="maxPoolSize" value="${dataSource.maxPoolSize}" />
+        <property name="numHelperThreads" value="${dataSource.numHelperThreads}" />
+        <property name="testConnectionOnCheckin" value="false"/>
+        <property name="testConnectionOnCheckout" value="true"/>
+	</bean>
+
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="mappingResources">
+			<list>
+				<value>com/myhome/entity/Page.hbm.xml</value>
+				<value>com/myhome/entity/Region.hbm.xml</value>
+				<value>com/myhome/entity/Tag.hbm.xml</value>
+				<value>com/myhome/entity/User.hbm.xml</value>
+				<value>com/myhome/entity/UserInfo.hbm.xml</value>
+				<value>com/myhome/entity/Role.hbm.xml</value>
+				<value>com/myhome/entity/Permission.hbm.xml</value>
+				<value>com/myhome/entity/RolePermissionItem.hbm.xml</value>
+				<value>com/myhome/entity/UserRoleItem.hbm.xml</value>
+				<value>com/myhome/entity/UserPermissionItem.hbm.xml</value>
+				<value>com/myhome/entity/Authentication.hbm.xml</value>
+				<value>com/myhome/entity/Artist.hbm.xml</value>
+				<value>com/myhome/entity/ArtistInfo.hbm.xml</value>
+				<value>com/myhome/entity/Works.hbm.xml</value>
+				<value>com/myhome/entity/Voting.hbm.xml</value>
+				<value>com/myhome/entity/Praise.hbm.xml</value>
+				<value>com/myhome/entity/Game.hbm.xml</value>
+				<value>com/myhome/entity/GameWorksItem.hbm.xml</value>
+				<value>com/myhome/entity/WorksPictureItem.hbm.xml</value>
+				<value>com/myhome/entity/WorksTagItem.hbm.xml</value>
+				<value>com/myhome/entity/Comment.hbm.xml</value>
+				<value>com/myhome/entity/UserArtistItem.hbm.xml</value>
+				<value>com/myhome/entity/VerificationCode.hbm.xml</value>
+				<value>com/myhome/entity/Picture.hbm.xml</value>
+				<value>com/myhome/entity/Opinion.hbm.xml</value>
+				<value>com/myhome/entity/Version.hbm.xml</value>
+				<value>com/myhome/entity/HelpChildern.hbm.xml</value>
+				<value>com/myhome/entity/Sponsors.hbm.xml</value>
+				<value>com/myhome/entity/Teacher.hbm.xml</value>
+				<value>com/myhome/entity/WithPicture.hbm.xml</value>
+				
+				
+				<value>com/myhome/entity/GenerousGifts.hbm.xml</value>
+				<value>com/myhome/entity/WantBuyHouse.hbm.xml</value>
+				<value>com/myhome/entity/WantToDecorate.hbm.xml</value>
+				<value>com/myhome/entity/GiftsExchange.hbm.xml</value>
+				<value>com/myhome/entity/HaveToDecorate.hbm.xml</value>
+				<value>com/myhome/entity/MyBalcony.hbm.xml</value>
+				<value>com/myhome/entity/RecommendHelpPlayTour.hbm.xml</value>
+				<value>com/myhome/entity/BaseDataDictionary.hbm.xml</value>
+                <value>com/myhome/entity/BaseDataDictionaryType.hbm.xml</value>
+                <value>com/myhome/entity/Activity.hbm.xml</value>
+                <value>com/myhome/entity/Parameter.hbm.xml</value>
+                
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" /> -->
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+
+	<!-- 文件上传表单的视图解析器 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="20048000" />
+	</bean>
+</beans>
+

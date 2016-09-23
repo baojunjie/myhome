@@ -1,0 +1,73 @@
+﻿.competitionInfoPage {
+    text-align: center;
+    padding: 50px;
+
+    .title {
+        font-size: 26px;
+        color: black;
+    }
+
+    .subTitle {
+        font-size: 18px;
+        color: black;
+    }
+
+    .pop-ups {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        padding-bottom: 0;
+        background: rgba(0,0,0,0.4);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+
+
+        .content {
+            width: 535px;
+            height: 418px;
+            text-align: left;
+            margin: 164px auto 0;
+            padding: 35px 44px 0;
+            background: #FFF;
+            border-radius: 10px;
+
+            .title {
+                height: 38px;
+                margin-bottom: 20px;
+                padding-left: 29px;
+                background: url('../img/competition/logo.png') no-repeat;
+
+                div {
+                    width: 350px;
+                    font-size: 18px;
+                    color: #000;
+                    padding-top: 6px;
+                    border-bottom: 1px solid #e6e6e6;
+                }
+            }
+
+            span {
+                float: left;
+                color: #e9450a;
+            }
+
+            p {
+                float: left;
+                width: 500px;
+
+                &.link {
+                    i {
+                        font-size: 14px;
+                        margin-right: 10px;
+                    }
+
+                    a {
+                        color: #ff4b0b;
+                    }
+                }
+            }
+        }
+    }
+}

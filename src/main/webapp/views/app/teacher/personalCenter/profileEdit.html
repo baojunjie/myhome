@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>个人中心-个人资料</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site personalPage site-4">
+#parse("_head.html")
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">个人中心</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="site-body">
+    
+
+<div class="personalPage-head">
+    <div class="main site-container">
+        <div class="main-t clearfix">
+                <a class="avatar fl  #if($session.getAttribute('USER_ID')==$!teacher.user.id) J_crop #else #end" href="javascript:void(0);">
+                 #if($!user.user.userInfo.img)
+               <img class="J_avatar" src="$!user.user.userInfo.img" />
+               #else
+               <img class="J_avatar" src="$!request.contextPath/res/img/painter.jpg" />
+              #end
+             </a>
+            <div class="info fl clearfix">
+                <strong class="fl">$!teacher.name</strong>
+               <a class="status2 fl ml10" style="color:#f8b300;border:1px solid #f8b300">#if($!teacher.status==1)待审核 #elseif($!teacher.status==2)审核中 #elseif($!teacher.status==3)已认证 #else审核不通过 #end</a>
+            </div>
+        </div>
+        <div class="des clearfix">
+            <p class="fl clearfix">
+                <strong class="fl">#if($!teacher.male)男#else女#end丨$!teacher.age岁丨$!teacher.region.name丨$!teacher.workUnit丨$!teacher.mobile丨<span class="role">老师</span></strong>
+            </p>
+             #if($!teacher.status==3 && $session.getAttribute("USER_ID")==$!teacher.user.id)
+            <a class="site-button site-button-blue fr" href="$!request.contextPath/teacher/batchimport.do?teacherid=$!teacher.id">批量上传</a>
+            #else
+            #end
+        </div>
+    </div>
+</div>
+<div class="personalPage-body site-container clearfix">
+    <div class="personalPage-side fl">
+        <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">个人信息</span>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a class="current" href="$!request.contextPath/teacher/personalCenter.do">详情资料</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        				     <!--    <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">关系网络</span>
+            </dt>
+            <dd>
+                <ul>
+                     <li>
+                        <a  href="$!request.contextPath/teacher/helpedKids.do">我帮助的小朋友</a>
+                    </li>
+                     <li>
+                        <a class="" href="$!request.contextPath/teacher/rewardedPainter.do">我打赏的小画家</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl> -->
+        <!-- <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">我的家问卷</span>
+            </dt>
+            <dd>
+                <ul class="J_questionnaire">
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我已装修</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要装修</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要买房</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我的阳台</a>
+                    </li>
+                 <li>
+	                        <a href="$!request.contextPath/teacher/pointsRule.do">积分规则</a>
+	                   		 </li>
+						</ul>
+					</dd>
+				</dl> -->
+        <div class="line"></div>
+    </div>
+    <div class="personalPage-content fl">
+        
+
+<div class="personalProfilePage">
+   <!--  <div class="section section-preview">
+    <p class="head clearfix">
+        <span class="line fl"></span>
+        <span class="title fl">我的账户信息</span>
+        <a class="fr" href="#">
+            <i class="iconfont icon-xiugaimima"></i>
+            <span>修改密码</span>
+        </a>
+    </p>
+    <div class="body">
+        <div class="form-item first">
+            <label class="label">用户名</label>
+            <span>$!user.user.userInfo.name</span>
+        </div>
+        <div class="form-item">
+            <label class="label">手机号</label>
+            <span>$!user.login</span>
+        </div>
+    </div>
+</div> -->
+    <div class="section mt10">
+        <form class="site-form" data-mode="inline" action="$!request.contextPath/teacher/add.do" method="post">
+            <p class="head clearfix">
+                <span class="line fl"></span>
+                <span class="title fl">我的详细信息</span>
+                <span class="clearfix fr">
+                    <a href="$!request.contextPath/teacher/personalCenter.do">
+                        <span>取消</span>
+                    </a>
+                    <a class="J_save save ml20" href="javascript:void(0);">
+                        <i class="iconfont icon-451xianxingbaocun"></i>
+                        <span>保存并提交审核</span>
+                    </a>
+                </span>
+            </p>
+            <div class="body">
+                <div class="site-form-2">
+    <div class="form-item first" action="$!request.contextPath/teacher/add.do" method="post">
+        <label class="label">* 姓名</label>
+        <div class="input">
+            <input name="name" value="$!teacher.name" autofocus data-valid-require="请填写老师真实姓名" placeholder="请填写老师真实姓名" data-valid-range="姓名长度在2-20位" data-valid-range-min="2" data-valid-range-max="20" class="site-input J_validInput" type="text">
+            <input name="id" value="$!teacher.id" type="hidden" />
+        </div>
+        <div class="tip"></div>
+    </div>
+    <div class="form-item site-upload J_validInput" data-valid-require="请上老师本人的清晰头像" data-valid-control="custom">
+        <label class="label">* 照片</label>
+          <div class="input">
+             <label data-init="$!teacher.thumbnailImg" class="upload site-upload-button" data-preview="true"  data-file-type="image" data-form-data='{"typeimg":"8"}'></label>
+             <input name="img" value="$!teacher.picturetag" type="hidden" />
+          </div>
+        <div class="tip">请上老师本人的清晰头像</div>
+     </div>
+   <div class="form-item">
+                    <label class="label">* 性别</label>
+                    <div class="input">
+                        <select class="site-input J_validInput"  data-valid-require="请选择性别" name="maleStr">
+                            <option value="1" #if($!teacher.male)selected#else#end>男</option>
+                            <option value="2" #if($!teacher.male==false)selected#else#end>女</option>
+                        </select>
+                    </div>
+        			<div class="tip"></div>
+      </div>
+    <div class="form-item">
+        <label class="label">* 民族</label>
+        <div class="input">
+            <input name="nation" value="$!teacher.nation" data-valid-require="请填写民族" data-valid-range="民族长度在1-32位" data-valid-range-min="1" data-valid-range-max="32" class="site-input J_validInput" type="text">
+        </div>
+        <div class="tip"></div>
+    </div>
+    <div class="form-item">
+        <label class="label">* 生日</label>
+        <div class="input">
+            <input name="birthdayStr" value="$!teacher.birthday" id="birthday" onClick="WdatePicker({ maxDate: '%y-%M-%d' })" data-valid-require="请选择生日" class="site-input J_validInput" type="text">
+        </div>
+        <div class="tip"></div>
+    </div>
+    <div class="form-item">
+         <label class="label">* 城市</label>
+          <div class="input">
+             <select id="province" class="site-input J_validInput"  data-init="$!teacher.province" data-valid-require="请选择省份"></select>
+             <select id="city" class="site-input J_validInput ml10" data-init="$!teacher.city"  data-valid-require="请选择城市"></select>
+             <select name="regionStr" id="district" class="site-input J_validInput"  data-init="$!teacher.regionStr"  data-valid-require="请选择地区"></select>
+           </div>
+          <div class="tip"></div>
+     </div>
+    <div class="form-item">
+        <label class="label">* 单位</label>
+        <div class="input">
+            <input name="workUnit" value="$!teacher.workUnit" data-valid-require="请填写单位" data-valid-range="单位长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+        </div>
+        <div class="tip"></div>
+    </div>
+    <div class="form-item">
+        <label class="label">* 联系方式</label>
+        <div class="input">
+            <input name="mobile" value="$!teacher.mobile" data-valid-require="请输入手机号码" data-valid-mobile="请输入正确的手机号码" placeholder="请输入手机号码" class="site-input J_validInput" type="text">
+        </div>
+        <div class="tip"></div>
+    </div>
+    <div class="form-item site-upload J_validInput"  data-valid-control="custom">
+        <label class="label">教师聘书</label>
+        <div class="input">
+            <label data-init="$!teacher.thumbnailCeltyl" class="upload site-upload-button" data-preview="true" data-file-type="image" data-form-data='{"typeimg":"2"}' ></label>
+            <input name="celtyl" value="$!teacher.picturetag" type="hidden" />
+        </div>
+        <div class="tip">请上传教师聘书的清晰照片</div>
+    </div>
+</div>
+
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+            </div>
+        </form>
+    </div>
+
+</div>
+    </div>
+</div>
+#parse("app/painter/reward.html")
+</div>
+
+    <!-- shared section start-->
+   <div class="site-foot">
+   #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "reward,personalCenter/main,personalCenter/profile,area"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

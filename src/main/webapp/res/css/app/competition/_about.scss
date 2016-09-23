@@ -1,0 +1,162 @@
+﻿.competitionAboutPage {
+    .site-body {
+        .banner {
+            height: 298px;
+            background: url(../img/competition/about/about_competition.jpg) no-repeat 50% 50%;
+        }
+
+        .banner-bottom {
+            a {
+                display: block;
+                height: 164px;
+                background-image: url(../img/competition/about/competition_bottom_bg.png);
+            }
+        }
+
+        .wrap {
+            position: relative;
+            text-align: center;
+            font-size: 30px;
+            color: #e9450a;
+            height: 38px;
+            line-height: 38px;
+            padding: 70px 0;
+
+
+            i {
+                position: absolute;
+                left: 470px;
+
+                &.i-1 {
+                    top: 50px;
+                }
+
+                &.i-2 {
+                    top: 60px;
+                }
+
+                &.i-3 {
+                    top: 60px;
+                }
+
+                &.i-4 {
+                    top: 50px;
+                }
+
+                &.i-5 {
+                    top: 60px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                color: #666;
+                line-height: 22px;
+                margin-top: 10px;
+            }
+        }
+
+        .wrap1 {
+            padding-bottom: 20px;
+        }
+
+        .compeSum {
+            text-align: center;
+            width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 42px;
+            border-bottom: 1px dashed #e60044;
+        }
+
+        strong {
+            display: block;
+            font-size: 22px;
+            color: #000;
+        }
+
+        .compeSort {
+            text-align: center;
+            line-height: 40px;
+
+            span {
+                padding-right: 10px;
+            }
+        }
+
+        .greybg {
+            padding-bottom: 30px;
+            background-color: #f7f7f7;
+        }
+
+        .no_border {
+            border-bottom: none;
+        }
+
+        .participation {
+            padding-bottom: 110px;
+
+            img {
+                width:100%;
+            }
+        }
+
+        .pxzd {
+            text-align: center;
+            padding-bottom: 96px;
+            border-bottom: 1px dashed #e60044;
+
+            strong {
+                font-size: 24px;
+            }
+        }
+
+        .prizes {
+            p {
+                line-height: 34px;
+                padding-left: 20px;
+
+                &.title {
+                    font-size: 18px;
+                    color: #62becc;
+                    background: url('../img/competition/about/competition_p_bg.png') no-repeat 0 12px;
+                }
+            }
+
+            padding-bottom: 110px;
+            padding-left: 100px;
+            border-bottom: 1px dashed #e60044;
+        }
+
+        .review {
+            padding-left: 100px;
+
+
+            li {
+                float: left;
+
+                &.liWid {
+                    width: 620px;
+                }
+
+                &.liRight span {
+                    width: 86px;
+                }
+            }
+
+            p {
+                line-height: 35px;
+
+                &.title {
+                    color: #000;
+                }
+
+                span {
+                    display: inline-block;
+                    width: 70px;
+                }
+            }
+
+            padding-bottom: 118px;
+        }
+    }
+}

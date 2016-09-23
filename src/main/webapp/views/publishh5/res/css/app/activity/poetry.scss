@@ -1,0 +1,26 @@
+﻿.poetryPage {
+    font-family: "SimHei ";
+    text-align: center;
+    background: url(../img/activity/poetry/bg.png) 0 0 no-repeat #38556b;
+    background-size: 100%;
+
+    .wrap {
+        margin: 10% auto 10%;
+        position:relative;
+
+        img {
+            width: 85.3%;
+        }
+
+        .poetryOne,.poetryTwo,.poetryThree,.poetryFour {
+            width:85.3%;
+            position:absolute;
+            top:22%;
+            color:#FFF;
+            font-size:18px;
+            line-height:2em;
+            margin-left:7.5%;
+            opacity:0;
+        }
+    }
+}

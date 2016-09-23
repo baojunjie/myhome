@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>个人中心-个人资料</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+</head>
+<body class="site personalPage site-4">
+#parse("_head.html")
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">个人中心</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="site-body">
+    
+
+<div class="personalPage-head">
+    <div class="main site-container">
+        <div class="main-t clearfix">
+               <a class="avatar fl   #if($session.getAttribute('USER_ID')==$!helpchildren.user.id) J_crop #else #end" href="javascript:void(0);">
+                 #if($!user.user.userInfo.img)
+               <img class="J_avatar" src="$!user.user.userInfo.img" />
+               #else
+               <img class="J_avatar" src="$!request.contextPath/res/img/painter.jpg" />
+              #end
+            </a> 
+            <div class="info fl clearfix">
+                <strong class="fl">$!helpchildren.name</strong>
+                <a class="status2 fl ml10" style="color:#f8b300;border:1px solid #f8b300">#if($!helpchildren.status==1)待审核 #elseif($!helpchildren.status==2)审核中 #elseif($!helpchildren.status==3)已认证 #else审核不通过 #end</a>
+                #if($!helpchildren.user.userInfo.type==6)
+                  <a class="status2 fl ml10" href="$!request.contextPath/artist/personalCenter.do?userid=$!helpchildren.user.id">切换成为小画家</a>
+                #else
+                	 #if($session.getAttribute("USER_ID")==$!helpchildren.user.id)
+                 	<a class="status2 fl ml10" href="$!request.contextPath/game/interceptorindex.do">申请成为小画家</a>
+                 	#else
+                 	#end
+                #end 
+            </div>
+            #if($session.getAttribute("USER_ID"))
+                    #if($session.getAttribute("USER_ID")!=$!helpchildren.user.id)
+                    <div class="help help1 fr">
+                    <a class="J_reward clearfix site-button" href="javascript:void(0);">
+                        <i class="fl iconfont icon-iconfontbangzhu"></i>
+                        <span class="fl">我要帮助</span>
+                    </a>
+                    </div>
+                    #else
+                    #end
+            #else
+            <div class="help help1 fr">
+                    <a class="J_reward clearfix site-button" href="javascript:void(0);">
+                        <i class="fl iconfont icon-iconfontbangzhu"></i>
+                        <span class="fl">我要帮助</span>
+                    </a>
+                    </div>
+            #end
+        </div>
+        <div class="des clearfix">
+            <p class="fl clearfix">
+                <strong class="fl">#if($!helpchildren.male==true)男#else女#end丨$!helpchildren.age岁丨$!helpchildren.origin#if($!helpchildren.school!="")丨$!helpchildren.school#else#end丨梦想基金： $!helpchildren.dreamFund元丨<span class="role">幸运小朋友</span></strong>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="personalPage-body site-container clearfix">
+    <div class="personalPage-side fl">
+     #if($session.getAttribute("USER_ID") == $!helpchildren.user.id)
+     #else
+        <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">个人信息</span>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a class="" href="$!request.contextPath/help/personalCenter.do?helpchildrenid=$!helpchildren.id">#if($session.getAttribute("USER_ID")==$!helpchildren.user.id)我的#else他的#end概况</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        #end
+         #if($session.getAttribute("USER_ID") == $!helpchildren.user.id)
+        
+        <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">个人信息</span>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a class="current" href="$!request.contextPath/help/personalCenter/profile.do">详情资料</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        #else
+        #end
+       #if($session.getAttribute("USER_ID") == $!helpchildren.user.id)
+        <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">关系网络</span>
+            </dt>
+            <dd>
+                <ul>
+                	<li>
+                        <a href="$!request.contextPath/help/ireward.do">帮助我的人</a>
+                    </li>
+                     <li>
+                        <a class=""  href="$!request.contextPath/help/helpedKids.do">我帮助的小朋友</a>
+                    </li>
+                     <li>
+                        <a class="" href="$!request.contextPath/help/rewardedPainter.do">我打赏的小画家</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+         <!-- <dl>
+            <dt class="clearfix">
+                <i class="fl iconfont icon-zhengfangxing"></i>
+                <span class="fl">我的家问卷</span>
+            </dt>
+            <dd>
+                <ul class="J_questionnaire">
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我已装修</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要装修</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我要买房</a>
+                    </li>
+                    <li>
+                        <a class="" href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE')>我的阳台</a>
+                    </li>
+                	<li>
+	                        <a href="$!request.contextPath/help/pointsRule.do">积分规则</a>
+	                   		 </li>
+						</ul>
+					</dd>
+				</dl> -->
+				 #else
+		        #end
+		        <dl>
+	            <dt class="clearfix">
+	                <i class="fl iconfont icon-zhengfangxing"></i>
+	                <span class="fl">账户</span>
+	            </dt>
+	            <dd>
+	                <ul>
+	                    <li>
+	                        <a class="current" href="$!request.contextPath/help/accountsReceivable.do?userid=$!helpchildren.user.id">收款账户</a>
+	                    </li>
+	                </ul>
+	            </dd>
+	        </dl>
+        <div class="line"></div>
+    </div>
+    <div class="personalPage-content fl">
+<div class="personalProfilePage accountsReceivablePage">
+
+    <div class="section section-preview">
+        <p class="head clearfix">
+            <span class="line fl"></span>
+            <span class="title fl">收款账户</span>
+        </p>
+        <div class="body">
+            <ul class="clearfix">
+                <li class="alipay fl">
+                    <p>#if($!helpchildren.alipayAccount=="")暂无账号#else  $!helpchildren.alipayAccount #end</p>
+                </li>
+                <li class="wechat fl ml20">
+                    <p>#if($!helpchildren.weChatAccount=="")暂无账号#else $!helpchildren.weChatAccount #end</p>
+                </li>
+                <li class="unionpay fl mt20">
+                    <p>#if($!helpchildren.bankAccount=="")暂无账号#else $!helpchildren.bankAccount #end</p>
+                </li>
+            </ul>
+        </div>    
+    </div>
+</div>
+
+    </div>
+</div>
+#parse("app/luckykids/reward.html")
+</div>
+   <div class="site-foot">
+   #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "reward,personalCenter/main,personalCenter/rewardList"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

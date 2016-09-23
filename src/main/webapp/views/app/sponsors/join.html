@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>赞助商认证</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+   <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+   <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+#parse("_head.html")
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">赞助商认证</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="site-body">
+    
+
+<div class="competitionJoinPage site-container">
+    <form class="site-form" data-mode="inline" action="$!request.contextPath/sponsors/add.do" method="post">
+        <div class="competitionJoinPage-item">
+            <p class="title">填写资料，认证成为赞助商</p>
+            <div class="form">
+             <div class="site-form-2">
+                <div class="form-item first">
+                    <label class="label">* 公司名称</label>
+                    <div class="input">
+                        <input name="companyName" value="$!company.companyName" autofocus data-valid-require="请填写公司名称" placeholder="请填写公司名称" data-valid-range="公司名称长度在2-20位" data-valid-range-min="2" data-valid-range-max="20" class="site-input J_validInput" type="text">
+                        <input name="id" value="$!company.id" type="hidden" />
+                    </div>
+                    <div class="tip"></div>
+                </div>
+                <div class="form-item">
+                    <label class="label">* 联系方式</label>
+                    <div class="input">
+                        <input name="mobile" value="$!company.mobile" data-valid-require="请输入手机号码" data-valid-mobile="请输入正确的手机号码" placeholder="请输入手机号码" class="site-input J_validInput" type="text">
+                    </div>
+                    <div class="tip"></div>
+                </div>
+               
+                <div class="form-item site-upload J_validInput" data-valid-require="请上传公司LOGO的清晰照片" data-valid-control="custom">
+                    <label class="label">* 公司LOGO</label>
+                    <div class="input">
+                        <label data-init="$!company.thumbnailLogo" class="upload site-upload-button" data-preview="true" data-file-type="image" data-form-data='{"typeimg":"5"}' ></label>
+                       <input name="logo" value="$!company.picturetag" type="hidden" />
+                    </div>
+                    <div class="tip">请上传公司LOGO的清晰照片</div>
+                </div>
+                
+                <div class="form-item site-upload J_validInput" data-valid-require="请上传营业执照的清晰照片" data-valid-control="custom">
+                    <label class="label">* 营业执照</label>
+                    <div class="input">
+                        <label data-init="$!company.tBusinessLicense" class="upload site-upload-button" data-preview="true" data-file-type="image" data-form-data='{"typeimg":"6"}'></label>
+                         <input name="businessLicense" value="$!company.picturetag" type="hidden" />
+                    </div>
+                    <div class="tip">请上传营业执照的清晰照片</div>
+                </div>
+                 <div class="form-item">
+                    <label class="label">* 证书类型</label>
+                    <div class="input">
+                        <select class="site-input" name="certificateType">
+                            <option value="1" #if($!company.certificateType==1)selected#else#end>开户许可证</option>
+                            <option value="2" #if($!company.certificateType==2)selected#else#end>税务登记证</option>
+                            <option value="3" #if($!company.certificateType==3)selected#else#end>组织机构代码证</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item site-upload J_validInput" data-valid-require="请上传证书的清晰照片" data-valid-control="custom">
+                    <label class="label">* 证书文件</label>
+                    <div class="input">
+                        <label data-init="$!company.SCertificate" class="upload site-upload-button" data-preview="true" data-file-type="image" data-form-data='{"typeimg":"7"}'></label>
+                        <input name="certificate" value="$!company.picturetag" type="hidden" />
+                    </div>
+                    <div class="tip">请上传证书的清晰照片</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-primary" type="submit" value="提交资料">
+        </div>
+    </form>
+</div>
+
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+</div>
+
+    <!-- shared section start-->
+    <div class="site-foot">
+     #parse("_footer.html")
+</div>
+   #parse("footer.html")
+    <script>
+        var siteConfig = {
+            personalCenter: {
+                url: "/views/app/user/index.html"
+            },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: ""
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

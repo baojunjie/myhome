@@ -1,0 +1,94 @@
+﻿.personalProfilePage {
+    .section {
+        padding: 22px 25px 22px 60px;
+        background: white;
+
+        .head {
+            .title {
+                color: black;
+                font-weight: normal;
+                font-size: 16px;
+                margin-left: 10px;
+            }
+
+            .line {
+                width: 4px;
+                height: 16px;
+                margin-top: 4px;
+                background: #92c3ff;
+            }
+
+            a {
+                color: #ccc;
+                font-size: 14px;
+            }
+
+            .save {
+                color: #92c3ff;
+            }
+        }
+
+        .body {
+            font-size: 14px;
+            padding-top: 25px;
+        }
+    }
+
+    .section-preview {
+        .form-item {
+            @extend .clearfix;
+            margin-top: 12px;
+
+            &.first {
+                margin-top: 0;
+            }
+
+            .label {
+                float: left;
+                text-align: right;
+                width: 90px;
+            }
+
+            span {
+                float: left;
+                color: black;
+                width: 600px;
+                margin-left: 26px;
+            }
+
+            img {
+                width: 90px;
+            }
+        }
+    }
+}
+
+.sponsorPersonalProfilePage {
+    .section {
+        .form-item {
+            .label {
+                width: 98px;
+            }
+        }
+    }
+}
+
+.kidsPersonalProfilePage {
+    .section {
+        .form-item {
+            .label {
+                width: 110px;
+            }
+        }
+    }
+}
+
+.painterPersonalProfilePage {
+    .section {
+        .form-item {
+            .label {
+                width: 112px;
+            }
+        }
+    }
+}

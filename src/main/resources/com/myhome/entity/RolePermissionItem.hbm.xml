@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="RolePermissionItem" table="t_role_permission_item" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <many-to-one name="role" class="Role" column="role_id" cascade="save-update" />
+        
+        <many-to-one name="permission" class="Permission" column="permission_id" cascade="save-update" />
+        
+    </class>
+</hibernate-mapping>

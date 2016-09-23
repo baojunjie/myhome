@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.myhome.entity">
+	<class name="MyBalcony" table="t_my_balcony" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<property name="balconyImg" column="balcony_img" type="string" />
+		
+		<property name="balconyImgThum" column="balcony_img_thum" type="string" />
+		
+		<property name="balconyFunction" column="balcony_function" type="integer" />
+		
+		<property name="balconyStyle" column="balcony_style" type="integer" />
+		
+		<property name="diy" column="diy" type="integer" />
+		
+		<property name="spend" column="spend" type="integer" />
+
+		<many-to-one name="region" class="Region" column="region_id" cascade="none" lazy="false" />
+
+		<many-to-one name="user" class="User" column="user_id" cascade="none" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

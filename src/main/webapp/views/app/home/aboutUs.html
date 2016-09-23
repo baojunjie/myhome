@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>关于我们</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site aboutUsPage site-4">
+#parse("_head.html")
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">关于我们</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="site-body">
+<div>
+    <div class="banner"></div>
+    <div class="content site-container">
+        <div class="nav">
+            <ul class="clearfix">
+                <li class="fl">关于我们</li>
+                <li class="fl">联系我们</li>
+                <li class="fl last">意见反馈</li>
+            </ul>
+        </div>
+        <div class="article">
+            <div class="section" id="about">
+                <div class="section-content">
+                    <p>
+                        <span class="pre mr5">
+                            <img src="$!request.contextPath/res/img/home/aboutUs/p.jpg" />
+                        </span>
+                        我的家-全国少年儿童绘画大赛是由中国青少年发展服务中心、中国青少年发展服务国际交流中心、中国少年儿童书画院主办，由杭州构家网络科技有限公司、北京燕园大井文化传播有限公司承办的面向全国3-12岁少年儿童的公益性绘画比赛。该比赛更是能让小朋友帮助小朋友的公益计划，我们希望通过互联网平台，连接需要帮助的小朋友、爱心小朋友、社会公益行动者、公益理念传播者，使小朋友不仅仅可以拿作品参赛，还能以此帮助有困难的小朋友，从小培养他们的大爱意识，让公益事业与中国少年儿童艺术共同发展。
+                        <span class="end">
+                            <img src="$!request.contextPath/res/img/home/aboutUs/p.jpg" />
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="section" id="contact">               
+                <div class="section-content">
+                    <div class="clearfix item">
+                        <span>地址：</span>
+                        <p>北京市海淀区车道沟1号青东商务区A座东9层909</p>
+                    </div>
+                    <div class="clearfix item">
+                        <span>电话：</span>
+                        <p>010-58409516</p>
+                    </div>
+                    <div class="clearfix item">
+                        <span>邮箱：</span>
+                        <p><a href="mailto:wdj6161@126.com">wdj6161@126.com</a></p>
+                    </div>
+                    <div class="clearfix item">
+                        <span>网站：</span>
+                        <p><a href="http://www.haaaaaa.com">www.haaaaaa.com</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.cydev.org">www.cydev.org</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ccpci.org.cn">www.ccpci.org.cn</a></p>                        
+                    </div>
+                    <div class="clearfix item">
+                        <span>邮编：</span>
+                        <p>100005</p>
+                    </div>
+                    <div class="clearfix QRcode mt30">
+                        <div class="fl">
+                            <img src="$!request.contextPath/res/img/home/aboutUs/app.jpg" />
+                            <p class="mt10">我的家<span class="mark">APP下载</span>二维码</p>
+                        </div>
+                        <div class="fl ml50">
+                            <img src="$!request.contextPath/res/img/home/aboutUs/wechat.jpg" />
+                            <p class="mt10">我的家<span class="mark">官方微信</span>二维码</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="feedback">               
+                <div class="section-content">
+                    <p>如果您对网站有任何的建议或意见，可以通过以下方式来跟我们联系，感谢您的支持！</p>
+                    <div class="clearfix item">
+                        <span>电话：</span>
+                        <p>010-58409516</p>
+                    </div>
+                    <div class="clearfix item">
+                        <span>邮箱：</span>
+                        <p><a href="mailto:wdj6161@126.com">wdj6161@126.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+</div>
+    <!-- shared section start-->
+     <div class="site-foot">
+   #parse("_footer.html")
+</div>
+    #parse("footer.html")
+    <script>
+        var siteConfig = {
+        	personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+            },
+            works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+            },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: ""
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

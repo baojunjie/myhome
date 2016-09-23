@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Pragma" content="no-cache"></meta>
+<meta http-equiv="Cache-Control" content="no-cache"></meta>
+<title>用户登录</title>
+<link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon"
+	href="$!request.contextPath/favicon.ico">
+<script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-2">
+
+
+	<div class="site-head">
+		<div class="site-container clearfix">
+			<div class="site-head-l">
+				<h1 class="logo">
+					<a href="$!request.contextPath/home/index.do">我的家</a>
+				</h1>
+				<div class="text clearfix">
+					<span class="divide"></span> <span class="title">用户登录</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="site-body site-container ">
+
+
+		<div class="loginPage clearfix">
+			<div class="view"></div>
+			<div class="site-box box">
+				<p class="title clearfix">
+					<span>登录我的家</span>
+				</p>
+				<div class="site-form">
+					<form action="$!request.contextPath/login/authentication/login.do"
+						method="post">
+						<div class="site-form-item">
+							<label class="iconfont icon-yonghuicon"></label> <span
+								class="line"></span>
+							<div class="input">
+								<input placeholder="用户名/手机号" autofocus
+									data-valid-server="$!result" data-valid-require="请输入用户名或手机号"
+									name="mobile" class="site-input J_validInput" type="text"
+									value="$!mobile" />
+							</div>
+						</div>
+						<div class="site-form-item mt40">
+							<label class="iconfont icon-cipher"></label> <span class="line"></span>
+							<div class="input">
+								<input placeholder="密码" autofocus data-valid-server="$!result"
+									data-valid-require="请输入密码" name="password"
+									class="site-input J_validInput" type="password" />
+							</div>
+						</div>
+						<div class="site-form-action mt40">
+							<!-- <a href="$!request.contextPath/mobile/qqauthentication/callBack.do">QQ登录</a>
+                     <a href >微博登录</a>
+                     <a href >微信登录</a> -->
+							<input class="site-button site-button-primary" type="submit"
+								value="登  录" />
+						</div>
+					</form>
+				</div>
+				<div class="otherLogin">
+					<div class="otherLoginTop clearfix">
+						<div class="line fl"></div>
+						<div class="fl title">其他方式登录</div>
+						<div class="line fl"></div>
+					</div>
+					<div class="otherLoginCon">
+						<ul class="clearfix">
+							<li><a class="QQ" href="$!request.contextPath/qqauthentication/apply.do"></a></li>
+							<li><a class="wechat" href="$!request.contextPath/weixin/authentication/apply.do"></a></li>
+						<li><a class="weibo" href="$!request.contextPath/web/weibo/authentication/apply.do"></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<p class="boxBottom">
+					<a
+						href="$!request.contextPath/login/authentication/registerindex.do">注册新账号</a>
+					<span>|</span> <a
+						href="$!request.contextPath/login/authentication/resetindex.do">忘记密码</a>？
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="site-foot">#parse("_footer.html")</div>
+	#parse("footer.html")
+	<!-- shared section start-->
+
+	<script>
+		var siteConfig = {
+				personalCenter: {
+	                kidsUrl: "$!request.contextPath/help/personalCenter.do",
+	                userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+	                teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+	                painterUrl: "$!request.contextPath/artist/personalCenter.do"
+	            },
+	            works: {
+	                detailUrl: "$!request.contextPath/works/worksinfo.do"
+	            },
+			fileUrl : "",
+			resUrl : "$!request.contextPath/res",
+			serverUrl : "$!request.contextPath",
+			app : "user/login"
+		};
+	</script>
+	<script data-main="$!request.contextPath/res/js/init"
+		src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+	<!-- shared section end-->
+	<!--百度统计-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</body>
+</html>

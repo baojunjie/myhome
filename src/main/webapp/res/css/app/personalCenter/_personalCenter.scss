@@ -1,0 +1,198 @@
+﻿.personalPage {
+    .site-body {
+        padding: 0;
+    }
+
+    &-head {
+        min-height: 240px;
+        background: url(../img/personalCenterBanner.jpg) no-repeat 50% 0;
+
+        .main {
+            padding-top: 95px;
+
+            .avatar {
+                width: 180px;
+                height: 180px;
+                padding: 2px;
+                border-radius: 50%;
+                overflow: hidden;
+                background: white;
+
+                img {
+                    width: 178px;
+                    height: 178px;
+                    border-radius: 50%;
+                }
+            }
+
+            .info {
+                margin: 86px 0 0 30px;
+
+                strong {
+                    font-size: 34px;
+                    color: white;
+                }
+
+                a {
+                    font-size: 14px;
+                    color: white;
+                    padding: 3px 9px;
+                    margin-top: 14px;
+                    background: #92c3ff;
+                    border-radius: 15px;
+                }
+
+                .status1 {
+                    color: #f8b300;
+                    background: rgba(102,102,102,0.3);
+                    border: 1px solid #f8b300;
+                }
+
+                .status2 {
+                    color: #d9d9d9;
+                    background: rgba(102,102,102,0.3);
+                    border: 1px solid #ccc;
+                }
+            }
+
+            .help {
+                margin-top: 96px;
+
+                a {
+                    color: #666;
+                    width: 104px;
+                    height: 37px;
+                    background: white;
+
+                    i {
+                        font-size: 22px;
+                        margin: 1px 0 0 14px;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        margin: 10px 0 0 7px;
+                    }
+
+                    &:hover {
+                        background: #f2f2f2;
+                    }
+                }
+            }
+
+            .help1 {
+                a {
+                    i {
+                        font-size: 30px;
+                        margin: -3px 0 0 8px;
+                    }
+
+                    span {
+                        margin: 10px 0 0 5px;
+                    }
+                }
+            }
+
+            .des {
+                font-size: 14px;
+                height: 50px;
+                line-height: 50px;
+                margin-top: -38px;
+                padding: 0 20px 0 216px;
+                background: white;
+
+                p {
+                    .role {
+                        color: #f8b300;
+                    }
+
+                    a {
+                        color: #b2b2b2;
+
+                        i {
+                            font-size: 12px;
+                        }
+
+                        span {
+                            margin-left: 2px;
+                        }
+                    }
+                }
+
+                .site-button {
+                    width: 79px;
+                    height: 37px;
+                    line-height: 37px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+
+    &-body {
+        padding: 20px 0 40px;
+    }
+
+    &-side {
+        position: relative;
+        width: 186px;
+        padding: 5px 0 25px;
+        background: white;
+
+        dl {
+            margin-top: 20px;
+        }
+
+        dt {
+            color: black;
+            padding-left: 29px;
+
+            i {
+                font-size: 12px;
+                color: #ccc;
+                line-height: 22px;
+            }
+
+            span {
+                padding-left: 18px;
+            }
+        }
+
+        ul {
+            padding-left: 60px;
+        }
+
+        li {
+            margin-top: 8px;
+
+            a {
+                color: #666;
+                font-size: 14px;
+
+                &.current {
+                    border-bottom: 1px solid #92c3ff;
+                }
+            }
+
+            i {
+                font-size: 14px;
+                color: #e8440a;
+                margin-left: 5px;
+            }
+        }
+
+        .line {
+            position: absolute;
+            right: 0;
+            top: 30px;
+            bottom: 30px;
+            width: 1px;
+            background: #dedfe0;
+        }
+    }
+
+    &-content {
+        width: 1004px;
+        margin-left: 10px;
+    }
+}

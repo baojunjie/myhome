@@ -1,0 +1,99 @@
+﻿.uploadPage {
+    .personalPage-head .des .site-button {
+        display: none;
+    }
+
+    .bulkUploadPage {
+        padding: 96px 84px 106px 90px;
+        background: #FFF;
+
+        .head {
+            padding-left: 70px;
+
+            .line {
+                width: 4px;
+                height: 16px;
+                background: #92c3ff;
+                margin: 4px 10px 0 0;
+            }
+
+            .title {
+                color: #000;
+            }
+        }
+
+        .read {
+            color: #969899;
+            padding-left: 84px;
+            margin-bottom: 50px;
+
+            a {
+                color: #2ec0fb;
+            }
+        }
+
+        .process {
+            position: relative;
+
+            .control {
+                position: absolute;
+                top: 50%;
+                width: 56px;
+                height: 106px;
+                margin-top: -53px;
+                background: no-repeat;
+            }
+
+            .control-preview {
+                left: 0;
+                background-image: url(../img/teacher/preview.png);
+
+                &:hover {
+                    background-image: url(../img/teacher/previewhover.png);
+                }
+            }
+
+            .control-next {
+                right: 0;
+                background-image: url(../img/teacher/next.png);
+
+                &:hover {
+                    background-image: url(../img/teacher/nexthover.png);
+                }
+            }
+
+            ul {
+                width: 693px;
+                overflow: hidden;
+                margin-left: 70px;
+
+                li {
+                    position: relative;
+                    height: 376px;
+                    background: no-repeat;
+
+                    &.first {
+                        background-image: url('../img/teacher/process-one.jpg');
+                    }
+
+                    &.second {
+                        background-image: url('../img/teacher/process-two.jpg');
+                    }
+
+                    &.three {
+                        background-image: url('../img/teacher/process-three.jpg');
+                    }
+
+                    &.four {
+                        background-image: url('../img/teacher/process-four.jpg');
+                    }
+                }
+            }
+        }
+
+        .action {
+            margin-top: 60px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,243 @@
+﻿.competitionActivityPage {
+
+    .banner {
+        position: relative;
+
+        .control {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            width: 80px;
+            height: 106px;
+            margin-top: -53px;
+            background: no-repeat;
+        }
+
+        .control-preview {
+            left: 80px;
+            background-image: url(../img/home/preview1.png);
+        }
+
+        .control-next {
+            right: 80px;
+            background-image: url(../img/home/next1.png);
+        }
+
+        li {
+            position: relative;
+            height: 300px;
+            background: no-repeat 50% 50%;
+
+            &.first {
+                background-image: url('../img/competition/activity/banner01.jpg');
+
+                a {
+                    background: #2ec0fb;
+                }
+            }
+
+            &.second {
+                background-image: url('../img/competition/activity/banner02.jpg');
+
+                a {
+                    margin: 180px 0 0 660px;
+                }
+
+                .disabled {
+                    cursor: default;
+                    background: #999;
+                    width: 140px;
+                }
+            }
+        }
+
+        .action {
+            a {
+                width: 118px;
+                margin: 192px 0 0 430px;
+                color: white;
+                display: block;
+                border-radius: 19px;
+                height: 38px;
+                line-height: 38px;
+                text-align: center;
+                background: #ff4e00;
+            }
+        }
+    }
+
+    .content {
+        font-size: 18px;
+        line-height: 44px;
+        text-align: center;
+
+        div {
+            box-sizing: border-box;
+        }
+
+        .summary {
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            .site-container {
+                height: 596px;
+                background: url(../img/competition/divisionevent/title.png) no-repeat 50% 50%;
+            }
+        }
+
+
+        .eventsGallery {
+            padding-bottom: 110px;
+            text-align: left;
+            background: #e9edf0;
+
+            .site-container {
+                background: url(../img/competition/divisionevent/eventsGalleryBg.gif) repeat-y center 0;
+                padding-bottom: 100px;
+                padding-top: 160px;
+
+                ul {
+                    &.ulleft {
+
+                        li {
+
+                            .arrow {
+                                right: 0;
+                                background-image: url(../img/competition/divisionevent/arrowLeft.png);
+                            }
+                        }
+                    }
+
+                    &.ulright {
+                        margin-left: -10px;
+
+                        li {
+
+                            .arrow {
+                                left: 0;
+                                background-image: url(../img/competition/divisionevent/arrowRight.png);
+                            }
+
+                            .box {
+                                margin-left: 37px;
+                            }
+                        }
+                    }
+
+
+                    li {
+                        position: relative;
+                        margin-top: 100px;
+                        width: 605px;
+
+                        .box {
+                            width: 568px;
+                            overflow:hidden;
+                            background: white;
+                            box-shadow: 0 0 8px #b9b9b9;
+
+                            .boxHd {
+                                padding: 30px;
+                                color: #999;
+                                line-height: 14px;
+                                font-size: 10px;
+
+                                .hour {
+                                    font-size: 26px;
+                                    font-weight: bold;
+                                    color: #333;
+                                    line-height: 30px;
+                                    margin-right: 10px;
+                                }
+
+                                .type {
+                                    margin-top: 3px;
+                                }
+                            }
+
+                            .boxBy {
+                                position: relative;
+
+                                &:hover {
+                                    div {
+                                        display: block;
+                                    }
+                                }
+
+                                div {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 568px;
+                                    height: 425px;
+                                    background: url(../img/competition/pastReview/videobg.png) repeat;
+
+                                    a {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        line-height: 25px;
+                                        margin-top: -12px;
+                                        margin-left: -18px;
+                                    }
+                                }
+                            }
+
+                            .boxFt {
+                                a {
+                                    color: #333;
+                                }
+
+                                padding: 20px 30px 32px;
+                                line-height: 30px;
+                                font-size: 14px;
+                                text-align: left;
+                            }
+                        }
+
+                        .arrow {
+                            position: absolute;
+                            top: 26px;
+                            width: 37px;
+                            height: 20px;
+                            background: no-repeat;
+                        }
+
+                        &.first {
+                            margin-top: 0;
+                        }
+                        /*&.datatimeNode {
+                            top: 1734px;
+                            left: 515px;
+                            width: 170px;
+                            height: 26px;
+                            line-height: 26px;
+                            border-radius: 13px;
+                            background: #c7c7c7;
+                            color: white;
+
+                            span {
+                                display: block;
+                                width: 10px;
+                                height: 30px;
+                                margin: 0 auto;
+                                background: url(../img/competition/divisionevent/arrowRight.png) 0 13px no-repeat;
+                            }
+                        }*/
+                    }
+                }
+            }
+
+            .endMessage {
+                width: 1200px;
+                margin: 0 auto;
+                height: 100px;
+                line-height: 100px;
+                background: white;
+                text-align: center;
+            }
+        }
+    }
+}

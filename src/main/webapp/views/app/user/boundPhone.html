@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>绑定手机号</title>
+    <meta name="keywords" content="少儿绘画,儿童绘画,全国少儿绘画,全国儿童绘画,少儿绘画大赛,儿童绘画作品" />
+    <meta name="description" content="我的家-全国少年儿童绘画大赛，面向全国3 -12岁少年儿童的公益性绘画比赛。使小朋友不仅仅可以拿作品参赛,还能以此帮助有困难的小朋友,从小培养他们的大爱意识,让公益事业与中国少年儿童艺术共同发展。" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-1">
+    
+
+
+
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">绑定手机号</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container site-box">
+    
+
+<div class="registerPage boundPhone clearfix">
+	<div class="fl user  #if($!type==3) #else none #end">
+    <p class="title mt20">
+                             请绑定手机号
+    </p>
+     <div class="img mt40">
+            <a href="#">
+                <img class="J_imageAdapt" src="$!url" />
+            </a>
+            <p class="mt5">$!name</p>
+        </div>
+    </div>
+    <div class="site-form site-form-1  fl" data-auto-parse="false">
+        <form data-mode="inline" action="$!request.contextPath/weixin/authentication/bingding.do" method="post">
+            <input name="login" value="$!login" type="hidden" /> 
+            <input name="type" value="$!type" type="hidden" /> 
+            <input name="name" value="$!name" type="hidden" /> 
+            <input name="url" value="$!url" type="hidden" /> 
+            <div class="site-form-item first">
+                <div class="input">
+                    <input id="mobile" name ="mobile" placeholder="手机号" data-valid-require="请输入手机号码" data-valid-mobile="手机号码格式不正确" data-valid-remote-action="focusout" data-valid-remote-params="mobile" class="site-input J_validInput" type="text" />
+                </div>
+                <div class="tip"></div>
+            </div>
+            <div class="site-form-item site-form-code">
+                
+                <div class="input">
+                    <input id="code" name="code" placeholder="验证码" data-valid-require="请输入验证码" data-valid-remote="验证码不正确" data-valid-remote-params="verificationCode" data-valid-remote-params-other="" data-valid-remote-action="submit" data-valid-remote-url="/login/authentication/checkcode.do" class="site-input J_validInput" type="text" />
+                    <input id="btnSendCode" type="button" class="site-button site-button-gray" value="获取验证码" />
+                </div>
+                <div class="tip"></div>
+            </div>          
+            <div class="site-form-item site-form-action mt30">
+                <input class="site-button site-button-primary" type="submit" value="绑 定" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="site-foot">
+ #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            url: "$!request.contextPath",
+            app: "user/checkCode"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

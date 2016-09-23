@@ -1,0 +1,24 @@
+﻿.Page500 { 
+    .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 440px;
+        height: 380px;
+        margin-left: -220px;
+        margin-top: -190px;
+        background: url(../img/500.jpg) no-repeat;
+
+        a {
+            position:absolute;
+            top:266px;
+            left:8px;
+            width:144px;
+            height:38px;
+            line-height:38px;
+            text-align:center;
+            border:1px solid #95c0fb;
+            border-radius:50px;
+        }
+    }
+}

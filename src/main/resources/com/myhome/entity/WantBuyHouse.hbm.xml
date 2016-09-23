@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.myhome.entity">
+    <class name="WantBuyHouse" table="t_want_buy_house" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <property name="orderTag" column="order_tag" type="integer" />
+
+        <property name="name" column="name" type="string" />
+
+        <property name="houseType" column="house_type" type="string" />
+
+        <property name="purchaseTime" column="purchase_time" type="date" />
+        
+        <property name="purchasingBudget" column="purchasing_budget" type="integer" />
+        
+        <property name="houseForSale" column="house_for_sale" type="integer" />
+        
+        <property name="area" column="area" type="integer" />
+
+        <many-to-one name="region" class="Region" column="region_id" cascade="none" lazy="false"/>
+
+        <many-to-one name="user" class="User" column="user_id" cascade="none" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

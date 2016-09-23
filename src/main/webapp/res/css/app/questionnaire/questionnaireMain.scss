@@ -1,0 +1,405 @@
+﻿@media only screen and (min-device-width : 800px) {
+    .questionnairePage {
+        .successBoxWrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .successBox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -284px;
+                margin-top: -100px;
+                width: 570px;
+                height: 200px;
+                line-height: 32px;
+                background: #FFF;
+                padding: 60px 100px 0;
+                text-align: center;
+                border-radius: 4px;
+
+                .close {
+                    position: absolute;
+                    top: 20px;
+                    right: 32px;
+
+                    i {
+                        font-size: 36px;
+                        color: #666;
+                        width: 36px;
+                    }
+
+                    &:hover i {
+                        color: #f4480a;
+                    }
+                }
+
+                h2 {
+                    font-size: 30px;
+                }
+
+                .mobile {
+                    display: none;
+                }
+
+                .wechat {
+                    text-align: center;
+                    padding: 26px 0;
+
+                    img {
+                        display: inline-block !important;
+                    }
+                }
+
+                span {
+                    color: #ec5143;
+                }
+
+                .action {
+                    margin-top: 45px;
+
+                    a {
+                        width: 180px;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+
+        background: #fe1e52;
+
+        .banner {
+            height: 564px;
+            background: url(../img/questionnaire/top.gif) no-repeat 50% 50%;
+        }
+
+        .nav {
+            width: 100%;
+            height: 80px;
+            padding-top: 1px;
+            background: url(../img/questionnaire/nav/bg.png) repeat-x;
+
+            li {
+                float: left;
+                margin-left: 32px;
+
+                &.first {
+                    margin: 0;
+                }
+
+                a {
+                    display: block;
+                    height: 78px;
+                    width: 275px;
+                    background: no-repeat 0 0;
+                }
+            }
+
+            .nav-renovated a {
+                background-image: url(../img/questionnaire/nav/renovated.jpg);
+
+                &.active {
+                    background-image: url(../img/questionnaire/nav/renovated-active.jpg);
+                }
+            }
+
+            .nav-wantRenovate a {
+                background-image: url(../img/questionnaire/nav/wantRenovate.jpg);
+
+                &.active {
+                    background-image: url(../img/questionnaire/nav/wantRenovate-active.jpg);
+                }
+            }
+
+            .nav-buyHouse a {
+                background-image: url(../img/questionnaire/nav/buyHouse.jpg);
+
+                &.active {
+                    background-image: url(../img/questionnaire/nav/buyHouse-active.jpg);
+                }
+            }
+
+            .nav-mybalcony a {
+                background-image: url(../img/questionnaire/nav/mybalcony.jpg);
+
+                &.active {
+                    background-image: url(../img/questionnaire/nav/mybalcony-active.jpg);
+                }
+            }
+        }
+
+        .content {
+            width: 1068px;
+            background: white;
+            padding: 84px 0 160px 132px;
+            margin: 36px auto 110px;
+
+            h1 {
+                width: 504px;
+                height: 70px;
+                font-size: 26px;
+                font-weight: normal;
+                color: #FFF;
+                line-height: 70px;
+                text-align: center;
+                margin-left: 216px;
+                background: url(../img/questionnaire/heading.gif) no-repeat;
+            }
+
+            form {
+                .formcontent {
+                    border-left: 1px solid #ffe1df;
+                }
+
+                h2 {
+                    position: relative;
+                    font-size: 22px;
+                    font-weight: normal;
+                    height: 44px;
+                    color: #6a0402;
+                    padding-left: 20px;
+                    margin-top: 50px;
+                    margin-bottom: 40px;
+
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: -41px;
+                        float: left;
+                        width: 42px;
+                        height: 44px;
+                        line-height: 30px;
+                        color: #FFF;
+                        text-align: center;
+                        font-size: 22px;
+                        font-weight: bold;
+                        background: url(../img/questionnaire/title.png) no-repeat;
+                    }
+                }
+
+                .item {
+                    font-size: 18px;
+                    color: #666;
+                    padding-left: 86px;
+
+
+                    label {
+                        float: left;
+                        width: 110px;
+                        height: 36px;
+                        line-height: 36px;
+
+                        i {
+                            color: #fe1e52;
+                        }
+                    }
+
+                    .input {
+                        float: left;
+
+                        .site-input {
+                            color: #6a0402;
+                            width: 162px;
+                            padding: 5px 8px;
+                            border-radius: 4px;
+                        }
+
+                        .site-input2 {
+                            width: 566px;
+                        }
+
+                        .site-btn {
+                            box-sizing: content-box;
+                            display: block;
+                            width: 54px;
+                            height: 36px;
+                            line-height: 36px;
+                            color: #e95c49;
+                            padding: 0;
+                            font-size: 16px;
+                            text-align: left;
+                            padding-left: 42px;
+                            border: none;
+                            background: url(../img/questionnaire/wantRenovate/add.png) 20px 10px no-repeat #f5edeb;
+                        }
+
+                        select {
+                            &.site-input {
+                                width: 178px;
+                                padding: 5px 8px;
+                            }
+
+                            &.site-input2 {
+                                width: 354px;
+                            }
+                        }
+
+                        .area1 {
+                            height: 136px;
+                        }
+
+                        .area2 {
+                            height: 202px;
+                        }
+                    }
+
+                    .des {
+                        float: left;
+                        height: 36px;
+                        line-height: 36px;
+                        color: #999;
+                        font-size: 16px;
+                        margin-left: 10px;
+                    }
+
+                    .tip {
+                        clear: both;
+                        height: 30px;
+                        line-height: 30px;
+                        color: #fe1e52;
+                        font-size: 12px;
+                        padding-left: 114px;
+                    }
+
+                    .radio {
+                        margin-right: 10px;
+                    }
+
+                    ul {
+                        width: 730px;
+
+                        li {
+                            float: left;
+                            margin-right: 18px;
+                            width: 220px;
+
+                            &.meishiwang {
+                                width: 162px;
+                                margin-bottom: 30px;
+                            }
+
+                            .pic {
+                                border: 3px solid #ffe1df;
+                                border-radius: 4px;
+                            }
+
+                            .des {
+                                width: 220px;
+                                height: 60px;
+                                line-height: 60px;
+                                text-align: center;
+                                margin-left: 0;
+
+                                label {
+                                    float: none;
+                                    color: #6a0402;
+                                }
+                            }
+                        }
+                    }
+
+                    .introduce {
+                        width: 692px;
+                        font-size: 16px;
+                        line-height: 32px;
+                    }
+                }
+
+                .item1 {
+                    label {
+                        width: 380px;
+
+                        &.red {
+                            color: #6a0402;
+                        }
+                    }
+
+                    .input {
+                        height: 36px;
+                        line-height: 36px;
+                        color: #6a0402;
+
+                        label {
+                            float: none;
+                        }
+                    }
+                }
+
+                .line {
+                    width: 692px;
+                    height: 1px;
+                    background: #ffe1df;
+                    margin: 4px 0 34px 86px;
+                }
+
+                h3 {
+                    color: #6a0402;
+                    font-size: 18px;
+                    font-weight: normal;
+                    margin-left: 86px;
+                    margin-bottom: 26px;
+                }
+
+                .designer {
+                    margin-left: 26px;
+                }
+
+                .site-button-red {
+                    font-size: 22px;
+                    color: white;
+                    width: 468px;
+                    height: 54px;
+                    line-height: 54px;
+                    background: #fe0909;
+                    margin-top: 110px;
+                    margin-left: 232px;
+                }
+            }
+        }
+
+        .wantRenovate {
+            form h3 {
+                font-size: 16px;
+            }
+
+            form .gifts {
+                label {
+                    width: auto;
+                }
+
+                .site-input {
+                    width: 212px;
+                }
+
+                .tip {
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .mybalcony {
+            form .hard {
+                .input {
+                    line-height: 48px;
+
+                    label {
+                        float: none;
+                        color: #6a0402;
+                        font-size: 16px;
+                        margin-right: 60px;
+                    }
+                }
+            }
+        }
+    }
+}

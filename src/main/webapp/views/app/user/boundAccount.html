@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>绑定账号</title>
+    <meta name="keywords" content="少儿绘画,儿童绘画,全国少儿绘画,全国儿童绘画,少儿绘画大赛,儿童绘画作品" />
+    <meta name="description" content="我的家-全国少年儿童绘画大赛，面向全国3 -12岁少年儿童的公益性绘画比赛。使小朋友不仅仅可以拿作品参赛,还能以此帮助有困难的小朋友,从小培养他们的大爱意识,让公益事业与中国少年儿童艺术共同发展。" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-1">
+    
+
+
+
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">绑定账号</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container site-box">
+    
+
+<div class="registerPage boundPhone">
+    <p class="title">
+        <strong>绑定账号</strong>
+    </p>
+    <div class="site-form site-form-1" data-auto-parse="false">
+        <form data-mode="inline" action="$!request.contextPath/weixin/authentication/add.do" method="post">
+            <input name="mobile" value="$!mobile" type="hidden" /> 
+            <input name="login" value="$!login" type="hidden" /> 
+            <input name="type" value="$!type" type="hidden" /> 
+            <div class="site-form-item">
+               
+                <div class="input">
+                    <input placeholder="用户名" name="name" data-valid-custom="用户名只能由汉字、字母、数字、下划线组成并且不能以数字开头" data-valid-custom-regex="^([a-z_\u4e00-\u9fa5]+([a-z_\u4e00-\u9fa50-9])*)$" data-valid-custom-regex-flag="i" data-valid-require="请输入用户名" data-valid-range="用户名长度只能在4-20位字符之间" data-valid-range-min="4" data-valid-range-max="20" data-valid-remote="用户名已存在" data-valid-remote-url="/login/authentication/checkname.do" data-valid-remote-params="usename" data-valid-range-type="string" class="site-input J_validInput" type="text" />
+                </div>
+                <div class="tip">4-20位字符，支持字母、汉字、数字、下划线并且不能以数字开头</div>
+            </div>            
+            <div class="site-form-item">
+               
+                <div class="input">
+                    <input id="password"  name="password" placeholder="密码" data-valid-require="请输入密码" data-valid-range="密码长度4～15位" data-valid-range-min="4" data-valid-range-max="15" class="site-input J_validInput" type="password" />
+                </div>
+                <div class="tip">密码长度4～15位，字母区分大小写</div>
+            </div> 
+            <div class="site-form-item">
+                
+                <div class="input">
+                    <input  placeholder="密码" data-valid-require="请再次输入密码" data-valid-equal="两次输入的密码不一致" data-valid-equal-to="#password" data-valid-range="密码长度4～15位" data-valid-range-min="4" data-valid-range-max="15" class="site-input J_validInput" type="password" />
+                </div>
+                <div class="tip">请再次输入密码</div>
+            </div>          
+            <div class="site-form-item site-form-action">
+                <input class="site-button site-button-primary" type="submit" value="完成" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="site-foot">
+      #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            url: "$!request.contextPath",
+            app: "user/checkCode"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

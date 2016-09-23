@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>诗意的日子</title>
+    <link href="$!request.contextPath/views/publishh5/res/css/main.css" rel="stylesheet" />
+    <script src="$!request.contextPath/views/publishh5/res/js/rem.js"></script>
+</head>
+<body class="poetryPage">
+    
+<div class="wrap">
+    <img src="$!request.contextPath/views/publishh5/res/img/activity/poetry/days.png" id="days" />
+    <img src="$!request.contextPath/views/publishh5/res/img/activity/poetry/textbg.png" id="textbg" class="none" />
+    <div class="poetryOne">
+        <p>我的院子里有一片星空</p>
+        <p>每当我低头</p>
+        <p>星星就堆积在我的脚旁</p>
+        <p>我的夜晚总有些轻风</p>
+        <p>那些遥远的密语</p>
+    </div>
+    <div class="poetryTwo">
+        <p>与海浪乘风而至我的耳边</p>
+        <p>我低着头细听</p>
+        <p>数着脚旁瞌睡了的星星</p>
+        <p>我有些老了，却还在成长</p>
+        <p>像孩子那样成长</p>
+    </div>
+    <div class="poetryThree">
+        <p>偶尔迷茫，偶尔忧伤</p>
+        <p>偶尔乐不可支，对未来充满憧憬</p>
+        <p>我猜，日子如果不是这样</p>
+        <p>就没有星星愿意堆积在我的脚旁</p>
+        <p>听那些密语的提醒</p>
+    </div>
+    <div class="poetryFour">
+        <p>只要我一抬头</p>
+        <p>我的星空就带着我飞翔</p>
+    </div>
+</div>
+
+<script src="$!request.contextPath/views/publishh5/res/js/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(days, 1000);
+
+        function days() {
+            $("#days").fadeOut(2000, function () {
+                $("#textbg").fadeIn(2000, poetryOne);
+            });
+        };
+        function poetryOne() {
+
+            var arr = [".poetryOne", ".poetryTwo", ".poetryThree", ".poetryFour"];
+
+            function text(i) {
+
+                if (i < arr.length-1) {
+                    $(arr[i]).animate({ opacity: 1 }, 600);
+                    setTimeout(poetryOneHide, 6000);
+
+                    function poetryOneHide() {
+                        $(arr[i]).fadeOut(2000, next);
+                        function next() {
+                            setTimeout(text(++i), 2000);
+                        };
+                    };
+                    
+                } else {
+                    $(arr[i]).animate({ opacity: 1 }, 600);
+                };
+            };
+            text(0);
+
+        };
+    });
+</script>
+</body>
+</html>

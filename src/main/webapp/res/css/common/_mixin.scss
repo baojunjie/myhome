@@ -1,0 +1,59 @@
+﻿/*@mixin clearfix {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+
+    &:after {
+        clear: both;
+    }
+}*/
+
+@mixin clearfix {
+    &:after {
+        content: "\0020";
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+@mixin hide-text() {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+}
+
+@mixin ellipsis($width: 100%) {
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+@mixin placeholder-color($color) {
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: $color;
+    }
+
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: $color;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: $color;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color;
+    }
+
+    :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+        color: $color;
+    }
+}

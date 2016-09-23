@@ -1,0 +1,31 @@
+﻿.aboutUsPage {
+    font-family: "SimHei ";
+    text-align: center;
+    background: url(../img/activity/aboutUs/bg.jpg) 0 2.5rem no-repeat;
+    background-size:100%;   
+
+    article {
+
+        h1 {
+            width: 12rem;
+            height: 3.75rem;
+            margin: 2.85rem auto 1.35rem;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        h2 {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.5em;
+            margin-top: 1.35rem;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.5em;
+        }
+    }
+}

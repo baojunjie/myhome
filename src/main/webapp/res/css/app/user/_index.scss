@@ -1,0 +1,232 @@
+﻿/// <reference path="../../_references.scss" />
+
+.personalPage {
+    .personalPage-info {
+        height: 360px;
+
+        .info {
+            position: relative;
+            float: left;
+            text-align: center;
+            color: white;
+            width: 434px;
+            height: 100%;
+            background: url(../img/user/personal/bg1.jpg) no-repeat;
+
+            .avatar {
+                overflow: hidden;
+                width: 130px;
+                height: 130px;
+                margin-left: 155px;
+                border-radius: 50%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .name {
+                .text {
+                    font-size: 20px;
+                }
+
+                .tag {
+                    font-size: 14px;
+                    padding: 3px 10px;
+                    border-radius: 10px;
+                    background: #92c3ff;
+                }
+            }
+
+            .action {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+
+                a {
+                    display: block;
+                    color: white;
+                    width: 98px;
+                    height: 31px;
+                    line-height: 32px;
+                    margin: 0 auto;
+                    border: 1px solid white;
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .info-i {
+            padding-top: 70px;
+        }
+
+        .img {
+            float: left;
+            width: 766px;
+            height: 100%;
+            background: url(../img/user/personal/bg2.jpg) no-repeat;
+        }
+    }
+
+    .personalPage-nav {
+        position: relative;
+        background: white;
+
+        ul {
+            width: 600px;
+            margin: 0 auto;
+
+            li {
+                margin-left: 60px;
+
+                &.first {
+                    margin: 0;
+                }
+
+                &.active a {
+                    display: block;
+                    color: black;
+                    border-bottom: 4px solid #f8b300;
+                }
+
+                a {
+                    color: $color-base;
+                    height: 66px;
+                    line-height: 66px;
+
+                    span {
+                        color: $color-brand;
+                    }
+                }
+            }
+        }
+
+        .site-button {
+            position: absolute;
+            right: 20px;
+            top: 12px;
+            width: 100px;
+            height: 46px;
+            line-height: 46px;
+        }
+
+        .title {
+            height: 70px;
+            line-height: 70px;
+            color: black;
+            text-align: center;
+        }
+    }
+
+    .personalPage-panel {
+        background: white;
+    }
+
+    .list {
+        padding: 20px;
+
+        li {
+            width: 214px;
+            padding: 4px 4px 10px;
+            margin: 10px 0 0 10px;
+            border: 1px solid #dedfe0;
+            border-radius: 2px;
+
+            &.first {
+                margin-left: 0;
+            }
+
+            .works {
+                display: block;
+                overflow: hidden;
+                width: 214px;
+                height: 214px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .info {
+                @include ellipsis();
+                margin-top: 8px;
+                padding-left: 8px;
+            }
+
+            .action {
+                text-align: right;
+                margin-top: 8px;
+                padding-right: 5px;
+
+                a {
+                    font-size: 16px;
+                    color: #999;
+
+                    &:hover {
+                        color: $color-brand;
+                    }
+                }
+            }
+        }
+
+        & > .action {
+            text-align: center;
+
+            .site-button {
+                width: 200px;
+                height: 44px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    .list1 {
+
+        .info {
+
+            .name {
+                color: #010101;
+            }
+
+            .line {
+                color: #999;
+            }
+
+            .category {
+                color: #359f6a;
+            }
+        }
+
+        .des {
+            @include ellipsis();
+            font-size: 12px;
+            color: #999;
+            padding: 0 10px;
+            margin-top: 10px;
+        }
+    }
+
+    .list2 {
+        .info {
+            color: #008b52;
+        }
+
+        .action {
+            font-size: 14px;
+            margin-top: 6px;
+            padding: 0 8px;
+
+            .vote {
+                color: #999;
+                padding-top: 5px;
+            }
+
+            .site-button {
+                width: 64px;
+                height: 28px;
+                line-height: 28px;
+            }
+        }
+    }
+}

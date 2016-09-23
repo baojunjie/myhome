@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我已装修</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if lte IE 8]>
+       <link rel="stylesheet" type="text/css" href="$!request.contextPath/res/css/app/questionnaire/questionnaireMain.css" />
+    <![endif]-->
+</head>
+<body class="site questionnairePage ">
+#parse("_head.html")
+<div class="banner"></div>
+<!-- <div class="nav">
+    <ul class="site-container clearfix">
+        <li class="first nav-renovated">
+            <a href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class="active"></a>
+        </li>
+        <li class="nav-wantRenovate">
+            <a href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-buyHouse">
+            <a href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-mybalcony">
+            <a href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+    </ul>
+</div> -->
+<div class="content">
+    
+ <div class="content-i">
+
+<div class="renovated">
+    <h1>2015我的家调查问卷--我已装修</h1>
+     <form class="site-form mt80" data-auto-parse="false" action="/mobile/haveToDecorate/addHaveToDecorate.do" method="post" data-tip-success-class="">
+         <input type="text" name="user.id"  hidden="true" value="$!id">
+          <input type="text" name="user.userInfo.invitationCode"  hidden="true" value="$!invitationCode">
+        <div class="formcontent">
+            <section>
+                <h2 class="clearfix">
+                    <i>01</i>
+                    说说您家的基本情况
+                </h2>
+                <div class="sectionContent">
+                    <div class="item clearfix">
+                        <label><i>*</i>所在城市</label>
+                        <div class="input">
+                            <select id="province" class="site-input"></select>
+                            <select id="city" class="site-input ml20"></select>
+                            <select id="district" name="region.id" class="site-input ml20"></select>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>楼盘名称</label>
+                        <div class="input">
+                            <input data-valid-require="请输入楼盘名称" name="name" data-valid-range="楼盘名称长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input site-input2 J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>购买时间</label>
+                        <div class="input">
+                            <input data-valid-require="请输入购买时间" name="purchaseTime" onfocus="WdatePicker({ maxDate: '%y-%M-%d' })" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>面积</label>
+                        <div class="input">
+                            <input data-valid-require="请输入面积" name="area" data-valid-integer="请输入正确的面积" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">平米</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>单价</label>
+                        <div class="input">
+                            <input name="unitPrice" data-valid-require="请输入单价" data-valid-numeric="请输入正确的单价" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">元/平米</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>装修总价</label>
+                        <div class="input">
+                            <input name="totalPrice" data-valid-require="请输入总价" data-valid-numeric="请输入正确的总价" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">元（含全部家居电器）</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="clearfix">
+                        <div class="craftsman fl">
+                            <h3>您的施工工匠：</h3>
+                            <div class="item clearfix">
+                                <label>姓名</label>
+                                <div class="input">
+                                    <input name="craftsmanName" data-valid-range="姓名长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                            <div class="item clearfix">
+                                <label>手机号</label>
+                                <div class="input">
+                                    <input name="craftsmanMobile" data-valid-mobile="请输入正确的手机号码" class="site-input J_validInput" type="text">
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                            <div class="item clearfix">
+                                <label>工种</label>
+                                <div class="input">
+                                    <select name="craftsmanType" class="site-input">
+                                     #foreach($craftsmanType in $craftsmanTypeList)
+                                     <option value="$craftsmanType.name">$craftsmanType.name</option>
+                                     #end
+                                    </select>
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                            <div class="item clearfix">
+                                <label>评价</label>
+                                <div class="input">
+                                    <textarea name="craftsmanComment" class="site-input area1"></textarea>
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                        </div>
+                        <div class="designer fl">
+                            <h3>您的设计师：</h3>
+                            <div class="item clearfix">
+                                <label>姓名</label>
+                                <div class="input">
+                                    <input name="designerName" data-valid-range="姓名长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                            <div class="item clearfix">
+                                <label>手机号</label>
+                                <div class="input">
+                                    <input name="designerMobile" data-valid-mobile="请输入正确的手机号码" class="site-input J_validInput" type="text">
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                            <div class="item clearfix">
+                                <label>评价</label>
+                                <div class="input">
+                                    <textarea name="designerComment" class="site-input area1"></textarea>
+                                </div>
+                                <div class="tip"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>02</i>
+                    说说您家的小宝贝门来自哪里
+                </h2>
+                <div class="sectionContent">
+                    <h3>洁具：</h3>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>浴缸</label>
+                            <div class="input">
+                                <select id="bathtub" name="bathtub" class="site-input site-input2">
+                                 #foreach($bathtub in $bathtubList)
+                                     <option value="$bathtub.name">$bathtub.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>水槽</label>
+                            <div class="input">
+                                <select id="waterChannel" name="waterChannel" class="site-input site-input2">
+                                 #foreach($waterChannel in $waterChannelList)
+                                     <option value="$waterChannel.name">$waterChannel.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>花洒</label>
+                            <div class="input">
+                                <select id="sprinkler" name="sprinkler" class="site-input site-input2">
+                                  #foreach($sprinkler in $sprinklerList)
+                                     <option value="$sprinkler.name">$sprinkler.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>马桶</label>
+                            <div class="input">
+                                <select id="closestool" name="closestool" class="site-input site-input2">
+                                #foreach($closestool in $closestoolList)
+                                     <option value="$closestool.name">$closestool.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>涂料</label>
+                            <div class="input">
+                                <select id="dope" name="coating" class="site-input site-input2">
+                                 #foreach($dope in $dopeList)
+                                     <option value="$dope.name">$dope.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>开关插座</label>
+                            <div class="input">
+                                <select id="socket" name="switchInsert" class="site-input site-input2">
+                                 #foreach($socket in $socketList)
+                                     <option value="$socket.name">$socket.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>灯具</label>
+                            <div class="input">
+                                <select id="lamps" name="lamps" class="site-input site-input2">
+                                #foreach($lamp in $lampList)
+                                     <option value="$lamp.name">$lamp.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>瓷砖</label>
+                            <div class="input">
+                                <select id="tile" name="tile" class="site-input site-input2">
+                                  #foreach($tile in $tileList)
+                                     <option value="$tile.name">$tile.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>地板</label>
+                            <div class="input">
+                                <select id="floor" name="floor" class="site-input site-input2">
+                                 #foreach($floor in $floorList)
+                                     <option value="$floor.name">$floor.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="line"></div>
+                    <h3>家用电器：</h3>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>空调</label>
+                            <div class="input">
+                                <select id="airCondition" name="airCondition" class="site-input site-input2">
+                                 #foreach($airCondition in $airConditionList)
+                                     <option value="$airCondition.name">$airCondition.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>热水器</label>
+                            <div class="input">
+                                <select id="waterHeater" name="waterHeater" class="site-input site-input2">
+                                #foreach($waterHeater in $waterHeaterList)
+                                     <option value="$waterHeater.name">$waterHeater.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>浴霸</label>
+                            <div class="input">
+                                <select id="yuba" name="bathHeater" class="site-input site-input2">
+                                 #foreach($yuba in $yubaList)
+                                     <option value="$yuba.name">$yuba.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>冰箱</label>
+                            <div class="input">
+                                <select id="freezer" name="refrigerator" class="site-input site-input2">
+                                #foreach($freezer in $freezerList)
+                                     <option value="$freezer.name">$freezer.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>净水器</label>
+                            <div class="input">
+                                <select id="waterCleaner" name="waterPurifier" class="site-input site-input2">
+                                #foreach($waterCleaner in $waterCleanerList)
+                                     <option value="$waterCleaner.name">$waterCleaner.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>油烟机</label>
+                            <div class="input">
+                                <select id="rangeHood" name="smokeExhaust" class="site-input site-input2">
+                                #foreach($rangeHood in $rangeHoodList)
+                                     <option value="$rangeHood.name">$rangeHood.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>煤气灶</label>
+                            <div class="input">
+                                <select id="gasCooker" name="gasCooker" class="site-input site-input2">
+                                #foreach($gasCooker in $gasCookerList)
+                                     <option value="$gasCooker.name">$gasCooker.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="line"></div>
+                    <h3>家具：</h3>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>衣柜</label>
+                            <div class="input">
+                             <select id="bureau" name="garderobe" class="site-input site-input2">
+                                #foreach($bureau in $bureauList)
+                                     <option value="$bureau.name">$bureau.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>沙发</label>
+                            <div class="input">
+                                <select id="sofa" name="sofa" class="site-input site-input2">
+                                #foreach($sofa in $sofaList)
+                                     <option value="$sofa.name">$sofa.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>床垫</label>
+                            <div class="input">
+                                <select id="mattress" name="mattess" class="site-input site-input2">
+                                 #foreach($mattress in $mattressList)
+                                     <option value="$mattress.name">$mattress.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>床</label>
+                            <div class="input">
+                                <select id="bed" name="bed" class="site-input site-input2">
+                                 #foreach($bed in $bedList)
+                                     <option value="$bed.name">$bed.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <label><i>*</i>橱柜</label>
+                            <div class="input">
+                                <select id="cabinet" name="cabinet" class="site-input site-input2">
+                                 #foreach($cabinet in $cabinetList)
+                                     <option value="$cabinet.name">$cabinet.name</option>
+                                 #end
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item item1 mt80">
+                        <div class="clearfix">
+                            <label class="red"><i>*</i>您家是否愿意加入短租airbnb？</label>
+                            <div class="input">
+                                <input type="radio" checked name="airbnb" value="1" class="radio" id="airbnb1" /><label for="airbnb1">是</label>
+                                <input type="radio" name="airbnb" value="0" class="radio ml60" id="airbnb2" /><label for="airbnb2">否</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item1 mt10">
+                        <div class="clearfix">
+                            <label class="red"><i>*</i>您家是否需要出售？</label>
+                            <div class="input">
+                                <input type="radio" checked name="houseForSale" value="1" class="radio" id="radio1" /><label for="radio1">是</label>
+                                <input type="radio" name="houseForSale" value="0" class="radio ml60" id="radio2" /><label for="radio2">否</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-red" type="submit" value="提交问卷">
+        </div>
+    </form>
+</div>
+</div>
+
+
+</div>
+<div id="questionnaireShareBox" class="successBoxWrap none">
+    <div class="successBox">
+        <a id="questionnaireShareClose" href="javascript:void(0);" class="close"><i class="iconfont icon-guanbi"></i></a>
+        <h2><span>恭喜，您获得10积分！</span></h2>
+    </div>
+</div>
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+
+    <!-- shared section start-->
+    <script type="text/template" id="galleryTmpl">
+    <div class="worksDetailPage clearfix none">
+        <a href="javascript:void(0);" class="site-gallery-close close"><i class="iconfont icon-guanbi"></i></a>
+        <a data-action="prev" href="javascript:void(0);" class="control control-prev"><i class="iconfont icon-iconfonticonfont10shanchu1"></i></a>
+        <div class="site-gallery-container site-container"></div>
+        <a data-action="next" href="javascript:void(0);" class="control control-next"><i class="iconfont icon-iconfonticonfont10shanchu"></i></a>
+    </div>
+</script>
+<script type="text/template" id="galleryContentTmpl">
+    <div class="detailWrap main">
+        <div class="clearfix">
+            <div class="detailSort">
+                作品名称：<span>{{:works.name}}</span>
+            </div>
+            <div class="detailSort">
+                作品类别：<span>{{:tag.name}}</span>
+            </div>
+            {{if works.status === 3}}
+            <div class="detailVote">
+                <a class="J_vote" href="javascript:void(0);" data-id="{{:works.id}}" data-amount="{{:works.votenum}}" data-tmpl="点赞(#vote)"><i class="iconfont icon-like"></i>({{:works.votenum || 0}})</a>
+            </div>
+            {{/if}}
+            {{if works.status === 2 || works.status === 4}}
+            <div class="action">
+                <a href="/views/app/painter/join.html">修改</a>
+                <a class="ml30 J_deleteWorks" href="javascript:void(0);" data-name="{{:works.name}}" data-id="{{:works.id}}">删除</a>
+                {{if works.status === 2}}
+                <a class="ml30 strong J_submitWorks" href="javascript:void(0);" data-name="{{:works.name}}" data-id="{{:works.id}}">提交审核</a>
+                {{/if}}
+            </div>
+            {{/if}}
+        </div>
+        <div class="detailPic mt20">
+            <img src="{{:~getFileUrl(works.worksPictureItemSet[0].picture.orginpath)}}" />
+        </div>
+        <div class="posts">
+            <div class="clearfix">
+                <div class="postsPerson">
+                    <img class="J_imageAdapt" src="{{:works.artist.artistInfo.img}}" />
+                </div>
+                <div class="postsCon">
+                    <p class="title">
+                        <a href="/views/app/painter/personalCenter/works/authed.html">{{:works.artist.artistInfo.name}}</a>
+                    </p>
+                    <p>
+                        <span class="font-color">{{:works.artist.artistInfo.male ? "男" : "女"}}</span>
+                        <span class="line font-color">|</span>
+                        <span class="font-color">{{:works.artist.artistInfo.age}}岁</span>
+                        <span class="line font-color">|</span>
+                        <span class="font-color">{{:works.artist.artistInfo.region.name}}</span>
+                        <span class="line font-color">|</span>
+                        <span class="font-color">{{:works.artist.artistInfo.school || ""}}</span>
+                    </p>
+                    <p class="des mt15">
+                        {{:works.description}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{if works.status === 3}}
+    <div class="detailWrap mt20">
+        <form class="clearfix">
+            <textarea placeholder="我来说一句..." name="words"></textarea>
+            <input type="hidden" name="worksid" value="{{:works.id}}" />
+            <input type="submit" value="添加评论" class="site-button mt20" />
+        </form>
+        <div class="postList J_reviewList">
+        </div>
+    </div>
+    {{/if}}
+</script>
+<script type="text/template" id="reviewTmpl">
+    <div class="posts last clearfix">
+        <div class="postsPerson">
+            <img class="J_imageAdapt" src="{{:user.userInfo.img? user.userInfo.img : '$!request.contextPath/res/img/painter.jpg'}}" />
+        </div>
+        <div class="postsCon">
+            <p class="title">
+                <a href="#">{{:user.userInfo.name}}</a><span class="line font-color">-</span><span class="font-color">{{:~formatDate(createdDatetime)}}</span>
+            </p>
+            <p>
+                {{>words}}
+            </p>
+        </div>
+    </div>
+</script>
+    <script type="text/template" id="loginDialog">
+    <div class="site-loginBox site-loginDialog">
+        <div class="main">
+            <a class="close J_close iconfont icon-guanbi" href="javascript:void(0);"></a>
+            <p class="logo">
+                <img src="$!request.contextPath/res/img/logo-small.png" />
+            </p>
+            <p class="mt20">
+                您还没有登录哦，赶快登录我的家报名吧！
+            </p>
+            <div class="site-form">
+                <form>
+                    <div class="site-form-item">
+                        <label class="iconfont icon-yonghuicon"></label>
+                        <span class="line"></span>
+                        <div class="input">
+                            <input placeholder="用户名或手机号" autofocus="" data-valid-require="请输入用户名或手机号" class="site-input J_validInput" type="text">
+                        </div>
+                    </div>
+                    <div class="site-form-item mt40">
+                        <label class="iconfont icon-cipher"></label>
+                        <span class="line"></span>
+                        <div class="input">
+                            <input placeholder="密码" autofocus="" data-valid-require="请输入密码" class="site-input J_validInput" type="password">
+                        </div>
+                    </div>
+                    <div class="site-form-action mt40">
+                        <input class="site-button site-button-primary" type="submit" value="登  录">
+                    </div>
+                </form>
+            </div>
+            <p class="mt15 tr">
+                <a href="/views/app/user/passwordReset/index.html">忘记密码</a>
+            </p>
+        </div>
+        <p class="register mt20">
+            还没有我的家号？<a href="/views/app/user/register.html">点击注册»</a>
+        </p>
+    </div>
+</script>
+    <script type="text/template" id="cropTmpl">
+    <div class="site-crop">
+        <div class="head">
+            <strong>上传头像</strong>
+            <a class="close J_close iconfont icon-guanbi" href="javascript:void(0);"></a>
+        </div>
+        <div class="content clearfix">
+            <div class="main fl">
+                <div class="main-i">
+                    <div class="site-upload" data-auto-parse="false">
+                        <div class="input">
+                            <label class="upload site-upload-button" data-file-type="image">选择图片</label>
+                            <input type="hidden">
+                        </div>
+                    </div>
+                    <span>
+                        <img class="none" />
+                    </span>
+                </div>
+            </div>
+            <div class="preview fl ml10">
+                <div class="panel">
+                    <img class="none" />
+                </div>
+                <p>预览</p>
+            </div>
+        </div>
+        <div class="foot">
+            <input class="J_yes site-button button-yes" type="button" value="确定" />
+            <input class="J_close site-button button-cancel ml15" type="button" value="取消" />
+        </div>
+    </div>
+</script>
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+                fileUrl: "",
+                resUrl: "$!request.contextPath/res",
+                serverUrl: "$!request.contextPath",
+               // serverUrl: "http://www.haaaaaa.com",
+                 //serverUrl: "http://192.168.3.45:8081/web_myhome",
+                //serverUrl: "http://192.168.1.73:8080/myhome",
+                app: "area,questionnaire/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

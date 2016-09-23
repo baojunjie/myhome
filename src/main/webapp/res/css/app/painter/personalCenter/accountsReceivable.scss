@@ -1,0 +1,28 @@
+﻿.accountsReceivablePage {
+    ul {
+        padding-bottom:70px;
+    }
+
+    li {
+        width: 420px;
+        height: 62px;
+        line-height: 62px;
+        text-align: center;
+        color: #FFF;
+        font-size: 24px;
+        font-weight: bold;
+        padding-top: 136px;
+
+        &.alipay {
+            background: url("../img/painter/alipay.gif") no-repeat;
+        }
+
+        &.wechat {
+            background: url("../img/painter/wechat.gif") no-repeat;
+        }
+
+        &.unionpay {
+            background: url("../img/painter/unionpay.gif") no-repeat;
+        }
+    }
+}

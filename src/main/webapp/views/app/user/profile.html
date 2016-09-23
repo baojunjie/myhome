@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>个人资料</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+ #parse("head.html")
+<div class="site-body">
+    
+
+<div class="profilePage site-container">
+    <div class="head">
+        <p class="title">个人资料</p>
+         #if($session.getAttribute("USER_ID")&&($!artist.status==1||$!artist.status==4)&&($session.getAttribute("ARTIST_ID")==$!artist.id))   
+        <a href="$!request.contextPath/artist/updateindex.do?artistid=$!artist.id">
+            <i class="iconfont icon-bianji"></i>
+	               <span>编辑</span>
+        </a>
+         #else 
+        #end
+    </div>
+    <div class="content">
+        <p class="avatar">
+            <img src="$!artist.artistInfo.img" />
+        </p>
+        <div class="list">
+            <ul>
+                <li class="first">
+                    <label>姓名</label>
+                    <span>$!artist.artistInfo.name</span>
+                </li>
+                <li>
+                    <label>性别</label>
+                    <span>#if($!artist.artistInfo.male)男#else女#end</span>
+                </li>
+                <li>
+                    <label>民族</label>
+                    <span>$!artist.artistInfo.nation</span>
+                </li>
+                <li>
+                    <label>生日</label>
+                    <span>$!artist.artistInfo.birthday</span>
+                </li>
+                <li>
+                    <label>籍贯</label>
+                    <span>$!artist.artistInfo.origin</span>
+                </li>
+                <li>
+                    <label>选送地区</label>
+                    <span>$!artist.artistInfo.region.name</span>
+                </li>
+                <li>
+                    <label>身份信息</label>
+                    <span>$!artist.artistInfo.idCode</span>
+                </li>
+                <li>
+                    <label>学校/培训机构</label>
+                    <span>$!artist.artistInfo.school</span>
+                </li>
+                <li>
+                    <label>家长联系方式</label>
+                    <span>$!artist.artistInfo.parentMobile</span>
+                </li>
+              #if($!artist.artistInfo.referrerSchool&&$!artist.artistInfo.referrerSchool!="")
+                <li>
+                    <label>推荐单位</label>
+                    <span>$!artist.artistInfo.referrerSchool/$!artist.artistInfo.referrerMobile</span>
+                </li>
+               #else
+               #end 
+                #if($!artist.artistInfo.instructor&&$!artist.artistInfo.instructor!="")
+                <li>
+                    <label>组织老师</label>
+                    <span>$!artist.artistInfo.instructor/$!artist.artistInfo.instructorMobile</span>
+                </li>
+                 #else
+               #end 
+               #if($!artist.artistInfo.teacher&&$!artist.artistInfo.teacher!="")
+                <li>
+                    <label>指导老师</label>
+                    <span>$!artist.artistInfo.teacher/$!artist.artistInfo.teacherMobile</span>
+                </li>
+                 #else
+               #end 
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: ""
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

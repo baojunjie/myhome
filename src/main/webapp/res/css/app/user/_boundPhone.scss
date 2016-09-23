@@ -1,0 +1,63 @@
+﻿.boundPhone {
+    margin: 87px 0 126px 242px;
+
+    .user {
+        height: 200px;
+        border-right: 1px dashed #e6e6e6;
+        padding-right: 76px;
+        margin-right: 76px;
+
+        .title {
+            color: #333;
+        }
+
+        .img {
+            a {
+                display: block;
+                width: 78px;
+                height: 78px;
+                margin-left: 8px;
+                padding: 1px;
+                border: 1px solid #d9d9d9;
+                border-radius: 3px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            p {
+                color:#b2b2b2;
+                text-align: center;
+            }
+        }
+    }
+
+
+
+    .site-form {
+        .first {
+            margin-top:0;
+        }
+
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #000;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #000;
+        }
+
+        input:-ms-input-placeholder {
+            color: #666;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #666;
+        }
+
+        .site-form-action {
+            padding-left: 18px;
+        }
+    }
+}

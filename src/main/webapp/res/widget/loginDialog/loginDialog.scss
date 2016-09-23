@@ -1,0 +1,21 @@
+﻿.site-loginDialog {
+    width: 570px;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 2px;
+    background: white;
+
+    .main {
+        width: 382px;
+        margin: 0 auto;
+    }
+
+    .close {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        font-size: 22px;
+        color: #999;
+    }
+    
+}

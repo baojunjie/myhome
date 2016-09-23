@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.myhome.entity">
+	<class name="Teacher" table="t_teacher" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<property name="name" column="name" type="string" />
+
+		<property name="male" column="male" type="boolean" />
+
+		<property name="birthday" column="birthday" type="date" />
+
+		<property name="workUnit" column="work_unit" type="string" />
+
+		<property name="mobile" column="mobile" type="string" />
+
+		<property name="celtyl" column="celtyl" type="string" />
+		
+		<property name="img" column="img" type="string" />
+
+		<property name="thumbnailImg" column="thumbnail_img" type="string" />
+
+		<property name="nation" column="nation" type="string" />
+
+		<!-- <property name="age" column="age" type="integer" /> -->
+
+		<property name="thumbnailCeltyl" column="thumbnail_celtyl" type="string" />
+
+		<many-to-one name="region" class="Region" column="region_id" cascade="none" lazy="false"/>
+		
+		<property name="age" column="age" type="integer" />
+
+		<property name="token" type="string" column="token"/>
+		
+		<property name="constellation" type="string" column="constellation"/>
+		
+		<property name="zodiac" type="string" column="zodiac"/>
+		
+		<many-to-one name="user" class="User" column="user_id" cascade="none" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

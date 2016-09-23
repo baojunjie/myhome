@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>免费注册</title>
+     <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-2">
+#parse("_head.html")    
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">免费注册</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container ">
+    
+<div class="registerSuccessPage">
+    <div class="congratulation clearfix">
+        <i class="iconfont icon-success"></i>
+        <p class="title">恭喜您，您已成功注册我的家！</p>
+        <p>您可以<a href="$!request.contextPath/user/personalCenter/edit.do">去个人中心完善资料</a>，也可以继续申请认证</p>
+    </div>
+    <div class="sort clearfix site-container">
+        <ul>
+            <li class="first">
+                <p class="role">小画家</p>
+                <p>参赛小朋友请点击此处</p>
+                <p>优秀作品有机会在鸟巢展览哦</p>
+                <a class="site-button site-button-blue"  href="$!request.contextPath/game/interceptorindex.do">我要参赛</a>
+            </li>
+<!--             <li>
+                <p class="role">赞助商</p>
+                <p>赞助商请点击此处，将爱心送给</p>
+                <p>需要帮助的小朋友，鼓励小画家创作</p>
+                <a class="site-button site-button-blue"  href="$!request.contextPath/sponsors/join.do">我要赞助</a>
+            </li> -->
+            <li>
+                <p class="role">老师</p>
+                <p>老师请点击此处</p>
+                <p>让更多的小朋友和家长认识您</p>
+                <a  class="site-button site-button-blue" href="$!request.contextPath/teacher/join.do">我是老师</a>
+            </li>
+            <!-- <li>
+                <p class="role">幸运小朋友</p>
+                <p>需要帮助的小朋友请点击此处</p>
+                <p>将有机会成为幸运小朋友，获得帮助</p>
+                <a class="site-button site-button-blue"  href="$!request.contextPath/help/join.do">我要求助</a>
+            </li> -->
+        </ul>
+    </div>
+</div>
+
+
+</div>
+    <!-- shared section start-->
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+    #parse("footer.html")
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: ""
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

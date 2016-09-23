@@ -1,0 +1,105 @@
+<div class="site-nav" id="home_body">
+    <div class="site-container">
+        <div class="fl clearfix">
+            <a class="fl"   target="_blank"  href="$!request.contextPath/home/aboutUs.do#contact" >联系我们</a>
+            <span class="fl line">|</span>
+            <div class="fl qrcode">
+                <a class="J_qrcode" href="javascript:void(0);">关注微信</a>
+                <div class="popup site-container none">
+                    <div class="popupContent clearfix">
+                        <div class="weixinDes fl">
+                            <img src="$!request.contextPath/res/img/sitenav/weixinDes.png" />
+                        </div>
+                        <div class="line fl"></div>
+                        <div class="weixinPic fl">
+                            <img src="$!request.contextPath/res/img/sitenav/weixinPic.png" />
+                        </div>
+                    </div>
+                    <p class="weixinMessage">
+                        <img src="$!request.contextPath/res/img/sitenav/weixinMessage.png" />
+                    </p>
+                    <div class="popup-bottom"></div>
+                </div>
+            </div>
+            <span class="fl line">|</span>
+            <div class="fl qrcode qrcode-download">
+                <a class="J_qrcode" href="javascript:void(0);">下载APP</a>
+                <div class="popup  site-container popupapp none">
+                    <div class="popupContent clearfix">
+                        <div class="weixinPic fl">
+                            <img src="$!request.contextPath/res/img/sitenav/weixinPicapp.png" />
+                        </div>                        
+                        <div class="line fl"></div>
+                        <div class="weixinDes fl">
+                            <img src="$!request.contextPath/res/img/sitenav/weixinDesapp.png" />
+                        </div>
+                    </div>
+                    <p class="weixinMessage">
+                        <img src="$!request.contextPath/res/img/sitenav/weixinMessageapp.png" />
+                    </p>
+                    <div class="popup-bottom"></div>
+                </div>
+            </div>           
+        </div>
+        <div class="fr clearfix">
+           #if($session.getAttribute("USER_ID"))
+                #if($session.getAttribute("USER_TYPE")==2||$session.getAttribute("USER_TYPE")==6)
+                <a class="first fl clearfix" href="$!request.contextPath/artist/personalCenter.do?userid=$session.getAttribute('USER_ID')">
+                    <span class="avatar fl">
+                        <img class="J_avatar" src="#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else$!request.contextPath/res/img/painter-small.jpg#end" />
+                    </span>
+                    <strong class="name fl">$session.getAttribute("USER_NAME")</strong>
+                </a>
+                #elseif($session.getAttribute("USER_TYPE")==3)
+                <a class="first fl clearfix" href="$!request.contextPath/help/personalCenter/profile.do">
+                    <span class="avatar fl">
+                        <img class="J_avatar" src="#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else$!request.contextPath/res/img/painter-small.jpg#end" />
+                    </span>
+                    <strong class="name fl">$session.getAttribute("USER_NAME")</strong>
+                </a>
+                 #elseif($session.getAttribute("USER_TYPE")==4)
+                <a class="first fl clearfix" href="$!request.contextPath/teacher/personalCenter.do">
+                    <span class="avatar fl">
+                        <img class="J_avatar" src="#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else$!request.contextPath/res/img/painter-small.jpg#end" />
+                    </span>
+                    <strong class="name fl">$session.getAttribute("USER_NAME")</strong>
+                </a>
+                #elseif($session.getAttribute("USER_TYPE")==5)
+                <a class="first fl clearfix" href="$!request.contextPath/sponsors/personalCenter.do">
+                    <span class="avatar fl">
+                        <img class="J_avatar" src="#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else$!request.contextPath/res/img/painter-small.jpg#end#end" />
+                    </span>
+                    <strong class="name fl">$session.getAttribute("USER_NAME")</strong>
+                </a>
+               #else
+              <!--<a class="first fl clearfix" href="$!request.contextPath/game/interceptorindex.do">-->   
+                    <a class="first fl clearfix" href="$!request.contextPath/user/personalCenter/profile.do"> 
+                    <span class="avatar fl">
+                        <img class="J_avatar" src="#if($session.getAttribute('USER_PATH'))$session.getAttribute('USER_PATH')#else$!request.contextPath/res/img/painter-small.jpg#end" />
+                    </span>
+                    <strong class="name fl">$session.getAttribute("USER_NAME")</strong>
+                </a>
+               #end
+                #if($session.getAttribute("USER_TYPE")==2||$session.getAttribute("USER_TYPE")==6||$session.getAttribute("USER_TYPE")==1||$session.getAttribute("USER_TYPE")==3)
+                    #if($session.getAttribute("ARTIST_ID"))
+                    <span class="fl line">|</span>
+                    <a class="fl" href="$!request.contextPath/works/uploadindex.do?artistid=$session.getAttribute('ARTIST_ID')">我要参赛</a>
+                    #else
+                    <span class="fl line">|</span>
+                    <a class="fl" href="$!request.contextPath/game/interceptorindex.do">我要参赛</a>
+                    #end
+                #elseif($session.getAttribute("USER_TYPE")==4||$session.getAttribute("USER_TYPE")==5)
+                #else
+                #end
+                <span class="fl line">|</span>
+                <a class="fl" href="$!request.contextPath/login/authentication/loginout.do">退出</a>
+            #else
+             <a class="fl" href="$!request.contextPath/game/interceptorindex.do">我要参赛</a>
+             <span class="fl line">|</span>
+             <a class="first fl" href="$!request.contextPath/login/authentication/loginindex.do">登录</a> 
+             <span class="fl line">|</span>
+             <a class="fl" href="$!request.contextPath/login/authentication/registerindex.do">注册</a> 
+           #end
+        </div>
+    </div>
+</div>

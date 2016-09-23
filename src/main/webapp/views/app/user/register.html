@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>免费注册</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-1">
+    
+
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">免费注册</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container site-box">
+    
+
+<div class="registerPage">
+    <p class="title">
+        <strong>注册我的家</strong>
+        <span>如果您已有我的家账户,</span>
+        <a href="$!request.contextPath/login/authentication/loginindex.do">点击此处进行登录</a>
+    </p>
+    <div class="site-form site-form-1" data-auto-parse="false">
+        <form action="$!request.contextPath/login/authentication/add.do" method="post" data-mode="inline">
+            <div class="site-form-item">
+                <label class="label">* 请输入用户名</label>
+                <div class="input">
+                    <!--<input autofocus data-valid-require="请输入用户名" name="name" data-valid-server="" class="site-input J_validInput" type="text" />-->
+                    <input autofocus data-valid-custom="用户名只能由汉字、字母、数字、下划线组成并且不能以数字开头" name="name" data-valid-custom-regex="^([a-zA-Z_\u4e00-\u9fa5]+([a-zA-Z_\u4e00-\u9fa50-9])*)$"  data-valid-custom-regex-flag="i" data-valid-require="请输入用户名" data-valid-range="用户名长度不得少于4个字符。" data-valid-range-min="4" maxlength="12" data-valid-remote="用户名已存在" data-valid-remote-url="/login/authentication/checkname.do" data-valid-remote-params="usename" data-valid-range-type="string" class="site-input J_validInput" type="text" />
+                </div>
+                <div class="tip">4-12位字符，支持字母、汉字、数字、下划线并且不能以数字开头</div>
+            </div>
+            <div class="site-form-item">
+                <label class="label">* 请输入手机号</label>
+                <div class="input">
+                    <input id="mobile" data-valid-require="请输入手机号码" name="mobile" data-valid-mobile="手机号码格式不正确" data-valid-remote-action="focusout" data-valid-remote="手机号码已存在" data-valid-remote-url="/login/authentication/checknum.do" data-valid-remote-params="mobile" class="site-input J_validInput"  maxlength="11"  type="text" />
+                </div>
+                <div class="tip">通过验证手机注册</div>
+            </div>
+            <div class="site-form-item site-form-code">
+                <label class="label">* 请输入验证码</label>
+                <div class="input">
+                    <input id="code" data-valid-require="请输入验证码"   name="code" data-valid-remote="验证码不正确" data-valid-remote-params="verificationCode" data-valid-remote-params-other="" data-valid-remote-action="submit" data-valid-remote-url="/login/authentication/checkcode.do" class="site-input J_validInput" type="text" />
+                    <input id="btnSendCode" type="button" class="site-button site-button-gray" value="获取验证码" />
+                </div>
+                <div class="tip">60秒未收到验证码，请重新发送</div>
+            </div>
+            <div class="site-form-item">
+                <label class="label">* 请输入登录密码</label>
+                <div class="input">
+                    <!--<input data-valid-require="请输入密码" data-valid-range="密码长度4～15位" name="password" data-valid-range-min="4" data-valid-rang-max="15" class="site-input J_validInput" type="password" /> -->
+                     <input data-valid-require="请输入密码" data-valid-range="密码长度4～15位" name="password" data-valid-range-min="4" data-valid-range-max="15" class="site-input J_validInput" type="password" />
+                </div>
+                <div class="tip">密码长度4～15位，字母区分大小写</div>
+            </div>
+            <div class="site-form-item site-form-agreement">
+                <label class="label"></label>
+                <div class="input clearfix">
+                    <input class="fl J_validInput" type="checkbox" data-valid-require="您必须阅读《我的家服务条款》才能注册">
+                    <span class="fl">我已阅读并接受<a target="_blank" href="$!request.contextPath/login/authentication/agreement.do">我的家服务条款</a></span>
+                </div>
+                <div class="tip"></div>
+            </div>
+            <div class="site-form-item site-form-action">
+                <input class="site-button site-button-primary" type="submit" value="注  册" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "user/checkCode"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

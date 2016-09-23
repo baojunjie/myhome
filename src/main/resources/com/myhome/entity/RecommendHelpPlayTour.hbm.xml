@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.myhome.entity">
+    <class name="RecommendHelpPlayTour" table="t_recommend_help_playTour" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <property name="money" column="money" type="double" />
+        
+        <property name="type" column="type" type="integer" />
+
+        <property name="message" column="message" type="string" />
+
+        <many-to-one name="userFrom" class="User" column="user_id_from" cascade="none" lazy="false"></many-to-one>
+        
+        <many-to-one name="userTo" class="User" column="user_id_to" cascade="none" lazy="false"></many-to-one>
+    </class>
+</hibernate-mapping>

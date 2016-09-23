@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>提交作品</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-4">
+#parse("_head.html")
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">提交作品</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="site-body">
+    
+
+<div class="competitionInfoPage site-container">
+    <form class="site-form" action="$!request.contextPath/game/examine.do" method="post">
+        <p class="title">您的作品已成功上传，请点击提交审核按钮参加比赛</p>
+        <p class="subTitle mt5"></p>
+        <p class="mt35">
+            <input id="agree" value="false" class="J_validInput" data-valid-require="您必须阅读参赛须知"  checked="false" type="checkbox" />
+            <label for="agree">我已阅读<a href="javascript:void(0);" id="btnRead">参赛须知</a></label>
+        </p>
+        <p class="mt10">
+            <input type="hidden" name="artistid" value="$!artistid" />
+            <input type="hidden" name="worksid" value="$!worksid" /><!--  -->
+            <input class="site-button site-button-primary" type="submit" value="立即提交审核" />
+            <input class="site-button site-button-back"  type="button"  onclick="window.location.href='$!request.contextPath/works/uploadindex.do?worksid=$!worksid' " value="返回修改" />
+        </p>
+       <!-- #if($!type=="WA")
+        <p class="mt10">
+            <a href="$!request.contextPath/game/updateindex.do?worksid=$!worksid">去修改»</a>
+        </p>
+        
+       #elseif($!type=="W")
+        <p class="mt10">
+            <a href="$!request.contextPath/works/uploadindex.do?worksid=$!worksid">去修改»</a>
+        </p>
+        #elseif($!type=="A")
+         <p class="mt10">
+            <a href="$!request.contextPath/artist/updateindex.do?artistid=$!artistid">去修改»</a>
+        </p>
+        #else
+        #end -->
+        
+    </form>
+    <div class="pop-ups none" id="read">
+        <div class="content clearfix">
+            <div class="title">
+                <div>“我的家”全国少年儿童绘画大赛参赛须知</div>
+            </div>
+            <div class="clearfix mt40">
+                <span>一、</span>
+                <p>本次大赛面向3~12岁美术爱好者，超出此年龄范围不具备参赛资格。</p>
+            </div>
+            <div class="clearfix mt40">
+                <span>二、</span>
+                <p>
+                    本次大赛的作品类型包括：国画、油画、水彩画、素描、版画、年画、动漫、儿童画（铅笔、钢笔、蜡笔画），
+                    规格不小于0.5m×0.5m，不大于2m×2m，不符合该要求的作品将无法通过审核。
+                </p>
+            </div>
+            <div class="clearfix mt40">
+                <span>三、</span>
+                <p>本次大赛参赛流程为：填写信息——上传作品——提交审核，未提交审核的作品将无法参赛此次比赛。</p>
+            </div>
+            <p class="link mt70"><a href="javascript:void(0);" id="btnBack"><i class="iconfont icon-fanhui"></i>返回继续提交</a></p>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- shared section start-->
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+    #parse("footer.html")
+    <script>
+        var siteConfig = {
+        	personalCenter: {
+             kidsUrl: "$!request.contextPath/help/personalCenter.do",
+             userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+             teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+             painterUrl: "$!request.contextPath/artist/personalCenter.do"
+             },
+             works: {
+             detailUrl: "$!request.contextPath/works/worksinfo.do"
+            },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: "competition/info"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

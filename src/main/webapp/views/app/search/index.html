@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" name="renderer" content="webkit">
+<!-- <meta property="qc:admins" content="2350137526075567752117167637570755716450647" /> -->
+<!-- <meta property="qc:admins" content="235013752607556775211716763757" />
+<meta property="qc:admins" content="235013752210755677521171676375" /> -->
+<meta property="wb:webmaster" content="a92891e2d30380c9" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=8.0000"></meta>
+<meta http-equiv="Pragma" content="no-cache"></meta>
+<meta http-equiv="Cache-Control" content="no-cache"></meta>
+<meta http-equiv="Expires" content="0"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>搜索</title>
+<link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon"
+	href="$!request.contextPath/favicon.ico">
+<script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-3">
+	#parse("head.html")
+	<div class="site-menu">
+		<ul class="site-container flc">
+			<li><a class=""
+				href="$!request.contextPath/home/index.do">首页</a></li>
+			<li><a class="" href="$!request.contextPath/game/about.do">关于大赛</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/works/index.do">作品展示</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/artist/index.do">小小画家</a>
+			</li>
+			<li><a href="$!request.contextPath/passWork/index.do">入围榜</a></li>
+			<li><a href="$!request.contextPath/love/index.do">公益活动</a></li>
+			<li>
+            <a class="" href="$!request.contextPath/game/activity.do">赛区活动</a>
+	        </li>
+	        <li class="">
+	            <a class="" href="$!request.contextPath/home/pastReview.do">往届回顾</a>
+	        </li>
+	        <li class="last search">
+            <form id="searchForm" class="clearfix" action="/" method="post">
+                <div id="searchWrap" class="fl clearfix none">
+                    <div class="text">
+                        <input name="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+                <input class="search-button" type="submit" value="搜索" />
+            </form>
+        </li>
+	        
+		</ul>
+	</div>
+
+	<div class="site-body">
+	<div class="searchPage">
+    <div class="searchPage-head">
+        <form id="searchMainForm" action="/" method="post">
+            <div class="main clearfix site-container">
+                <div class="text">
+                    <input name="keywords" autofocus type="text" id="text" placeholder="请输入搜索内容" />
+                </div>
+                <input class="site-button site-button-primary" type="submit" value="搜索" />
+            </div>
+        </form>
+    </div>
+    <div class="searchPage-tab site-tab" data-auto-parse="false">
+        <ul class="site-tab-nav">
+            <li class="active">
+                <a href="javascript:void(0);">
+                    <span>作品</span>
+                    (<i id="worksLabel">0</i>)
+                </a>
+            </li>
+            <li class="ml100">
+                <a href="javascript:void(0);">
+                    <span>画家</span>
+                    (<i id="painterLabel">0</i>)
+                </a>
+            </li>
+        </ul>
+        <div class="searchPage-content site-tab-panel">
+            <div class="searchPage-works site-container" id="worksPaging">
+                <ul class="flc list site-paging-list"></ul>
+                <script type="text/template" class="site-paging-tmpl">
+                    <li class="{{:i%5==0?"first":""}}">
+                        {{include tmpl="#worksTmpl"/}}
+                    </li>
+                </script>
+                <p class="site-paging-tip mt50"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+            <div class="searchPage-painter site-container none" id="painterPaging">
+                <ul class="flc list site-paging-list">
+                </ul>
+                <script type="text/template" class="site-paging-tmpl">
+                    <li class="{{:i%5==0?"first":""}}">
+                        <a target="_blank" class="image" href="{{:~siteConfig.personalCenter.painterUrl + "?artistid=" + artistInfo.id }}">
+                            <img class="J_imageAdapt" src="{{:artistInfo.img}}" />
+                        </a>
+                        <div class="content">
+                            <p class="title">
+                                <span>{{:artistInfo.name}}</span>
+                                <span class="line"></span>
+                                <span>{{:artistInfo.age}}岁</span>
+                            </p>
+                            <p class="des">
+                                <span>{{:artistInfo.school}}</span>
+                            </p>
+                        </div>
+                    </li>
+                </script>
+                <p class="site-paging-tip mt50"></p>
+                <p class="site-paging-button">
+                    <a href="javascript:void(0);">加载更多</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="searchPage-recommend site-paging" data-url="/search/recommendWorks.do" data-params='{"size":5}'>
+        <div class="main site-container">
+            <p class="searchPage-recommend-title clearfix">
+                <span>推荐作品</span>
+                <a target="_blank" href="$!request.contextPath/works/index.do">更多</a>
+            </p>
+            <ul class="flc list site-paging-list"></ul>
+            <script type="text/template" class="site-paging-tmpl">
+                <li class="{{:i == 0 ? "first" : ""}}">
+                    {{include tmpl="#worksTmpl"/}}
+                </li>
+            </script>
+            <p class="site-paging-tip mt50"></p>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="worksTmpl">
+    <a target="_blank" class="image" href="{{:~siteConfig.works.detailUrl + "?worksid=" + works.id}}">
+        <img class="J_imageAdapt" src="{{:works.worksPictureItemSet[0].picture.path}}" />
+    </a>
+    <div class="content">
+        <p class="title">
+            <span>{{:works.name}}</span>
+            <span class="line"></span>
+            <span>{{:tag.name}}</span>
+        </p>
+        <p class="des">
+            <span>{{:works.artist.artistInfo.name}}</span>
+            <span class="line"></span>
+            <span>{{:~getGender(works.artist.artistInfo.male)}}</span>
+            <span class="line"></span>
+            <span>{{:works.artist.artistInfo.age}}岁</span>
+        </p>
+    </div>
+</script>
+	</div>
+
+	<div class="site-foot">
+	#parse("_footer.html")
+	</div>
+	#parse("footer.html")
+	<!-- shared section start-->
+	<script>
+		var siteConfig = {
+				personalCenter: {
+	                kidsUrl: "$!request.contextPath/help/personalCenter.do",
+	                userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+	                teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+	                painterUrl: "$!request.contextPath/artist/personalCenter.do"
+	            },
+	            works: {
+	                detailUrl: "$!request.contextPath/works/worksinfo.do"
+	            },
+			fileUrl : "",
+			searchUrl: "$!request.contextPath/search/index.do",
+			resUrl : "$!request.contextPath/res",
+			serverUrl : "$!request.contextPath",
+			app : "search/index"
+		};
+	</script>
+	<script data-main="$!request.contextPath/res/js/init"
+		src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+	<!-- shared section end-->
+	<!--百度统计-->
+	<script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

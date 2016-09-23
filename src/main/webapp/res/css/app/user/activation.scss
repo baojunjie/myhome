@@ -1,0 +1,37 @@
+﻿.activationPage {
+    padding: 116px 0 170px 402px;
+    font-size: 14px;
+    color: #808080;
+
+    .title {
+        font-size: 24px;
+        color: #666;
+        margin-left: 64px;
+    }
+
+    input {
+        height: 46px;
+        line-height: 46px;
+        padding-left: 10px;
+        border-radius: 3px;
+
+        &.code {
+            width: 186px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            color: #b2b2b2;
+        }
+
+        .site-button-disabled{
+            color: #9d9d9d;
+        }
+
+        &.getcode {
+            width: 100px;
+            font-size: 14px;
+            color: #696969;
+            border:none;
+        }
+    }
+}

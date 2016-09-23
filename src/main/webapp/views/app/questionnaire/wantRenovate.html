@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我要装修</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if lte IE 8]>
+       <link rel="stylesheet" type="text/css" href="$!request.contextPath/res/css/app/questionnaire/questionnaireMain.css" />
+    <![endif]-->
+</head>
+<body class="site questionnairePage ">
+#parse("_head.html")
+<div class="banner"></div>
+<!-- <div class="nav">
+    <ul class="site-container clearfix">
+        <li class="first nav-renovated">
+            <a href="$!request.contextPath/mobile/haveToDecorate/haveToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-wantRenovate">
+            <a href="$!request.contextPath/mobile/wantToDecorate/wantToDecorate.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class="active"></a>
+        </li>
+        <li class="nav-buyHouse">
+            <a href="$!request.contextPath/mobile/wantBuyHouse/byHouse.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+        <li class="nav-mybalcony">
+            <a href="$!request.contextPath/mobile/myBalcony/myBalcony.do?user.id=$session.getAttribute('USER_ID')&user.userInfo.invitationCode="+$session.getAttribute('USER_INVITATIONCODE') class=""></a>
+        </li>
+    </ul>
+</div> -->
+<div class="content">
+ <div class="content-i">
+<div class="wantRenovate">
+    <h1>2015我的家调查问卷--我要装修</h1>
+     <form class="site-form mt80" data-auto-parse="false" action="/mobile/wantToDecorate/addMobileWantToDecorate.do" method="post" data-tip-success-class="">
+         <input type="text" name="user.id"  hidden="true" value="$!id">
+          <input type="text" name="user.userInfo.invitationCode"  hidden="true" value="$!invitationCode">
+        <div class="formcontent">
+            <section>
+                <h2 class="clearfix">
+                    <i>01</i>
+                    说说您对未来家的装修需求
+                </h2>
+                <div class="sectionContent">
+                    <div class="item clearfix">
+                        <label><i>*</i>所在城市</label>
+                        <div class="input">
+                            <select id="province" class="site-input"></select>
+                            <select id="city" class="site-input ml20"></select>
+                            <select id="district" name="region.id" class="site-input ml20"></select>
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>楼盘名称</label>
+                        <div class="input">
+                            <input data-valid-require="请输入楼盘名称" name="name" data-valid-range="楼盘名称长度在2-32位" data-valid-range-min="2" data-valid-range-max="32" class="site-input site-input2 J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>购买时间</label>
+                        <div class="input">
+                            <input data-valid-require="请输入购买时间" name="date" onfocus="WdatePicker({ maxDate: '%y-%M-%d' })" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>面积</label>
+                        <div class="input">
+                            <input data-valid-require="请输入面积" name="area" data-valid-integer="请输入正确的面积" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">平米</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>单价</label>
+                        <div class="input">
+                            <input data-valid-require="请输入单价" name="unitPrice" data-valid-numeric="请输入正确的单价" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">元/平米</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="item clearfix">
+                        <label><i>*</i>装修预算</label>
+                        <div class="input">
+                            <input data-valid-require="请输入预算" name="budget" data-valid-numeric="请输入正确的预算" class="site-input J_validInput" type="text">
+                        </div>
+                        <div class="des">元</div>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="item item1">
+                        <div class="clearfix">
+                            <label><i>*</i>您家是否愿意加入短租airbnb？</label>
+                            <div class="input">
+                                <input type="radio" checked name="airbnb" value="1" class="radio" id="airbnb1" /><label for="airbnb1">是</label>
+                                <input type="radio" name="airbnb"  value="0" class="radio ml60" id="airbnb2" /><label for="airbnb2">否</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item1 mt10">
+                        <div class="clearfix">
+                            <label><i>*</i>您家是否需要出售？</label>
+                            <div class="input">
+                                <input type="radio" checked name="houseForSale" value="1" class="radio" id="radio1" /><label for="radio1">是</label>
+                                <input type="radio" name="houseForSale" value="0" class="radio ml60" id="radio2" /><label for="radio2">否</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>02</i>
+                    你喜欢以下哪种装修风格
+                </h2>
+                <div class="sectionContent">
+                    <div class="item">
+                        <ul class="clearfix">
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style1.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="1"  class="radio" id="renovetestyle1" /><label for="renovetestyle1">倾城</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style2.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="2"  class="radio" id="renovetestyle2" /><label for="renovetestyle2">檀悦</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style3.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="3" class="radio" id="renovetestyle3" /><label for="renovetestyle3">雅典娜</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style4.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="4" class="radio" id="renovetestyle4" /><label for="renovetestyle4">亚美利加</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style5.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="5" class="radio" id="renovetestyle5" /><label for="renovetestyle5">卢瓦尔</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <img src="$!request.contextPath/res/img/questionnaire/wantRenovate/style6.jpg" />
+                                </div>
+                                <div class="des">
+                                    <input type="radio" name="likeStyle" value="6" class="radio" id="renovetestyle6" /><label for="renovetestyle6">构家新古典</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>03</i>
+                    中国室内装饰协会装饰材料用品专业委员会推荐品牌
+                </h2>
+                <div class="sectionContent">
+                    <div class="item">
+                        <ul class="clearfix">
+                            <li class="meishiwang mt20">
+                                <div class="pic">
+                                    <a target="_blank" href="http://www.jswtc.net/"><img src="$!request.contextPath/res/img/questionnaire/wantRenovate/jinshiwang.gif" /></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 class="clearfix">
+                    <i>04</i>
+                    丰厚装修礼包，等你来领！
+                </h2>
+                <div class="sectionContent">
+                    <div class="item">
+                        <div class="introduce">
+                            <p>如果您也有朋友需要装修，赶快留下他的大名和联系方式吧！</p>
+                            <p>
+                                若您的朋友成功联系构家网装修，并通过购家宝支付装修定金，您和您的朋友均可获得10平方米卫
+                                生间专用防滑砖。以下每个城市限10份（浙江杭州、浙江宁波、浙江金华、浙江瑞安、广东珠海、
+                                广东中山、广东佛山、广州、安徽铜陵），先到先得，送完即止！
+                            </p>
+                        </div>
+                    </div>
+                    <h3 class="mt30">请填写您需要装修的朋友的真实信息：</h3>
+                    <div id="gifts">
+                        <div class="item gifts clearfix">
+                            <div class="fl clearfix">
+                                <label>姓名</label>
+                                <div class="input ml20">
+                                    <input data-valid-range="姓名长度在2-32位" name="list.name" data-valid-range-min="2" data-valid-range-max="32" class="site-input J_validInput" type="text">
+                                    <div class="tip"></div>
+                                </div>
+                            </div>
+                            <div class="fl clearfix ml70">
+                                <label>手机号</label>
+                                <div class="input ml20">
+                                    <input data-valid-mobile="请输入正确的手机号码" name="list.mobile" class="site-input J_validInput" type="text">
+                                    <div class="tip"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="clearfix">
+                            <div class="input">
+                                <input id="btnAddGifts" class="site-input site-btn" type="button" value="添加">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="submit">
+            <input class="site-button site-button-red" type="submit" value="提交问卷">
+        </div>
+    </form>
+</div>
+ </div>
+</div>
+<div id="questionnaireShareBox" class="successBoxWrap none">
+    <div class="successBox">
+        <a id="questionnaireShareClose" href="javascript:void(0);" class="close"><i class="iconfont icon-guanbi"></i></a>
+        <h2><span>恭喜，您获得10积分！</span></h2>
+    </div>
+</div>
+<script src="$!request.contextPath/res/lib/my97date/WdatePicker.js"></script>
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            //serverUrl: "http://tmyhome.goujiawang.com",
+            serverUrl: "$!request.contextPath",
+           // serverUrl: "http://www.haaaaaa.com",
+//               serverUrl: "http://192.168.3.45:8081/web_myhome",
+            //serverUrl: "http://192.168.1.73:8080/myhome",
+            app: "area,questionnaire/index"
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

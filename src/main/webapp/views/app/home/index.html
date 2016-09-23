@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8" name="renderer" content="webkit">
+<meta property="wb:webmaster" content="a92891e2d30380c9" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=8.0000"></meta>
+<meta http-equiv="Pragma" content="no-cache"></meta>
+<meta http-equiv="Cache-Control" content="no-cache"></meta>
+<meta http-equiv="Expires" content="0"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的家</title>
+<link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon"
+	href="$!request.contextPath/favicon.ico">
+<script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-3 homePage">
+	#parse("head.html")
+	<div class="site-menu">
+		<ul class="site-container flc">
+			<li><a class="current"
+				href="$!request.contextPath/home/index.do">首页</a></li>
+			<li><a class="" href="$!request.contextPath/game/about.do">关于大赛</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/works/index.do">作品展示</a>
+			</li>
+			<li><a class="" href="$!request.contextPath/artist/index.do">小小画家</a>
+			</li>
+			<li><a href="$!request.contextPath/passWork/index.do">入围榜</a></li>
+			<li><a href="$!request.contextPath/love/index.do">公益活动</a></li>
+			<li>
+            <a class="" href="$!request.contextPath/game/activity.do">赛区活动</a>
+	        </li>
+	        <li class="">
+	            <a class="" href="$!request.contextPath/home/pastReview.do">往届回顾</a>
+	        </li>
+	        <li class="last search">
+            <form id="searchForm" class="clearfix" action="/" method="post">
+                <div id="searchWrap" class="fl clearfix none">
+                    <div class="text">
+                        <input name="keywords" type="text" placeholder="请输入搜索内容" />
+                    </div>
+                </div>
+                <input class="search-button" type="submit" value="搜索" />
+            </form>
+        </li>
+		</ul>
+	</div>
+
+	<div class="site-body">
+
+
+		<div class="homePage">
+			<div id="banner" class="banner">
+				<a class="control control-preview" href="javascript:void(0);"></a>
+				<ul>
+					 #foreach($singlepage in $!page) 
+					 <li class="none item" style="background-image: url('$!singlepage.filePath');">
+					    <a  target="_blank" href="$!singlepage.url"></a>
+					</li>
+					 #end
+				</ul>
+				<a class="control control-next" href="javascript:void(0);"></a>
+			</div>
+			<dl class="works" id="works">
+				<dt>
+				<span> <i>01</i><strong>作品展示</strong>
+					</span>
+				</dt>
+				<dd class="site-container clearfix">
+					<div class="works-item fl   site-tab J_worksTab" data-auto-parse="false">
+						<p class="title">
+							<strong>TOP作品秀</strong> <a
+								href="$!request.contextPath/works/index.do?index=0">更多 > </a>
+						</p>
+						<ol class="site-tab-nav flc">
+							<li data-tab-id="age0" class="active first "><a data-type="age" data-val="" class="J_worksItem" href="javascript:void(0);">全部</a>
+							</li>
+							<li data-tab-id="age1" class=""><a data-type="age" data-val="3" class="J_worksItem" href="javascript:void(0)">3岁</a></li>
+							<li data-tab-id="age2" class=" "><a data-type="age" data-val="4" class="J_worksItem" href="javascript:void(0)">4岁</a></li>
+							<li data-tab-id="age3" class=" "><a data-type="age" data-val="5" class="J_worksItem" href="javascript:void(0)">5岁</a></li>
+							<li data-tab-id="age4" class=" "><a data-type="age" data-val="6" class="J_worksItem" href="javascript:void(0)">6岁</a></li>
+							<li data-tab-id="age5" class=" "><a data-type="age" data-val="7" class="J_worksItem" href="javascript:void(0)">7岁</a></li>
+							<li data-tab-id="age6" class=" "><a data-type="age" data-val="8" class="J_worksItem" href="javascript:void(0)">8岁</a></li>
+							<li data-tab-id="age7" class=" "><a data-type="age" data-val="9" class="J_worksItem" href="javascript:void(0)">9岁</a></li>
+							<li data-tab-id="age8" class=" "><a data-type="age" data-val="10" class="J_worksItem" href="javascript:void(0)">10岁</a></li>
+							<li data-tab-id="age9" class=" "><a data-type="age" data-val="11" class="J_worksItem" href="javascript:void(0)">11岁</a></li>
+							<li data-tab-id="age10" class=" last"><a data-type="age" data-val="12" class="J_worksItem" href="javascript:void(0)">12岁</a></li>
+						</ol>
+						<div class="site-tab-panel">
+						</div>
+					</div>
+					 <div class="works-item fl last  site-tab J_worksTab" data-auto-parse="false">
+						<p class="title">
+							<strong>赛区作品秀</strong> <a
+								href="$!request.contextPath/works/index.do?index=1">更多 ></a>
+						</p>
+						<ol class="site-tab-nav flc">
+							<li data-tab-id="age0" class="active first "><a data-type="city" data-val="" class="J_worksItem" href="javascript:void(0);">全部</a>
+							</li>
+							#foreach($info in $!citylist)
+							<li data-tab-id="age$velocityCount" #if($velocityCount==$!citycount) class="last" #else class="" #end><a data-type="city" data-val="$!info.cityCode" class="J_worksItem" href="javascript:void(0);">$!info.cityName</a></li>
+							#end 
+						</ol>
+						<div class="site-tab-panel">
+						</div>
+					</div>
+					 <script type="text/template" id="worksTmpl">
+                <div data-tab-id="{{:tabId}}" class="{{:action=="init"?"":"none"}}">
+                    {{props data}}
+							{{if key=="boylist" || key=="girllist"}}
+                    <div class="section clearfix">
+                        <label class="fl boy">{{>key=="boylist"?"男生":"女生"}}</label>
+                        <ul class="fl flc">
+                            {{for prop}}
+                            <li class="J_voteWrap {{:#index==0?"first":""}}">
+                                <div class="main">
+                                    <a class="img" href="$!request.contextPath/works/worksinfo.do?worksid={{:id}}">
+                                        <img class="J_imageAdapt" src="{{:worksPictureItemSet[0].picture.path}}" />
+                                    </a>
+                                    <span class="action none">
+                                        <a class="vote J_vote" data-amount="{{:votenum}}" data-id="{{:id}}" href="javascript:void(0);">给他点赞</a>
+                                    </span>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        <a class="name" href="$!request.contextPath/artist/personalCenter.do?artistid={{:artist.id}}">{{:artist.artistInfo.name}}</a>
+                                        <span class="line">|</span>
+                                        <span class="">{{:artist.artistInfo.age}}岁</span>
+                                        <span class="line">|</span>
+                                        <span title="{{:artist.artistInfo.region.parent.name}} {{:artist.artistInfo.region.name}}">{{:artist.artistInfo.region.parent.name}} {{:artist.artistInfo.region.name}}</span>
+                                    </p>
+                                    <p class="worksName info">{{:name}}</p>
+{{if artist.artistInfo.school==null || artist.artistInfo.school==""}}
+
+<br/>
+{{/if}}
+                                    <p class="info">{{:artist.artistInfo.school}}</p>
+                                    <p class="number"><i class="iconfont icon-like"></i><span class="J_voteText">{{:votenum || 0}}</span></p>
+                                </div>
+                            </li>
+                            {{/for}}
+                        </ul>
+                    </div>
+							{{/if}}
+                    {{/props}}
+                </div>
+            </script>
+				</dd>
+			</dl>
+
+			<dl class="painter">
+				<dt>
+					<span> <i>02</i> <strong>小小画家</strong>
+					</span>
+				</dt>
+				<dd class="site-container">
+					<div class="painter-item">
+						<p class="title clearfix">
+							<strong>男生专区</strong> <a
+								href="$!request.contextPath/artist/index.do?searchmale=1">查看全部
+								></a>
+						</p>
+						<ul class="site-painter-list flc">
+							#foreach($info in $!artistListBoy) #if($velocityCount==1)
+							<li class="first">#else
+							<li class="">#end
+								<div class="main">
+									<a
+										href="$!request.contextPath/artist/personalCenter.do?artistid=$!info.id">
+										<img class="J_imageAdapt" src="$!info.img" />
+									</a> <span>#if($!info.votenum)$!info.votenum#else 0#end<i class="iconfont icon-like"></i></span>
+								</div>
+								<div class="content">
+									<p>
+									<a class="name" href="$!request.contextPath/artist/personalCenter.do?artistid=$!info.id">$!info.name</a>
+									 <span class="line">|</span>
+									<span class="age">$!info.age岁</span>
+									</p>
+									<p>
+										<span class="city">$!info.cityName $!info.region</span> <span class="line">|</span>
+										<span class="age" title="$!info.school">#if($!info.school!="")$!info.school#else#end</span>
+									</p>
+								</div>
+							</li> #end
+						</ul>
+					</div>
+					<div class="painter-item">
+						<p class="title clearfix">
+							<strong>女生专区</strong> <a
+								href="$!request.contextPath/artist/index.do?searchmale=2">查看全部
+								></a>
+						</p>
+						<ul class="site-painter-list flc">
+							#foreach($info in $!artistListGirl) #if($velocityCount==1)
+							<li class="first">#else
+							<li class="">#end
+								<div class="main">
+									<a
+										href="$!request.contextPath/artist/personalCenter.do?artistid=$!info.id">
+										<img class="J_imageAdapt" src="$!info.img" />
+									</a> <span>#if($!info.votenum)$!info.votenum#else 0#end<i class="iconfont icon-like"></i></span>
+								</div>
+								<div class="content">
+									<p>
+										<a class="name" href="$!request.contextPath/artist/personalCenter.do?artistid=$!info.id">$!info.name</a>
+										<span class="line">|</span>
+										<span class="age">$!info.age岁</span>
+									</p>
+									<p>
+										<span class="city">$!info.cityName $!info.region</span> <span class="line">|</span>
+										<span class="age" title="$!info.school">#if($!info.school!="")$!info.school#else#end</span>
+									</p>
+								</div>
+							</li> #end
+						</ul>
+					</div>
+				</dd>
+			</dl>
+
+			<dl  class="rankingList">
+				<dt>
+					 <span> <a id="ranking"></a> <i>03</i> <strong>入围榜</strong>
+					 </span>
+				</dt>
+				<dd>
+					 <div class="site-container main clearfix">
+                <div class="fl rankingWorks">
+                    <p class="title clearfix">
+                        <strong>入围作品</strong>
+                        <a href="$!request.contextPath/passWork/index.do">全部 ></a>
+                    </p>
+                    <ul class="flc">
+                    	#foreach($worksinfo in $!PassWorks)
+                        <li #if($velocityCount==1) class="first"#elseif($velocityCount==4) class="first" #else #end>
+                            <a class="img" href="$!request.contextPath/works/worksinfo.do?worksid=$!worksinfo.works.id">
+                                <img class="J_imageAdapt" src="#foreach($picture in $!worksinfo.works.worksPictureItemSet) $!picture.picture.path #end" />
+                            </a>
+                             <div class="prize grandPrize none"></div>
+                            <p>
+                                <a class="name" href="$!request.contextPath/works/worksinfo.do?worksid=$!worksinfo.works.id">$!worksinfo.works.name</a>
+                            </p>
+                        </li>
+                        #end
+                    </ul>
+                </div>
+                <div class="fl rankingPainters">                  
+                    <p class="title clearfix">
+                        <strong>入围画家</strong>
+                        <a href="$!request.contextPath/passWork/index.do#artist">全部 ></a>
+                    </p>
+                    <ul class="flc">
+                    #foreach($artistinfo in $!PassArtist)
+                        <li #if($velocityCount==1) class="first"#elseif($velocityCount==4) class="first" #else #end>
+                            <a class="img" href="$!request.contextPath/artist/personalCenter.do?artistid=$!artistinfo.id">
+                                <img class="J_imageAdapt" src="$!artistinfo.img" />
+                            </a>
+                            <div class="prize grandPrize none"></div>
+                            <p>
+                                <a class="name" href="$!request.contextPath/artist/personalCenter.do?artistid=$!artistinfo.id">$!artistinfo.name</a>
+                                <span class="line">|</span>
+                                <span class="">$!artistinfo.age岁</span>
+                            </p>
+                        </li>
+                        #end
+                    </ul>
+                </div>
+					</div>
+				</dd>
+			</dl>
+
+			<div class="help">
+				<div class="title">
+					<a id="help"></a>
+				</div>
+				<ul class="site-container flc">
+					<li class="first"><a
+						href="$!request.contextPath/love/index.do"> <img
+							src="$!request.contextPath/res/img/home/help-item-1.jpg" /> <span>分享打赏金给小朋友</span>
+					</a></li>
+					<li><a href="$!request.contextPath/love/index.do"> <img
+							src="$!request.contextPath/res/img/home/help-item-2.jpg" /> <span>出售作品电子使用版权</span>
+					</a></li>
+					<li><a href="$!request.contextPath/love/index.do"> <img
+							src="$!request.contextPath/res/img/home/help-item-3.jpg" /> <span>如何帮助？</span>
+					</a></li>
+					<li><a href="$!request.contextPath/love/index.do"> <img
+							src="$!request.contextPath/res/img/home/help-item-4.jpg" /> <span>如何打赏？</span>
+					</a></li>
+				</ul>
+			</div>
+			<div class="link clearfix site-container">
+				    <div class="link site-container">
+				        <a href="http://www.goujiawang.com/" target="_blank"></a>
+				    </div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="site-foot">#parse("_footer.html")</div>
+	#parse("footer.html")
+	<!-- shared section start-->
+	<script>
+		var siteConfig = {
+				personalCenter: {
+	                kidsUrl: "$!request.contextPath/help/personalCenter.do",
+	                userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+	                teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+	                painterUrl: "$!request.contextPath/artist/personalCenter.do"
+	            },
+	            works: {
+	                detailUrl: "$!request.contextPath/works/worksinfo.do"
+	            },
+			fileUrl : "",
+			searchUrl: "$!request.contextPath/search/index.do",
+			resUrl : "$!request.contextPath/res",
+			serverUrl : "$!request.contextPath",
+			app : "home/index,works/works"
+		};
+	</script>
+	<script data-main="$!request.contextPath/res/js/init"
+		src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+	<!-- shared section end-->
+	<!--百度统计-->
+	<script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

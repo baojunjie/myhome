@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+	<class name="ArtistInfo" table="t_artist_info" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="foreign">
+				<param name="property">artist</param>
+			</generator>
+		</id>
+
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime"
+			type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime"
+			type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<one-to-one name="artist" constrained="true" cascade="save-update" />
+
+		<property name="male" column="male" type="boolean" />
+
+		<property name="birthday" column="birthday" type="date" />
+		<!-- cascade="save-update" -->
+		<many-to-one name="region" class="Region" unique="true"
+			column="region_id" cascade="none" lazy="false" />
+
+		<property name="name" column="name" type="string" />
+
+		<property name="nation" column="nation" type="string" />
+
+		<property name="constellation" column="constellation" type="string" />
+
+		<property name="zodiac" column="zodiac" type="string" />
+
+		<property name="idCode" column="id_code" type="string" />
+
+		<property name="parentMobile" column="parent_mobile" type="string" />
+
+		<property name="school" column="school" type="string" />
+
+		<property name="schoolMobile" column="school_mobile" type="string" />
+
+		<property name="instructor" column="instructor" type="string" />
+
+		<property name="instructorMobile" column="instructor_mobile"
+			type="string" />
+
+		<property name="teacher" column="teacher" type="string" />
+
+		<property name="teacherMobile" column="teacher_mobile" type="string" />
+
+		<property name="img" column="img" type="string" />
+
+		<property name="orginimg" column="orginimg" type="string" />
+
+		<property name="referrerSchool" type="string" column="referrer_school" />
+
+		<property name="referrerMobile" type="string" column="referrer_mobile" />
+
+		<property name="cartoon" type="string" column="cartoon" />
+
+		<property name="age" type="integer" column="age" />
+
+		<many-to-one name="user" class="User" column="user_id"
+			cascade="none" lazy="false"></many-to-one>
+
+		<property name="origin" type="string" column="origin" />
+
+		<property name="token" type="string" column="token" />
+
+		<!-- 2.0新增 -->
+		<property name="alipayAccount" type="string" column="alipay_account" />
+
+		<property name="bankAccount" type="string" column="bank_account" />
+
+		<property name="bankName" type="string" column="bank_name" />
+
+		<property name="accountName" type="string" column="account_name" />
+
+		<property name="weChatAccount" type="string" column="weChat_account" />
+
+		<!-- 2.1新增 -->
+		<property name="trainingInstitution" type="string" column="training_institution" />
+	</class>
+</hibernate-mapping>
+

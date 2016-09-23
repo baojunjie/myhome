@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="Page" table="t_page" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <property name="name" column="name" type="string" />
+        
+        <property name="filePath" column="file_path" type="string" />
+        
+        <property name="url" column="url" type="string" />
+        
+        <property name="type" column="type" type="integer" />
+        
+        <property name="sort" column="sort" type="integer" />
+    </class>
+</hibernate-mapping>
+

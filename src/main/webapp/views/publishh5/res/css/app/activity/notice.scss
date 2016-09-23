@@ -1,0 +1,23 @@
+﻿.noticePage {
+    font-family: "SimHei ";
+    background: #eee;
+    padding-bottom:1rem;
+
+    h1 {
+        font-size: 25px;
+        line-height: 1.625rem;
+        text-align: center;
+        margin: 1rem auto 1.2rem;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.5em;
+        margin-top: 1.35rem;
+        padding: 0 0.8rem;
+
+        span {          
+           font-weight:bolder;        
+        }
+    }
+}

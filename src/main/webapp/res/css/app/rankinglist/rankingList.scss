@@ -1,0 +1,217 @@
+﻿.rankingListPage {
+    .plan {
+        height: 300px;
+        background: url(../img/rankinglist/rankingbanner.jpg) no-repeat 50% 50%;
+    }
+
+    .ranking {
+        width: 1308px;
+        margin: 0 auto;
+
+        .content {
+            width: 1200px;
+
+            .title {
+                height: 24px;
+                line-height: 24px;
+                color: #333;
+                font-size: 24px;
+                text-align: center;
+                background: url(../img/rankinglist/bg.jpg) no-repeat 0 center;
+            }
+
+            .list {
+                li {
+                    text-align: center;
+                    border: 1px solid #dedfe0;
+                    margin: 24px 0 0 24px;
+                    position: relative;
+
+                    &.first {
+                        margin-left: 0;
+                    }
+
+                    .main {
+                        display: block;
+                        width: 178px;
+                        height: 200px;
+
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+
+                    .prize {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 80px;
+                        height: 78px;
+                        background: no-repeat;
+
+                        &.grandPrize {
+                            background-image: url(../img/rankinglist/grandPrize.png);
+                        }
+
+                        &.gold {
+                            background-image: url(../img/rankinglist/gold.png);
+                        }
+
+                        &.silver {
+                            background-image: url(../img/rankinglist/silver.png);
+                        }
+
+                        &.bronze {
+                            background-image: url(../img/rankinglist/bronze.png);
+                        }
+
+                        &.creationAward {
+                            background-image: url(../img/rankinglist/creationAward.png);
+                        }
+
+                        &.national-gold {
+                            background-image: url(../img/rankinglist/national-gold.png);
+                        }
+
+                        &.national-silver {
+                            background-image: url(../img/rankinglist/national-silver.png);
+                        }
+
+                        &.national-bronze {
+                            background-image: url(../img/rankinglist/national-bronze.png);
+                        }
+
+                        &.provincial-gold {
+                            background-image: url(../img/rankinglist/provincial-gold.png);
+                        }
+
+                        &.provincial-silver {
+                            background-image: url(../img/rankinglist/provincial-silver.png);
+                        }
+
+                        &.provincial-bronze {
+                            background-image: url(../img/rankinglist/provincial-bronze.png);
+                        }
+
+                        &.city-gold {
+                            background-image: url(../img/rankinglist/city-gold.png);
+                        }
+
+                        &.city-silver {
+                            background-image: url(../img/rankinglist/city-silver.png);
+                        }
+
+                        &.city-bronze {
+                            background-image: url(../img/rankinglist/city-bronze.png);
+                        }
+                    }
+
+                    .detail {
+                        @include ellipsis(178px);
+                        line-height: 22px;
+                        padding: 18px 0;
+
+                        a {
+                            color: #252525;
+                        }
+                    }
+                }
+            }
+
+            .paging {
+                text-align: center;
+
+                a {
+                    border: 1px solid #f2f2f2;
+                    border-left: 0;
+                    color: #999;
+                    padding: 6px 16px;
+
+                    i {
+                        font-size: 12px;
+                    }
+
+                    &:first-child {
+                        border-left: 1px solid #f2f2f2;
+                    }
+
+                    &.current {
+                        background: #e8440a;
+                        color: white;
+                    }
+                }
+            }
+
+            .painter {
+                margin-bottom: 80px;
+
+                .list {
+                    li {
+                        border: none;
+                        margin: 26px 0 0 26px;
+
+
+                        &.first {
+                            margin-left: 0;
+                        }
+
+                        .main {
+                            height: 214px;
+                        }
+
+
+
+                        .detail {
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 178px;
+                            color: #FFF;
+                            line-height: 22px;
+                            padding: 14px 0;
+                            background: url(../img/rankinglist/painterbg.png) repeat;
+
+                            .name {
+                                color: #FFF;
+                            }
+
+                            .line {
+                                top: -2px;
+                                margin: 0 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .timeline {
+        width: 64px;
+        text-align: center;
+        margin-top: 128px;
+
+        dl {
+            color: #b2b2b2;
+
+            dt {
+                margin-top: 26px;
+            }
+
+            dd {
+                a {
+                    color: #b2b2b2;
+                    padding-left: 10px;
+
+                    &.active {
+                        color: #e8440a;
+                        background: url(../img/rankinglist/libg.jpg) no-repeat 0 center;
+                    }
+                }
+
+                margin-top: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,412 @@
+﻿@media only screen and (max-device-width : 800px) {
+    .questionnairePage {
+        background: #fe1e52;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .successBoxWrap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+
+            .successBox {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -45%;
+                margin-top: -160px;
+                width: 90%;
+                background: #FFF;
+                padding: 100px 40px;
+                text-align: center;
+                border-radius: 4px;
+
+                .close {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+
+                    i {
+                        font-size: 18px;
+                        color: #666;
+                    }
+
+                    &:hover i {
+                        color: #f4480a;
+                    }
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+
+                .mobile {
+                    margin-top: 15px;
+                }
+
+                .pc {
+                    display: none;
+                }
+
+                .wechat {
+                    display: none;
+                }
+
+                span {
+                    color: #ec5143;
+                }
+            }
+        }
+
+        input[type=text], textarea {
+            -webkit-appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .site-container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .site-nav {
+            display: none;
+        }
+
+        .banner {
+            height: 300px;
+            background: url(../img/questionnaire/mobile/top.png) no-repeat 50% 0;
+            background-size: 100%;
+        }
+
+        .nav {
+            display: none;
+            background: url(../img/questionnaire/mobile/nav/bg.png) repeat-x;
+            border: 1px solid #ec1445;
+            border-left: 0;
+            border-right: 0;
+
+            li {
+                float: left;
+                margin-left: 5px;
+
+                a {
+                    display: block;
+                    height: 45px;
+                    width: 88px;
+                    background: no-repeat 0 0;
+                    background-size: 100%;
+                }
+            }
+
+            .nav-renovated a {
+                background-image: url(../img/questionnaire/mobile/nav/renovated.png);
+
+                &.active {
+                    background-image: url(../img/questionnaire/mobile/nav/renovated-active.png);
+                }
+            }
+
+            .nav-wantRenovate a {
+                background-image: url(../img/questionnaire/mobile/nav/wantRenovate.png);
+
+                &.active {
+                    background-image: url(../img/questionnaire/mobile/nav/wantRenovate-active.png);
+                }
+            }
+
+            .nav-buyHouse a {
+                background-image: url(../img/questionnaire/mobile/nav/buyHouse.png);
+
+                &.active {
+                    background-image: url(../img/questionnaire/mobile/nav/buyHouse-active.png);
+                }
+            }
+
+            .nav-mybalcony a {
+                background-image: url(../img/questionnaire/mobile/nav/mybalcony.png);
+
+                &.active {
+                    background-image: url(../img/questionnaire/mobile/nav/mybalcony-active.png);
+                }
+            }
+        }
+
+        .content {
+            font-size: 14px;
+            padding: 0 5px 5px;
+            margin-top: 15px;
+
+            &-i {
+                background: white;
+                padding: 12px 12px 20px;
+            }
+
+            h1 {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                height: 42px;
+                line-height: 42px;
+                width: 80%;
+                margin: 50px auto 0;
+                background: url(../img/questionnaire/mobile/head-bg.png) no-repeat 0 0;
+                background-size: 100%;
+            }
+
+            h2 {
+                font-size: 15px;
+                color: #6a0402;
+                margin-top: 30px;
+            }
+
+            h3 {
+                font-size: 14px;
+                color: #6a0402;
+                margin-top: 30px;
+            }
+
+            .designer.fl, .craftsman.fl {
+                float: none;
+            }
+
+            form {
+                margin-top: 0;
+            }
+
+            .item {
+                margin-top: 8px;
+            }
+
+            label {
+                display: block;
+                color: #666;
+            }
+
+            .input {
+                margin-top: 2px;
+
+                label {
+                    display: inline;
+                }
+            }
+
+            .des label {
+                display: inline;
+            }
+
+            .tip {
+                clear: both;
+                font-size: 12px;
+                color: #ec5143;
+            }
+
+            .site-input {
+                height: 34px;
+                line-height: 34px;
+                width: 98%;
+                padding: 5px 6px 5px 7px;
+                border-radius: 2px;
+            }
+
+            #province, #city, #district {
+                width: 102px;
+            }
+
+            select.ml20 {
+                margin-left: 10px !important;
+            }
+
+            select.site-input {
+                width: 98%;
+            }
+
+            .submit {
+                margin-top: 30px;
+                text-align: center;
+            }
+
+            .site-button {
+                color: white;
+                font-size: 17px;
+                width: 100%;
+                height: 45px;
+                line-height: 45px;
+                background: #fe0909;
+            }
+
+            textarea.site-input {
+                height: 90px;
+            }
+
+            .radio.ml60 {
+                margin-left: 40px !important;
+            }
+
+            li {
+                float: left;
+                margin: 8px 0 0 8px;
+
+                .pic {
+                    overflow: hidden;
+                    width: 150px;
+                    border: 1px solid #ffe1df;
+                }
+
+                .pic img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                .des {
+                    text-align: center;
+                    margin-top: 5px;
+
+                    .radio {
+                        width: 12px;
+                        height: 12px;
+                    }
+
+                    label {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .gifts {
+                label {
+                    display: block;
+                }
+
+                .input {
+                    display: block;
+                }
+
+                .ml20, .ml70 {
+                    margin: 0 !important;
+                }
+
+                .ml70 {
+                    margin-top: 10px !important;
+                }
+
+                .fl {
+                    float: none;
+                }
+            }
+
+            .site-btn {
+                width: 73px;
+                height: 30px;
+                line-height: 30px;
+                padding: 0;
+                margin: 0;
+                background: #f5edeb;
+            }
+
+            .site-upload {
+                .input {
+                    float: left;
+                }
+            }
+
+            .hard {
+                padding: 0 10px;
+
+                input {
+                    margin: 8px 0 0 8px;
+                }
+            }
+
+            .site-upload-button {
+                display: inline-block;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 370px) {
+    .questionnairePage {
+        .banner {
+            height: 240px;
+        }
+
+        .nav {
+
+            li {
+                float: left;
+                margin-left: 5px;
+
+                a {
+                    display: block;
+                    height: 40px;
+                    width: 75px;
+                    background: no-repeat 0 0;
+                    background-size: 100%;
+                }
+            }
+        }
+
+        .content {
+
+            h1 {
+                width: 84%;
+                height: 38px;
+                line-height: 38px;
+            }
+
+            #province, #city, #district {
+                width: 85px;
+            }
+
+            select.site-input {
+                width: 99%;
+            }
+
+            li {
+
+                .pic {
+                    width: 132px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
+    .questionnairePage {
+        .nav {
+
+            li {
+                float: left;
+                margin-left: 10px;
+            }
+        }
+
+        .content {
+
+            h1 {
+                height: 48px;
+                line-height: 48px;
+            }
+
+            #province, #city, #district {
+                width: 114px;
+            }
+
+            li {
+
+                .pic {
+                    width: 116px;
+                }
+            }
+        }
+    }
+}

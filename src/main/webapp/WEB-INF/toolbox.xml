@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<toolbox>
+	<xhtml>true</xhtml>
+	
+	<!-- <tool>
+		<key>env</key>
+		<scope>request</scope>
+		<class>com.goujia.lychee.common.helper.GlobEnv</class>
+	</tool>
+	
+	<tool>
+		<key>esc</key>
+		<scope>request</scope>
+		<class>com.goujia.lychee.common.util.EscapeUtil</class>
+	</tool>
+	
+	<tool>
+		<key>date</key>
+		<scope>application</scope>
+		<class>com.goujia.lychee.common.util.DateUtil</class>
+	</tool>
+	<tool>
+		<key>DataUtil</key>
+		<scope>application</scope>
+		<class>com.goujia.ges.util.DataUtil</class>
+	</tool>
+	 -->
+	
+</toolbox>

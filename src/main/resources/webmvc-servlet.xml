@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns              = "http://www.springframework.org/schema/mvc" 
+			 xmlns:tx           = "http://www.springframework.org/schema/tx" 
+			 xmlns:xsi          = "http://www.w3.org/2001/XMLSchema-instance" 
+			 xmlns:mvc          = "http://www.springframework.org/schema/mvc" 
+			 xmlns:aop     	    = "http://www.springframework.org/schema/aop" 
+			 xmlns:beans        = "http://www.springframework.org/schema/beans" 
+			 xmlns:context 	    = "http://www.springframework.org/schema/context"
+			 xmlns:ehcache      = "http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring" 
+			 xsi:schemaLocation = "http://www.springframework.org/schema/mvc 
+			 				       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+								   http://www.springframework.org/schema/beans 
+								   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+								   http://www.springframework.org/schema/tx 
+								   http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+								   http://www.springframework.org/schema/aop 
+								   http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+								   http://www.springframework.org/schema/context 
+								   http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+		                           http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring 
+		                           http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+	
+	<mvc:annotation-driven />
+	 <mvc:resources location="/static/" mapping="/static/**"/> 
+    <mvc:resources location="/res/" mapping="/res/**"/> 
+    <mvc:resources location="/views/" mapping="/views/**"/> 
+	
+	<!-- 属性文件读入 -->
+	<!-- <context:property-placeholder location="classpath:application.properties"/> -->
+	
+	<!--
+      - ===============================================
+      - 指定包名扫描
+      - ===============================================
+	-->
+	<context:component-scan base-package="com.myhome.*.controller" />
+										  
+	
+	<!--
+      - ===============================================
+      - 定义视图转换器
+      - @author Flouny.Caesar
+      - @date 2014-10-15
+      - ===============================================
+	-->
+	<beans:bean id="byteArrayHttpMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+	<beans:bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+		<beans:property name="supportedMediaTypes">
+			<beans:list><beans:value>text/html; charset=utf-8</beans:value></beans:list>
+		</beans:property>
+	</beans:bean>
+	<beans:bean id="resourceHttpMessageConverter" class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+	<beans:bean id="sourceHttpMessageConverter" class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+	<beans:bean id="xmlAwareFormHttpMessageConverter" class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" />
+	<beans:bean id="jaxb2RootElementHttpMessageConverter" class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+	<beans:bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<beans:property name="supportedMediaTypes">
+			<beans:list>
+				<beans:value>text/html; charset=utf-8</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<!--
+      - ===============================================
+      - 配置视图转换器
+      - ===============================================
+	-->
+	<beans:bean id="handlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<!-- <beans:property name="webBindingInitializer">
+			<beans:bean class="com.goujia.lychee.common.converter.CustomerBinding" />
+		</beans:property>-->
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:ref bean="byteArrayHttpMessageConverter" />
+				<beans:ref bean="stringHttpMessageConverter" />
+				<beans:ref bean="resourceHttpMessageConverter" />
+				<beans:ref bean="sourceHttpMessageConverter" />
+				<beans:ref bean="xmlAwareFormHttpMessageConverter" />
+				<beans:ref bean="jaxb2RootElementHttpMessageConverter" />
+				<beans:ref bean="mappingJackson2HttpMessageConverter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<!--
+      - ===============================================
+      - velocity配置
+      - ===============================================
+	-->
+	<beans:bean class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+    	<beans:property name="resourceLoaderPath" value="views" />
+    	<beans:property name="velocityProperties">
+    		<beans:props>
+    			<beans:prop key="directive.foreach.counter.name">loopCounter</beans:prop>
+    			<beans:prop key="directive.foreach.counter.initial.value">0</beans:prop>
+    			<beans:prop key="input.encoding">UTF-8</beans:prop>
+    			<beans:prop key="output.encoding">UTF-8</beans:prop>
+    			<!-- <beans:prop key="velocimacro.library">macros.vm</beans:prop> -->
+    			<beans:prop key="velocimacro.library.autoreload">true</beans:prop>
+    			<beans:prop key="runtime.log.logsystem.class">org.apache.velocity.runtime.log.SimpleLog4JLogSystem</beans:prop>
+    			<beans:prop key="directive.set.null.allowed">true</beans:prop>
+    			<beans:prop key="directive.foreach.counter.name">velocityCount</beans:prop>
+    			<beans:prop key="directive.foreach.counter.initial.value">1</beans:prop>
+    		</beans:props>
+    	</beans:property>
+    </beans:bean>
+    
+    <!--
+      - ===============================================
+      - velocity配置
+      - ===============================================
+	-->
+    <beans:bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    	<beans:property name="cache" value="true" />
+    	<beans:property name="suffix" value=".html" />
+    	<beans:property name="contentType" value="text/html; charset=UTF-8" />
+    	<beans:property name="exposeRequestAttributes" value="true" />
+    	<beans:property name="exposeSessionAttributes" value="true" />
+    	<beans:property name="exposeSpringMacroHelpers" value="true" />
+    	<beans:property name="requestContextAttribute" value="request"/>
+    	<beans:property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml" />
+    </beans:bean>
+	
+	<!--
+      - ===============================================
+      - annotation配置
+      - ===============================================
+	-->
+	<beans:bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	
+	<!--
+      - ===============================================
+      - 上传
+      - ===============================================
+	-->
+	   <!-- 文件上传表单的视图解析器 -->  
+   <!-- <beans:bean  id="multipartResolver"     class="org.springframework.web.multipart.commons.CommonsMultipartResolver" /> -->    
+    <mvc:interceptors>
+	    <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+         <mvc:interceptor>
+            <mvc:mapping path="/**" />
+<!--               <mvc:exclude-mapping path="/H5/**" /> -->
+            <mvc:exclude-mapping path="/mobile/**" />
+            <beans:bean class="com.myhome.common.interceptor.UserInterceptor" />
+        </mvc:interceptor> 
+    </mvc:interceptors>
+	<!-- 静态访问地址 -->
+<!-- 	<mvc:default-servlet-handler/> -->
+</beans:beans>

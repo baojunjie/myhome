@@ -1,0 +1,242 @@
+﻿@charset "UTF-8";
+.rankingListPage .ranking {
+  width: 1308px;
+  margin: 0 auto; }
+  .rankingListPage .ranking .works, .rankingListPage .ranking .painter {
+    margin-bottom: 20px; }
+  .rankingListPage .ranking .awardsStage {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #000;
+    width: 1200px; }
+    .rankingListPage .ranking .awardsStage .stage {
+      text-align: center;
+      color: #000;
+      font-size: 20px;
+      margin-right: 48px; }
+    .rankingListPage .ranking .awardsStage .awardsCategories .none {
+      display: none; }
+    .rankingListPage .ranking .awardsStage .awardsCategories a {
+      color: #333;
+      width: 120px;
+      height: 40px;
+      display: inline-block;
+      background: url(../../../img/rankinglist/awards_link_03.png) no-repeat;
+      text-align: center;
+      margin-right: 10px; }
+      .rankingListPage .ranking .awardsStage .awardsCategories a:hover {
+        color: #FFF;
+        background: url(../../../img/rankinglist/awards_hover_03.png) no-repeat; }
+      .rankingListPage .ranking .awardsStage .awardsCategories a.on {
+        color: #FFF;
+        background: url(../../../img/rankinglist/awards_hover_03.png) no-repeat; }
+  .rankingListPage .ranking .site-tab-nav {
+    margin-top: 34px; }
+  .rankingListPage .ranking .site-tab-nav .active a {
+    color: #333; }
+  .rankingListPage .ranking .site-tab-nav a {
+    color: #999;
+    margin-right: 56px; }
+  .rankingListPage .ranking .content {
+    width: 1200px; }
+    .rankingListPage .ranking .content .tit_check {
+      clear: both;
+      height: 33px; }
+    .rankingListPage .ranking .content .title {
+      float: left;
+      height: 32px;
+      line-height: 32px;
+      color: #333;
+      font-size: 24px;
+      text-align: center; }
+    .rankingListPage .ranking .content .list li {
+      text-align: center;
+      border-radius: 10px;
+      margin: 24px 0 0 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 1px 1px 6px rgba(16, 16, 16, 0.1);
+      height: 310px; }
+      .rankingListPage .ranking .content .list li.first {
+        margin-left: 0; }
+      .rankingListPage .ranking .content .list li .main {
+        display: block;
+        width: 224px;
+        height: 300px; }
+        .rankingListPage .ranking .content .list li .main img {
+          max-height: 100%; }
+      .rankingListPage .ranking .content .list li .prize {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 64px;
+        height: 22px;
+        line-height: 20px;
+        background: url(../../../img/rankinglist/touming.png) no-repeat;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        /*&.grandPrize {
+                            background-image: url(../../../img/rankinglist/grandPrize.png);
+                        }
+
+
+                        &.gold {
+                            background-image: url(../../../img/rankinglist/gold.png);
+                        }
+
+                        &.silver {
+                            background-image: url(../../../img/rankinglist/silver.png);
+                        }
+
+                        &.bronze {
+                            background-image: url(../../../img/rankinglist/bronze.png);
+                        }
+
+                        &.creationAward {
+                            background-image: url(../../../img/rankinglist/creationAward.png);
+                        }
+
+                        &.national-gold {
+                            background-image: url(../../../img/rankinglist/national-gold.png);
+                        }
+
+                        &.national-silver {
+                            background-image: url(../../../img/rankinglist/national-silver.png);
+                        }
+
+                        &.national-bronze {
+                            background-image: url(../../../img/rankinglist/national-bronze.png);
+                        }
+
+                        &.provincial-gold {
+                            background-image: url(../img/rankinglist/provincial-gold.png);
+                        }
+
+                        &.provincial-silver {
+                            background-image: url(../../../img/rankinglist/provincial-silver.png);
+                        }
+
+                        &.provincial-bronze {
+                            background-image: url(../../../img/rankinglist/provincial-bronze.png);
+                        }
+
+                        &.city-gold {
+                            background-image: url(../../../img/rankinglist/city-gold.png);
+                        }
+
+                        &.city-silver {
+                            background-image: url(../../../img/rankinglist/city-silver.png);
+                        }*/
+        /*&.city-bronze {
+                            background-image: url(../../../img/rankinglist/city-bronze.png);
+                        }*/ }
+      .rankingListPage .ranking .content .list li .detail {
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: no-repeat;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        line-height: 22px;
+        padding: 0px 10px;
+        color: #666;
+        font-size: 14px;
+        width: 204px;
+        height: 54px;
+        /*background: url(../../../img/rankinglist/pbg_02.png) no-repeat 0px bottom;*/
+        background: #FFF;
+        padding-top: 10px; }
+        .rankingListPage .ranking .content .list li .detail .dot {
+          max-width: 196px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-wrap: normal; }
+        .rankingListPage .ranking .content .list li .detail a {
+          color: #333;
+          font-size: 16px; }
+        .rankingListPage .ranking .content .list li .detail span {
+          padding: 0 2px; }
+    .rankingListPage .ranking .content .paging {
+      text-align: center; }
+      .rankingListPage .ranking .content .paging a {
+        border-left: 0;
+        color: #999;
+        padding: 6px 16px; }
+        .rankingListPage .ranking .content .paging a i {
+          font-size: 12px; }
+        .rankingListPage .ranking .content .paging a:first-child {
+          border-left: 1px solid #f2f2f2; }
+        .rankingListPage .ranking .content .paging a.current {
+          background: #e8440a;
+          color: white; }
+    .rankingListPage .ranking .content .painter {
+      margin-bottom: 80px; }
+      .rankingListPage .ranking .content .painter .list li {
+        margin: 24px 0 0 16px;
+        height: 310px; }
+        .rankingListPage .ranking .content .painter .list li.first {
+          margin-left: 0; }
+        .rankingListPage .ranking .content .painter .list li .main {
+          height: 300px; }
+        .rankingListPage .ranking .content .painter .list li .detail {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 224px;
+          color: #666;
+          line-height: 22px;
+          padding: 0px;
+          padding-left: 10px;
+          padding-top: 10px; }
+          .rankingListPage .ranking .content .painter .list li .detail .name {
+            color: #333;
+            font-size: 16px; }
+          .rankingListPage .ranking .content .painter .list li .detail .line {
+            top: -2px;
+            margin: 0 3px; }
+    .rankingListPage .ranking .content .screen_box {
+      display: inline-block;
+      float: none;
+      margin-top: 30px; }
+      .rankingListPage .ranking .content .screen_box dd {
+        float: left;
+        display: inline-block;
+        text-align: center;
+        margin-left: 0px; }
+        .rankingListPage .ranking .content .screen_box dd a {
+          display: block;
+          font-size: 16px;
+          line-height: 31px;
+          color: #999;
+          font-family: "微软雅黑";
+          margin-right: 66px; }
+          .rankingListPage .ranking .content .screen_box dd a.on {
+            border-radius: 0;
+            border: none;
+            color: #333; }
+      .rankingListPage .ranking .content .screen_box label {
+        display: inline-block;
+        cursor: pointer; }
+
+.rankingListPage .timeline {
+  width: 64px;
+  text-align: center;
+  margin-top: 128px; }
+  .rankingListPage .timeline dl {
+    color: #b2b2b2; }
+    .rankingListPage .timeline dl dt {
+      margin-top: 26px; }
+    .rankingListPage .timeline dl dd {
+      margin-top: 10px; }
+      .rankingListPage .timeline dl dd a {
+        color: #b2b2b2;
+        padding-left: 10px; }
+        .rankingListPage .timeline dl dd a.active {
+          color: #e8440a;
+          background: url(../img/rankinglist/libg.jpg) no-repeat 0 center; }
+

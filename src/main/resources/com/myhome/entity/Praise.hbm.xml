@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+    <class name="Praise" table="t_praise" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <discriminator column="type" type="string" />
+
+        <property name="invalid" column="invalid" type="boolean" />
+        
+        <property name="status" column="status" type="integer" />
+        
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+        
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+        
+        <property name="orderTag" column="order_tag" type="integer" />
+        
+        <many-to-one name="user" class="User" column="user_id"  />
+        
+        <property name="point" column="point" type="integer" />
+
+        <subclass name="WorksPraise" discriminator-value="1">
+            <many-to-one name="works" class="Works" column="entity_id" />
+        </subclass>
+
+        <subclass name="ArtistPraise" discriminator-value="2">
+            <many-to-one name="artist" class="Artist" column="entity_id" />
+        </subclass>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.myhome.entity">
+	<class name="Sponsors" table="t_sponsors" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<property name="logo" column="logo" type="string" />
+		
+		<property name="thumbnailLogo" column="thumbnail_logo" type="string" />
+
+		<property name="companyName" column="company_name" type="string" />
+
+		<property name="mobile" column="mobile" type="string" />
+
+		<property name="businessLicense" column="business_license" type="string" />
+
+		<property name="tBusinessLicense" column="t_business_license" type="string" />
+
+		<property name="openAccount" column="open_account" type="string" />
+
+		<property name="taxRegistration" column="tax_registration" type="string" />
+
+		<property name="organizationCode" column="organization_code" type="string" />
+
+		<many-to-one name="region" class="Region" column="region_id" cascade="none" lazy="false" />
+
+		<many-to-one name="user" class="User" column="user_id" cascade="none" lazy="false"></many-to-one>
+		
+		
+		<property name="certificate" column="certificate" type="string" />
+		
+		<property name="SCertificate" column="scertificate" type="string" />
+		
+		<property name="certificateType" column="certificate_type" type="integer" />
+		
+		<property name="token" type="string" column="token"/>
+		
+		
+		<!-- 2.0新增  -->
+		
+		
+		<property name="administrativeLevel" type="string" column="administrative_level"/>
+		
+		<property name="enterpriseProperty" type="string" column="enterprise_property"/>
+		
+		<property name="scale" type="string" column="scale"/>
+		
+		<property name="registeredFund" type="string" column="registered_fund"/>
+		
+		<property name="legalPerson" type="string" column="legal_person"/>
+		
+		<property name="idCodePositive" type="string" column="id_code_positive"/>
+		
+		<property name="idCodeBack" type="string" column="id_code_back"/>
+		
+		<property name="idCodeBackThum" type="string" column="id_code_back_thum"/>
+		
+		<property name="idCodePositiveThum" type="string" column="id_code_positive_thum"/>
+		
+		<property name="linkman" type="string" column="Linkman"/>
+		
+		<property name="email" type="string" column="email"/>
+		
+		<property name="fax" type="string" column="fax"/>
+		
+		<property name="companyProfile" type="string" column="company_profile"/>
+		
+		<property name="enterpriseSort" type="string" column="enterprise_sort"/>
+		
+		<property name="companyUrl" type="string" column="company_url"/>
+		
+		<property name="address" type="string" column="address"/>
+	</class>
+</hibernate-mapping>

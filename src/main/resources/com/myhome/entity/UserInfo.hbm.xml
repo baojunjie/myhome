@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+	<class name="UserInfo" table="t_user_info" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="foreign">
+				<param name="property">user</param>
+			</generator>
+		</id>
+
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<one-to-one name="user" constrained="true" cascade="all" />
+
+		<property name="male" column="male" type="boolean" />
+
+		<property name="birthday" column="birthday" type="date" />
+
+		<many-to-one name="region" class="Region" column="region_id"  cascade="none"  lazy="false"/>
+
+		<property name="name" column="name" type="string" />
+
+		<property name="constellation" column="constellation" type="string" />
+
+		<property name="zodiac" column="zodiac" type="string" />
+
+		<property name="idCode" column="id_code" type="string" />
+
+		<property name="parentMobile" column="parent_mobile" type="string" />
+
+		<property name="school" column="school" type="string" />
+
+		<property name="teacher" column="teacher" type="string" />
+
+		<property name="teacherMobile" column="teacher_mobile" type="string" />
+
+		<property name="nation" column="nation" type="string" />
+		<!-- 1.5新增 -->
+		<property name="type" column="type" type="string" />
+
+		<property name="img" column="img" type="string" />
+
+		<property name="originImg" column="origin_img" type="string" />
+
+		<property name="profession" column="profession" type="string" />
+		
+		<property name="nickName" column="nick_name" type="string" />
+		
+		<property name="account" column="account" type="string" />
+		
+		<property name="balance" column="balance" type="string" />
+		
+		<property name="mobile" column="mobile" type="string" />
+		
+		<property name="token" column="token" type="string" />
+		
+		<!-- 2.0新增 -->
+		<property name="invitationCode" column="invitation_code" type="string" />
+		
+		<property name="score" column="score" type="integer" />
+
+	</class>
+</hibernate-mapping>

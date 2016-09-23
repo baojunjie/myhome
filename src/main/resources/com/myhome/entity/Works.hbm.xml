@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.myhome.entity">
+	<class name="Works" table="t_works" dynamic-update="true">
+
+		<id name="id" column="id" type="long">
+			<generator class="native" />
+		</id>
+
+		<property name="invalid" column="invalid" type="boolean" />
+
+		<property name="status" column="status" type="integer" />
+
+		<property name="createdDatetime" column="created_datetime"
+			type="timestamp" />
+
+		<property name="updatedDatetime" column="updated_datetime"
+			type="timestamp" />
+
+		<property name="orderTag" column="order_tag" type="integer" />
+
+		<many-to-one name="artist" class="Artist" column="artist_id"
+			lazy="false" cascade="none" />
+
+		<property name="votenum" column="votenum" type="integer" />
+
+		<property name="praise" column="praise" type="integer" />
+
+		<property name="male" column="male" type="boolean" />
+
+		<many-to-one name="region" class="Region" column="region_id"
+			lazy="false" />
+
+		<property name="age" column="age" type="integer" />
+
+		<property name="name" column="name" type="string" />
+
+		<property name="author" column="author" type="string" />
+
+		<property name="school" column="school" type="string" />
+
+		<property name="schoolMobile" column="school_mobile" type="string" />
+
+		<property name="description" column="description" type="string" />
+
+		<property name="commentNum" column="comment_num" type="integer" />
+
+		<property name="instructor" column="instructor" type="string" />
+
+		<property name="instructorMobile" column="instructor_mobile" type="string" />
+
+        <property name="token" type="string" column="token"/>
+        
+        <property name="type" type="integer" column="type" />
+        
+        <property name="awards" type="integer" column="awards" />
+		<set name="worksPictureItemSet" inverse="true" cascade="save-update"
+			lazy="false">
+			<key column="works_id" />
+			<one-to-many class="WorksPictureItem" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,151 @@
+﻿.searchPage {
+    padding-bottom: 80px;
+
+    &-head {
+        padding: 50px 0;
+        background: #edf0f2;
+
+        .main {
+            width: 698px;
+            margin: 0 auto;
+            color: #333;
+        }
+
+        .site-select {
+            float: left;
+        }
+
+        .text {
+            float: left;
+            border: 1px solid #ced4d9;
+            border-right: 0;
+
+            input {
+                padding: 13px 10px;
+                text-indent: 10px;
+                height: 22px;
+                line-height: 22px;
+                width: 540px;
+                border: none;
+                outline: 0;
+                background: white;
+            }
+        }
+
+        .site-button {
+            float: left;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            width: 136px;
+            height: 50px;
+            line-height: 48px;
+            border-radius: 0;
+        }
+    }
+
+    &-tab {
+        .site-tab-nav {
+            font-size: 20px;
+            text-align: center;
+            background: #edf0f2;
+
+            li {
+                display: inline-block;
+                height: 50px;
+
+                a {
+                    color: #666;
+                }
+
+                &.active {
+                    background: url(../img/search/tab-active.png) no-repeat center 42px;
+
+                    span {
+                        color: #e8440a;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        margin-top: -1px;
+        border-top: 1px solid #ebebeb;
+        background: white;
+
+        .site-paging-button {
+            a {
+                margin-top: 50px;
+            }
+        }
+    }
+
+    &-recommend {
+        margin-top: 45px;
+        background: white;
+
+        &-title {
+            span {
+                float: left;
+                color: #333;
+            }
+
+            a {
+                float: right;
+                color: #666;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .list {
+
+        li {
+            width: 224px;
+            margin-left: 20px;
+            margin-top: 40px;
+
+            &.first {
+                margin-left: 0;
+            }
+
+            .image {
+                display: block;
+                width: 224px;
+                height: 224px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .content {
+                padding-top: 14px;
+
+                .line {
+                    display: inline-block;
+                    padding: 5px 0;
+                    width: 1px;
+                    margin: 0 8px;
+                    border-left: 1px solid #ccc;
+                }
+
+                .title {
+                    @include ellipsis(224px);
+                    font-size: 16px;
+                    color: #333;
+
+                    .line {
+                        padding: 6px 0;
+                    }
+                }
+
+                .des {
+                    color: #ccc;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

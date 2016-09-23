@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Cache-Control" content="no-cache"></meta>
+    <title>找回密码</title>
+    <link href="$!request.contextPath/res/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="$!request.contextPath/favicon.ico">
+    <script src="$!request.contextPath/res/js/mobileAdapt.js"></script>
+</head>
+<body class="site site-1">
+    
+
+<div class="site-head">
+    <div class="site-container clearfix">
+        <div class="site-head-l">
+            <h1 class="logo">
+                <a href="$!request.contextPath/home/index.do">我的家</a>
+            </h1>
+            <div class="text clearfix">
+                    <span class="divide"></span>
+                    <span class="title">找回密码</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="site-body site-container site-box">
+    
+
+<div class="passwordResetPage">
+    <div class="step">
+        <ol class="flc">
+            <li>
+                <div class="rate ">
+                    <span class="number">
+                        <i class="iconfont icon-yuanxingbeijing"></i>
+                        <strong>1</strong>
+                    </span>
+                    <span class="text">安全验证</span>
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="rate current">
+                    <span class="number">
+                        <i class="iconfont icon-yuanxingbeijing"></i>
+                        <strong>2</strong>
+                    </span>
+                    <span class="text">重置密码</span>
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="rate ">
+                    <span class="number">
+                        <i class="iconfont icon-yuanxingbeijing"></i>
+                        <strong>3</strong>
+                    </span>
+                    <span class="text">完成</span>
+                </div>
+            </li>
+        </ol>
+    </div>
+    
+
+<div class="passwordReset-1 passwordReset-2 site-form site-form-1">
+    <p class="title">
+        验证成功，请重新设定您的密码
+    </p>
+    <form action="$!request.contextPath/login/authentication/update.do">
+        <div class="site-form-item">
+            <label class="label">请输入新密码</label>
+            <div class="input">
+                <input data-valid-require="请输入密码" name="password" data-valid-range="密码长度4～15位" data-valid-range-min="4" data-valid-rang-max="15" class="site-input J_validInput" type="password" />
+                <input  name="mobile" value="$!mobile" type="hidden" />
+            </div>
+        </div>
+        <div class="site-form-item site-form-action">
+            <input class="site-button site-button-primary" type="submit" value="下一步" />
+        </div>
+    </form>
+</div>
+</div>
+</div>
+    <div class="site-foot">
+    #parse("_footer.html")
+</div>
+ #parse("footer.html")
+    <!-- shared section start-->
+    <script>
+        var siteConfig = {
+        		personalCenter: {
+                    kidsUrl: "$!request.contextPath/help/personalCenter.do",
+                    userUrl: "$!request.contextPath/user/personalCenter/profile.do",
+                    teacherUrl: "$!request.contextPath/teacher/personalCenter.do",
+                    painterUrl: "$!request.contextPath/artist/personalCenter.do"
+                },
+                works: {
+                    detailUrl: "$!request.contextPath/works/worksinfo.do"
+                },
+            fileUrl: "",
+            resUrl: "$!request.contextPath/res",
+            serverUrl: "$!request.contextPath",
+            app: ""
+        };
+    </script>
+    <script data-main="$!request.contextPath/res/js/init" src="$!request.contextPath/res/lib/requirejs/require.js"></script>
+    <!-- shared section end-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?deaa130d368d596283c853e45be4c9ae";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>
